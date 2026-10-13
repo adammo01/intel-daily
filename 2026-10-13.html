@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="referrer" content="no-referrer">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<title>2026-10-13 收藏情报日报</title>
+<style>
+:root{
+  --bg:#f6f7f9; --surface:#ffffff; --surface-2:#fafbfc;
+  --text:#1a1d21; --text-2:#4b5563; --muted:#8b939e;
+  --border:#e5e7eb; --border-2:#eef0f3;
+  --accent:#2563eb; --accent-soft:#eff4ff;
+  --code-bg:#f3f4f6; --quote-bg:#f8fafc;
+  --shadow:0 1px 2px rgba(16,24,40,.04), 0 1px 3px rgba(16,24,40,.06);
+  --radius:10px;
+}
+[data-theme="dark"]{
+  --bg:#0e1013; --surface:#16181d; --surface-2:#1b1e24;
+  --text:#e6e8eb; --text-2:#b6bcc5; --muted:#7d848e;
+  --border:#272b32; --border-2:#21242a;
+  --accent:#6ea8fe; --accent-soft:#1a2433;
+  --code-bg:#1e2128; --quote-bg:#191c22;
+  --shadow:0 1px 2px rgba(0,0,0,.3);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0e1013; --surface:#16181d; --surface-2:#1b1e24;
+    --text:#e6e8eb; --text-2:#b6bcc5; --muted:#7d848e;
+    --border:#272b32; --border-2:#21242a;
+    --accent:#6ea8fe; --accent-soft:#1a2433;
+    --code-bg:#1e2128; --quote-bg:#191c22;
+    --shadow:0 1px 2px rgba(0,0,0,.3);
+  }
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--bg); color:var(--text);
+  font:15px/1.72 -apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB",
+       "Microsoft YaHei","Source Han Sans SC","Noto Sans CJK SC",sans-serif;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:var(--accent); text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:860px; margin:0 auto; padding:0 18px 56px}
+
+/* 顶栏 */
+.topbar{
+  position:sticky; top:0; z-index:20;
+  background:var(--surface);
+  background:color-mix(in srgb, var(--surface) 88%, transparent);
+  backdrop-filter:saturate(180%) blur(12px);
+  -webkit-backdrop-filter:saturate(180%) blur(12px);
+  border-bottom:1px solid var(--border);
+}
+.topbar-in{max-width:860px; margin:0 auto; padding:10px 18px; display:flex; align-items:center; gap:12px}
+.brand{display:flex; flex-direction:column; gap:1px; min-width:0; flex:1}
+.brand b{font-size:15px; font-weight:650; letter-spacing:.2px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+.brand span{font-size:11.5px; color:var(--muted); white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+.tb-right{display:flex; align-items:center; gap:6px; flex:none}
+.btn{
+  display:inline-flex; align-items:center; justify-content:center;
+  min-height:30px; padding:4px 10px; font-size:12.5px; line-height:1;
+  color:var(--text-2); background:var(--surface-2);
+  border:1px solid var(--border); border-radius:8px;
+  cursor:pointer; font-family:inherit; white-space:nowrap;
+}
+.btn:hover{color:var(--text); border-color:var(--muted)}
+.btn.icon{width:30px; padding:0; font-size:14px}
+
+/* 页面头 */
+.hero{padding:22px 0 12px}
+.hero h1{margin:0 0 6px; font-size:23px; line-height:1.35; letter-spacing:-.2px}
+.hero .meta{color:var(--muted); font-size:12.5px; display:flex; flex-wrap:wrap; gap:6px 14px}
+.chips{display:flex; flex-wrap:wrap; gap:6px; margin-top:10px}
+.chip{
+  font-size:11.5px; padding:2.5px 8px; border-radius:999px;
+  background:var(--accent-soft); color:var(--accent); border:1px solid transparent;
+}
+.chip.grey{background:var(--surface-2); color:var(--text-2); border-color:var(--border)}
+
+/* 正文卡片 */
+.card{
+  background:var(--surface); border:1px solid var(--border);
+  border-radius:var(--radius); box-shadow:var(--shadow);
+  padding:20px 22px; margin-top:14px;
+}
+.content>*:first-child{margin-top:0}
+.content>*:last-child{margin-bottom:0}
+.content h1{font-size:21px; margin:22px 0 10px; letter-spacing:-.2px}
+.content h2{
+  font-size:16.5px; margin:24px 0 10px; padding-bottom:7px;
+  border-bottom:1px solid var(--border-2); letter-spacing:-.1px;
+}
+.content h3{font-size:15px; margin:18px 0 7px; color:var(--text); font-weight:650}
+.content h4,.content h5,.content h6{font-size:14px; margin:14px 0 6px; color:var(--text-2)}
+.content p{margin:9px 0; color:var(--text-2)}
+.content strong{color:var(--text); font-weight:650}
+.content ul,.content ol{margin:8px 0; padding-left:20px}
+.content li{margin:4px 0; color:var(--text-2)}
+.content li.lvl2{list-style-type:circle; margin-left:8px}
+.content hr{border:0; border-top:1px solid var(--border); margin:20px 0}
+.content blockquote{
+  margin:12px 0; padding:10px 14px; background:var(--quote-bg);
+  border-left:3px solid var(--accent); border-radius:0 8px 8px 0; color:var(--text-2);
+}
+.content blockquote p{margin:4px 0}
+.content code{
+  font-family:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,monospace;
+  font-size:12.5px; background:var(--code-bg); padding:1.5px 5px; border-radius:5px;
+  color:var(--text); word-break:break-word;
+}
+.content pre{
+  margin:12px 0; padding:13px 15px; background:var(--code-bg);
+  border:1px solid var(--border-2); border-radius:8px; overflow-x:auto;
+}
+.content pre code{background:none; padding:0; font-size:12.5px; line-height:1.6}
+
+/* 表格 */
+.table-wrap{overflow-x:auto; margin:12px 0; -webkit-overflow-scrolling:touch}
+.content table{border-collapse:collapse; width:100%; font-size:13.5px; min-width:320px}
+.content th,.content td{
+  border:1px solid var(--border); padding:7px 10px; text-align:left; vertical-align:top;
+}
+.content th{background:var(--surface-2); font-weight:620; color:var(--text); white-space:nowrap}
+.content td{color:var(--text-2)}
+.content tbody tr:nth-child(even){background:var(--surface-2)}
+
+/* 归档列表 */
+.list{display:flex; flex-direction:column; gap:8px; margin-top:14px}
+.item{
+  display:flex; align-items:center; gap:12px; padding:11px 14px;
+  background:var(--surface); border:1px solid var(--border);
+  border-radius:var(--radius); box-shadow:var(--shadow);
+}
+.item:hover{border-color:var(--accent); text-decoration:none}
+.item .d{
+  flex:none; font-variant-numeric:tabular-nums; font-size:12.5px; color:var(--muted);
+  padding:3px 8px; background:var(--surface-2); border-radius:6px; border:1px solid var(--border-2);
+}
+.item .t{flex:1; min-width:0; font-size:14px; color:var(--text); overflow:hidden; text-overflow:ellipsis; white-space:nowrap}
+.item .n{flex:none; font-size:12px; color:var(--muted)}
+
+.nav{display:flex; gap:8px; margin-top:16px; flex-wrap:wrap}
+.nav .btn{flex:1; min-width:120px; justify-content:center; min-height:36px}
+
+.foot{margin-top:26px; padding-top:14px; border-top:1px solid var(--border); color:var(--muted); font-size:12px; line-height:1.9}
+.foot code{background:var(--code-bg); padding:1px 5px; border-radius:4px; font-size:11.5px}
+.empty{padding:40px 20px; text-align:center; color:var(--muted); font-size:13.5px}
+
+@media (max-width:560px){
+  .wrap{padding:0 13px 44px}
+  .topbar-in{padding:9px 13px}
+  .card{padding:15px 15px; border-radius:9px}
+  .hero h1{font-size:20px}
+  .content h1{font-size:19px}
+  .content h2{font-size:15.5px}
+  .item{padding:10px 12px; gap:9px}
+  .item .t{font-size:13.5px}
+}
+</style>
+</head>
+<body>
+<header class="topbar"><div class="topbar-in">
+  <div class="brand"><b>收藏情报日报</b><span>抖音 / B 站 每日收藏归纳</span></div>
+  <div class="tb-right">
+    <a class="btn" href="archive.html">归档</a>
+    <button class="btn icon" id="themeBtn" type="button" title="切换主题" aria-label="切换主题">◑</button>
+  </div>
+</div></header>
+<main class="wrap">
+<section class="hero"><h1>2026-10-13 收藏情报日报</h1><div class="meta"><span>2026 年 10 月 13 日</span></div><div class="chips"><span class="chip">9 条视频</span><span class="chip grey">状态：部分成功</span><span class="chip grey">内容创作</span><span class="chip grey">AI编程</span><span class="chip grey">自动化工作流</span></div></section><article class="card content"><h1>2026-10-13 收藏情报日报</h1>
+<blockquote><p>采集日期：<strong>2026-10-13</strong> ｜ 生成时间：2026-10-13 21:33:11<br>数据来源：本人账号的收藏夹（B 站 + 抖音），由真实浏览器会话读取</p></blockquote>
+<hr>
+<h2>一、今日概览</h2>
+<div class="table-wrap"><table><thead><tr><th>指标</th><th>数值</th></tr></thead><tbody><tr><td>本次新增视频</td><td><strong>9</strong> 条</td></tr><tr><td>平台分布</td><td>抖音 9 条</td></tr><tr><td>拿到字幕</td><td>0 / 9 条</td></tr><tr><td>归纳来源</td><td>Agent 归纳 9 条 ｜ 规则兜底 0 条</td></tr><tr><td>已进知识库</td><td>0 条</td></tr><tr><td>平均精华度</td><td>29.0</td></tr><tr><td>失败</td><td>1 项</td></tr><tr><td>降级（缺字幕）</td><td>4 条</td></tr></tbody></table></div>
+<p><strong>一句话结论</strong>：新增 9 条收藏，主题集中在「AI编程」；最值得看的是《AI一键全自动出角色动作 当游戏开发的门槛足够低的时候，就到了拼品质的时候了！#游戏开发 #Godot #vibecoding #我在抖音学ai #这个ai教程不烧心》（精华度 52）。</p>
+<hr>
+<h2>二、主题分布</h2>
+<div class="table-wrap"><table><thead><tr><th>主题</th><th>条数</th><th>平均精华度</th></tr></thead><tbody><tr><td>内容创作</td><td>8</td><td>26.1</td></tr><tr><td>AI编程</td><td>1</td><td>52.0</td></tr><tr><td>自动化工作流</td><td>1</td><td>52.0</td></tr></tbody></table></div>
+<hr>
+<h2>三、精华推荐（精华度 Top 9）</h2>
+<h3>1. AI一键全自动出角色动作 当游戏开发的门槛足够低的时候，就到了拼品质的时候了！#游戏开发 #Godot #vibecoding #我在抖音学ai #这个ai教程不烧心 ⭐⭐⭐ <code>52</code></h3>
+<ul><li><strong>平台</strong>：抖音 ｜ <strong>作者</strong>：- ｜ <strong>时长</strong>：--:--</li><li><strong>收藏</strong>：抖音收藏 ｜ <strong>字幕</strong>：desc_only（0 字）</li><li><strong>链接</strong>：<a href="https://www.douyin.com/video/7695862199100689715" target="_blank" rel="noopener noreferrer">https://www.douyin.com/video/7695862199100689715</a></li><li><strong>主旨</strong>：用 AI 一键生成游戏角色动作，Godot + Vibe Coding</li><li><strong>要点</strong>：</li><li class="lvl2">主题为 AI 一键全自动生成游戏角色动作</li><li class="lvl2">涉及工具与标签：Godot、Vibe Coding</li><li class="lvl2">核心观点：游戏开发门槛足够低后，竞争点转向品质</li><li class="lvl2">属「我在抖音学 AI」教程类内容</li><li class="lvl2">无字幕，具体工作流与提示词无法从文本获取</li><li><strong>可执行</strong>：</li><li class="lvl2">[ ] 在 Godot 中按该思路尝试用 AI 生成角色动作资产</li></ul>
+<h3>2. 第87集 | 长篇纪录片《玄奘之路》之归心似箭（大结局） 解说：九九《大唐西域记》又称《西游记》由唐代玄奘本人口述、弟子辩机笔录而成，详尽的记述了他19年西行的历程。三藏法师传由玄奘的弟子慧立和彦悰撰写，真实的讲述了玄奘的一生。在1300年之后，让我们根据这两本著作，穿越时间的迷雾，从神话回到真实，从唐僧回到玄奘。#玄奘之路#中国四大名著之一西游记的前身#大唐西域记#归心似箭#从唐僧回到玄奘@DOU+上热门 @DOU+小助手 ⭐⭐ <code>45</code></h3>
+<ul><li><strong>平台</strong>：抖音 ｜ <strong>作者</strong>：- ｜ <strong>时长</strong>：--:--</li><li><strong>收藏</strong>：抖音收藏 ｜ <strong>字幕</strong>：desc_only（0 字）</li><li><strong>链接</strong>：<a href="https://www.douyin.com/video/7505249357118278938" target="_blank" rel="noopener noreferrer">https://www.douyin.com/video/7505249357118278938</a></li><li><strong>主旨</strong>：《玄奘之路》第87集大结局，还原真实玄奘一生</li><li><strong>要点</strong>：</li><li class="lvl2">长篇纪录片《玄奘之路》第87集，为大结局《归心似箭》</li><li class="lvl2">解说：九九</li><li class="lvl2">史料底本之一为《大唐西域记》，由玄奘口述、弟子辩机笔录</li><li class="lvl2">另一底本为《三藏法师传》，由弟子慧立、彦悰撰写</li><li class="lvl2">记述玄奘 19 年西行历程，主张从神话回到真实</li><li><strong>可执行</strong>：</li><li class="lvl2">[ ] 若需查证史实，可回到《大唐西域记》《三藏法师传》两本原著</li></ul>
+<h3>3. 检修只关阀门，为什么还会发生中毒爆炸？#盲板抽堵 #八大特殊作业 #VR安全培训 #化工安全作业 #企业安全生产 ⭐⭐ <code>38</code></h3>
+<ul><li><strong>平台</strong>：抖音 ｜ <strong>作者</strong>：- ｜ <strong>时长</strong>：--:--</li><li><strong>收藏</strong>：抖音收藏 ｜ <strong>字幕</strong>：desc_only（0 字）</li><li><strong>链接</strong>：<a href="https://www.douyin.com/video/7696096318611115274" target="_blank" rel="noopener noreferrer">https://www.douyin.com/video/7696096318611115274</a></li><li><strong>主旨</strong>：化工安全科普：检修只关阀门为何仍会中毒爆炸</li><li><strong>要点</strong>：</li><li class="lvl2">提出问题：检修只关阀门，为什么还会发生中毒爆炸</li><li class="lvl2">涉及「盲板抽堵」特殊作业概念</li><li class="lvl2">关联「八大特殊作业」安全管理规范</li><li class="lvl2">标注 VR 安全培训、化工安全作业、企业安全生产场景</li><li class="lvl2">无字幕，具体案例与操作规范无法从文本获取</li><li><strong>可执行</strong>：</li><li class="lvl2">[ ] 企业安全培训可对照「八大特殊作业」清单核查盲板抽堵作业</li></ul>
+<h3>4. 第235集 | 精英组，专业组必备的干货真假爆发力的运用#拉丁舞教学 #大学老师日常 #李柠昊拉丁舞教学体系 ⭐⭐ <code>35</code></h3>
+<ul><li><strong>平台</strong>：抖音 ｜ <strong>作者</strong>：- ｜ <strong>时长</strong>：--:--</li><li><strong>收藏</strong>：抖音收藏 ｜ <strong>字幕</strong>：desc_only（0 字）</li><li><strong>链接</strong>：<a href="https://www.douyin.com/video/7320634427153943818" target="_blank" rel="noopener noreferrer">https://www.douyin.com/video/7320634427153943818</a></li><li><strong>主旨</strong>：拉丁舞教学第235集，讲真假爆发力的运用</li><li><strong>要点</strong>：</li><li class="lvl2">属「李柠昊拉丁舞教学体系」第235集</li><li class="lvl2">定位精英组、专业组学习者的教学内容</li><li class="lvl2">本集主题为「真假爆发力」的运用</li><li class="lvl2">标签含「大学老师日常」，为教师个人IP账号</li><li class="lvl2">无字幕，具体训练方法与动作要领无法从文本确认</li><li><strong>可执行</strong>：</li><li class="lvl2">[ ] 在抖音搜索「李柠昊拉丁舞教学」按集数顺序追更</li></ul>
+<h3>5. 呈坎是徽州有着1800年历史的古村落，这条视频带你沉浸式体验。#呈坎 #黄山婷婷 #导游讲解 ⭐⭐ <code>32</code></h3>
+<ul><li><strong>平台</strong>：抖音 ｜ <strong>作者</strong>：- ｜ <strong>时长</strong>：--:--</li><li><strong>收藏</strong>：抖音收藏 ｜ <strong>字幕</strong>：desc_only（0 字）</li><li><strong>链接</strong>：<a href="https://www.douyin.com/video/7404789142749498636" target="_blank" rel="noopener noreferrer">https://www.douyin.com/video/7404789142749498636</a></li><li><strong>主旨</strong>：徽州呈坎古村落导游讲解，1800 年历史沉浸式体验</li><li><strong>要点</strong>：</li><li class="lvl2">介绍徽州古村落呈坎</li><li class="lvl2">标题称呈坎有 1800 年历史</li><li class="lvl2">内容形式为导游讲解的沉浸式体验</li><li class="lvl2">出自「黄山婷婷」账号，属本地导游类内容</li><li class="lvl2">无字幕，村落看点与讲解细节无法从文本获取</li><li><strong>可执行</strong>：</li><li class="lvl2">[ ] 若规划黄山/徽州行程，可把呈坎列入古村落游览备选</li></ul>
+<h3>6. “赛博”年味！三亚机器人机器狗齐上阵，外国游客直呼：太神奇了 #在海南过个温暖年 ⭐ <code>18</code></h3>
+<ul><li><strong>平台</strong>：抖音 ｜ <strong>作者</strong>：- ｜ <strong>时长</strong>：--:--</li><li><strong>收藏</strong>：抖音收藏 ｜ <strong>字幕</strong>：desc_only（0 字）</li><li><strong>链接</strong>：<a href="https://www.douyin.com/video/7608920227027422507" target="_blank" rel="noopener noreferrer">https://www.douyin.com/video/7608920227027422507</a></li><li><strong>主旨</strong>：三亚机器人机器狗齐上阵，游客反响热烈（信息有限）</li><li><strong>要点</strong>：</li><li class="lvl2">内容为三亚现场的机器人、机器狗展示</li><li class="lvl2">标题称外国游客直呼「太神奇了」</li><li class="lvl2">归入「在海南过个温暖年」话题，属文旅向内容</li><li class="lvl2">无字幕，机型、厂商与展示细节不可考</li></ul>
+<h3>7. 第18集 | 艾特你数学不好的列表来学三角函数#高中数学 #初中数学 ⭐ <code>15</code></h3>
+<ul><li><strong>平台</strong>：抖音 ｜ <strong>作者</strong>：- ｜ <strong>时长</strong>：--:--</li><li><strong>收藏</strong>：抖音收藏 ｜ <strong>字幕</strong>：desc_only（0 字）</li><li><strong>链接</strong>：<a href="https://www.douyin.com/video/7404453497346739483" target="_blank" rel="noopener noreferrer">https://www.douyin.com/video/7404453497346739483</a></li><li><strong>主旨</strong>：数学教学第18集，讲三角函数（信息有限）</li><li><strong>要点</strong>：</li><li class="lvl2">属高中数学/初中数学系列第18集</li><li class="lvl2">本集主题为三角函数</li><li class="lvl2">标题以「艾特你数学不好的列表」作传播话术</li><li class="lvl2">无字幕，讲解内容与解题步骤不可考</li></ul>
+<h3>8. 2～《兰初定格》#女生必看小说 #小说推文每日更新 #小说推荐 ⭐ <code>14</code></h3>
+<ul><li><strong>平台</strong>：抖音 ｜ <strong>作者</strong>：- ｜ <strong>时长</strong>：--:--</li><li><strong>收藏</strong>：抖音收藏 ｜ <strong>字幕</strong>：desc_only（0 字）</li><li><strong>链接</strong>：<a href="https://www.douyin.com/video/7587259405991086713" target="_blank" rel="noopener noreferrer">https://www.douyin.com/video/7587259405991086713</a></li><li><strong>主旨</strong>：小说推文《兰初定格》第2集，面向女性读者（信息有限）</li><li><strong>要点</strong>：</li><li class="lvl2">属小说推文类内容，作品名《兰初定格》</li><li class="lvl2">序列标注为「2～」，即第 2 集</li><li class="lvl2">标签定位「女生必看小说」</li><li class="lvl2">无字幕，剧情梗概与推文卖点不可知</li></ul>
+<h3>9. 学生日常练舞#快乐就这么简单 #怎么高兴怎么玩 #舞出美丽舞出健康 ⭐ <code>12</code></h3>
+<ul><li><strong>平台</strong>：抖音 ｜ <strong>作者</strong>：- ｜ <strong>时长</strong>：--:--</li><li><strong>收藏</strong>：抖音收藏 ｜ <strong>字幕</strong>：desc_only（0 字）</li><li><strong>链接</strong>：<a href="https://www.douyin.com/video/7113524212165348642" target="_blank" rel="noopener noreferrer">https://www.douyin.com/video/7113524212165348642</a></li><li><strong>主旨</strong>：学生日常练舞片段，主打快乐健身（信息有限）</li><li><strong>要点</strong>：</li><li class="lvl2">内容为学生日常练舞的记录片段</li><li class="lvl2">标题话术为「快乐就这么简单」「怎么高兴怎么玩」</li><li class="lvl2">标签强调「舞出美丽舞出健康」，属健身娱乐向</li><li class="lvl2">无字幕、无作者与互动数据，舞种与训练方法不可考</li></ul>
+<hr>
+<h2>四、全部条目摘要</h2>
+<h3>🎵 抖音（9 条）</h3>
+<ul><li><strong>AI一键全自动出角色动作 当游戏开发的门槛足够低的时候，就到了拼品质的时候了！#游戏开发 #Godot #vibecoding #我在抖音学ai #这个ai教程不烧心</strong> ｜ <code>52</code> ｜ --:-- ｜ 字幕质量:中</li><li class="lvl2">用 AI 一键生成游戏角色动作，Godot + Vibe Coding</li><li class="lvl2">主题为 AI 一键全自动生成游戏角色动作</li><li class="lvl2">涉及工具与标签：Godot、Vibe Coding</li><li class="lvl2">核心观点：游戏开发门槛足够低后，竞争点转向品质</li><li class="lvl2">属「我在抖音学 AI」教程类内容</li><li class="lvl2">无字幕，具体工作流与提示词无法从文本获取</li><li><strong>第87集 | 长篇纪录片《玄奘之路》之归心似箭（大结局） 解说：九九《大唐西域记》又称《西游记》由唐代玄奘本人口述、弟子辩机笔录而成，详尽的记述了他19年西行的历程。三藏法师传由玄奘的弟子慧立和彦悰撰写，真实的讲述了玄奘的一生。在1300年之后，让我们根据这两本著作，穿越时间的迷雾，从神话回到真实，从唐僧回到玄奘。#玄奘之路#中国四大名著之一西游记的前身#大唐西域记#归心似箭#从唐僧回到玄奘@DOU+上热门 @DOU+小助手</strong> ｜ <code>45</code> ｜ --:-- ｜ 字幕质量:中</li><li class="lvl2">《玄奘之路》第87集大结局，还原真实玄奘一生</li><li class="lvl2">长篇纪录片《玄奘之路》第87集，为大结局《归心似箭》</li><li class="lvl2">解说：九九</li><li class="lvl2">史料底本之一为《大唐西域记》，由玄奘口述、弟子辩机笔录</li><li class="lvl2">另一底本为《三藏法师传》，由弟子慧立、彦悰撰写</li><li class="lvl2">记述玄奘 19 年西行历程，主张从神话回到真实</li><li><strong>检修只关阀门，为什么还会发生中毒爆炸？#盲板抽堵 #八大特殊作业 #VR安全培训 #化工安全作业 #企业安全生产</strong> ｜ <code>38</code> ｜ --:-- ｜ 字幕质量:中</li><li class="lvl2">化工安全科普：检修只关阀门为何仍会中毒爆炸</li><li class="lvl2">提出问题：检修只关阀门，为什么还会发生中毒爆炸</li><li class="lvl2">涉及「盲板抽堵」特殊作业概念</li><li class="lvl2">关联「八大特殊作业」安全管理规范</li><li class="lvl2">标注 VR 安全培训、化工安全作业、企业安全生产场景</li><li class="lvl2">无字幕，具体案例与操作规范无法从文本获取</li><li><strong>第235集 | 精英组，专业组必备的干货真假爆发力的运用#拉丁舞教学 #大学老师日常 #李柠昊拉丁舞教学体系</strong> ｜ <code>35</code> ｜ --:-- ｜ 字幕质量:中</li><li class="lvl2">拉丁舞教学第235集，讲真假爆发力的运用</li><li class="lvl2">属「李柠昊拉丁舞教学体系」第235集</li><li class="lvl2">定位精英组、专业组学习者的教学内容</li><li class="lvl2">本集主题为「真假爆发力」的运用</li><li class="lvl2">标签含「大学老师日常」，为教师个人IP账号</li><li class="lvl2">无字幕，具体训练方法与动作要领无法从文本确认</li><li><strong>呈坎是徽州有着1800年历史的古村落，这条视频带你沉浸式体验。#呈坎 #黄山婷婷 #导游讲解</strong> ｜ <code>32</code> ｜ --:-- ｜ 字幕质量:中</li><li class="lvl2">徽州呈坎古村落导游讲解，1800 年历史沉浸式体验</li><li class="lvl2">介绍徽州古村落呈坎</li><li class="lvl2">标题称呈坎有 1800 年历史</li><li class="lvl2">内容形式为导游讲解的沉浸式体验</li><li class="lvl2">出自「黄山婷婷」账号，属本地导游类内容</li><li class="lvl2">无字幕，村落看点与讲解细节无法从文本获取</li><li><strong>“赛博”年味！三亚机器人机器狗齐上阵，外国游客直呼：太神奇了 #在海南过个温暖年</strong> ｜ <code>18</code> ｜ --:-- ｜ 字幕质量:低</li><li class="lvl2">三亚机器人机器狗齐上阵，游客反响热烈（信息有限）</li><li class="lvl2">内容为三亚现场的机器人、机器狗展示</li><li class="lvl2">标题称外国游客直呼「太神奇了」</li><li class="lvl2">归入「在海南过个温暖年」话题，属文旅向内容</li><li class="lvl2">无字幕，机型、厂商与展示细节不可考</li><li><strong>第18集 | 艾特你数学不好的列表来学三角函数#高中数学 #初中数学</strong> ｜ <code>15</code> ｜ --:-- ｜ 字幕质量:低</li><li class="lvl2">数学教学第18集，讲三角函数（信息有限）</li><li class="lvl2">属高中数学/初中数学系列第18集</li><li class="lvl2">本集主题为三角函数</li><li class="lvl2">标题以「艾特你数学不好的列表」作传播话术</li><li class="lvl2">无字幕，讲解内容与解题步骤不可考</li><li><strong>2～《兰初定格》#女生必看小说 #小说推文每日更新 #小说推荐</strong> ｜ <code>14</code> ｜ --:-- ｜ 字幕质量:低</li><li class="lvl2">小说推文《兰初定格》第2集，面向女性读者（信息有限）</li><li class="lvl2">属小说推文类内容，作品名《兰初定格》</li><li class="lvl2">序列标注为「2～」，即第 2 集</li><li class="lvl2">标签定位「女生必看小说」</li><li class="lvl2">无字幕，剧情梗概与推文卖点不可知</li><li><strong>学生日常练舞#快乐就这么简单 #怎么高兴怎么玩 #舞出美丽舞出健康</strong> ｜ <code>12</code> ｜ --:-- ｜ 字幕质量:低</li><li class="lvl2">学生日常练舞片段，主打快乐健身（信息有限）</li><li class="lvl2">内容为学生日常练舞的记录片段</li><li class="lvl2">标题话术为「快乐就这么简单」「怎么高兴怎么玩」</li><li class="lvl2">标签强调「舞出美丽舞出健康」，属健身娱乐向</li><li class="lvl2">无字幕、无作者与互动数据，舞种与训练方法不可考</li></ul>
+<hr>
+<h2>五、失败与降级记录</h2>
+<div class="table-wrap"><table><thead><tr><th>平台</th><th>条目</th><th>阶段</th><th>错误</th><th>时间</th></tr></thead><tbody><tr><td>bilibili</td><td>-</td><td>login</td><td>未登录（code=-101）</td><td>2026-10-13 21:30:59</td></tr></tbody></table></div>
+<blockquote><p>⚠️ <strong>本次运行为「部分成功」</strong>：存在采集或处理失败项，报告已按可用数据生成。</p></blockquote>
+<hr>
+<h2>附：运行信息</h2>
+<ul><li>报告日期：2026-10-13</li><li>本次条目数：9</li><li>知识库收录：0 篇</li><li>状态：partial</li><li>数据源文件：<code>data/raw/*-2026-10-13.json</code></li><li>流程：采集 → 字幕 → 摘要包 → 归纳 → 报告 → 知识库</li></ul>
+<hr>
+<p>_本报告由「抖音/B站 收藏情报系统」自动生成，规则与约定见 <code>情报系统/AGENT.md</code>。_</p></article>
+<div class="nav"><a class="btn" href="2026-10-12.html">下一期 2026-10-12 →</a><a class="btn" href="archive.html">全部归档</a></div>
+<div class="foot">由「收藏情报系统」自动生成 ｜ 内容来自本人在 B 站与抖音的收藏，原视频版权归原作者所有</div>
+</main>
+<script>
+(function(){
+  var KEY='intel-theme', root=document.documentElement;
+  function sys(){try{return window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}catch(e){return 'light';}}
+  function cur(){return root.getAttribute('data-theme')||sys();}
+  function paint(){var b=document.getElementById('themeBtn'); if(b){b.textContent=cur()==='dark'?'\u25D0':'\u25D1'; b.title=cur()==='dark'?'切换到浅色':'切换到深色';}}
+  try{var s=localStorage.getItem(KEY); if(s){root.setAttribute('data-theme',s);}}catch(e){}
+  window.__toggleTheme=function(){
+    var next=cur()==='dark'?'light':'dark';
+    root.setAttribute('data-theme',next);
+    try{localStorage.setItem(KEY,next);}catch(e){}
+    paint();
+  };
+  if(document.readyState!=='loading'){paint();}else{document.addEventListener('DOMContentLoaded',paint);}
+})();
+</script>
+</body>
+</html>
