@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="referrer" content="no-referrer">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<title>2026-10-14 收藏情报日报</title>
+<style>
+:root{
+  --bg:#f6f7f9; --surface:#ffffff; --surface-2:#fafbfc;
+  --text:#1a1d21; --text-2:#4b5563; --muted:#8b939e;
+  --border:#e5e7eb; --border-2:#eef0f3;
+  --accent:#2563eb; --accent-soft:#eff4ff;
+  --code-bg:#f3f4f6; --quote-bg:#f8fafc;
+  --shadow:0 1px 2px rgba(16,24,40,.04), 0 1px 3px rgba(16,24,40,.06);
+  --radius:10px;
+}
+[data-theme="dark"]{
+  --bg:#0e1013; --surface:#16181d; --surface-2:#1b1e24;
+  --text:#e6e8eb; --text-2:#b6bcc5; --muted:#7d848e;
+  --border:#272b32; --border-2:#21242a;
+  --accent:#6ea8fe; --accent-soft:#1a2433;
+  --code-bg:#1e2128; --quote-bg:#191c22;
+  --shadow:0 1px 2px rgba(0,0,0,.3);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0e1013; --surface:#16181d; --surface-2:#1b1e24;
+    --text:#e6e8eb; --text-2:#b6bcc5; --muted:#7d848e;
+    --border:#272b32; --border-2:#21242a;
+    --accent:#6ea8fe; --accent-soft:#1a2433;
+    --code-bg:#1e2128; --quote-bg:#191c22;
+    --shadow:0 1px 2px rgba(0,0,0,.3);
+  }
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--bg); color:var(--text);
+  font:15px/1.72 -apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB",
+       "Microsoft YaHei","Source Han Sans SC","Noto Sans CJK SC",sans-serif;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:var(--accent); text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:860px; margin:0 auto; padding:0 18px 56px}
+
+/* 顶栏 */
+.topbar{
+  position:sticky; top:0; z-index:20;
+  background:var(--surface);
+  background:color-mix(in srgb, var(--surface) 88%, transparent);
+  backdrop-filter:saturate(180%) blur(12px);
+  -webkit-backdrop-filter:saturate(180%) blur(12px);
+  border-bottom:1px solid var(--border);
+}
+.topbar-in{max-width:860px; margin:0 auto; padding:10px 18px; display:flex; align-items:center; gap:12px}
+.brand{display:flex; flex-direction:column; gap:1px; min-width:0; flex:1}
+.brand b{font-size:15px; font-weight:650; letter-spacing:.2px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+.brand span{font-size:11.5px; color:var(--muted); white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+.tb-right{display:flex; align-items:center; gap:6px; flex:none}
+.btn{
+  display:inline-flex; align-items:center; justify-content:center;
+  min-height:30px; padding:4px 10px; font-size:12.5px; line-height:1;
+  color:var(--text-2); background:var(--surface-2);
+  border:1px solid var(--border); border-radius:8px;
+  cursor:pointer; font-family:inherit; white-space:nowrap;
+}
+.btn:hover{color:var(--text); border-color:var(--muted)}
+.btn.icon{width:30px; padding:0; font-size:14px}
+
+/* 页面头 */
+.hero{padding:22px 0 12px}
+.hero h1{margin:0 0 6px; font-size:23px; line-height:1.35; letter-spacing:-.2px}
+.hero .meta{color:var(--muted); font-size:12.5px; display:flex; flex-wrap:wrap; gap:6px 14px}
+.chips{display:flex; flex-wrap:wrap; gap:6px; margin-top:10px}
+.chip{
+  font-size:11.5px; padding:2.5px 8px; border-radius:999px;
+  background:var(--accent-soft); color:var(--accent); border:1px solid transparent;
+}
+.chip.grey{background:var(--surface-2); color:var(--text-2); border-color:var(--border)}
+
+/* 正文卡片 */
+.card{
+  background:var(--surface); border:1px solid var(--border);
+  border-radius:var(--radius); box-shadow:var(--shadow);
+  padding:20px 22px; margin-top:14px;
+}
+.content>*:first-child{margin-top:0}
+.content>*:last-child{margin-bottom:0}
+.content h1{font-size:21px; margin:22px 0 10px; letter-spacing:-.2px}
+.content h2{
+  font-size:16.5px; margin:24px 0 10px; padding-bottom:7px;
+  border-bottom:1px solid var(--border-2); letter-spacing:-.1px;
+}
+.content h3{font-size:15px; margin:18px 0 7px; color:var(--text); font-weight:650}
+.content h4,.content h5,.content h6{font-size:14px; margin:14px 0 6px; color:var(--text-2)}
+.content p{margin:9px 0; color:var(--text-2)}
+.content strong{color:var(--text); font-weight:650}
+.content ul,.content ol{margin:8px 0; padding-left:20px}
+.content li{margin:4px 0; color:var(--text-2)}
+.content li.lvl2{list-style-type:circle; margin-left:8px}
+.content hr{border:0; border-top:1px solid var(--border); margin:20px 0}
+.content blockquote{
+  margin:12px 0; padding:10px 14px; background:var(--quote-bg);
+  border-left:3px solid var(--accent); border-radius:0 8px 8px 0; color:var(--text-2);
+}
+.content blockquote p{margin:4px 0}
+.content code{
+  font-family:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,monospace;
+  font-size:12.5px; background:var(--code-bg); padding:1.5px 5px; border-radius:5px;
+  color:var(--text); word-break:break-word;
+}
+.content pre{
+  margin:12px 0; padding:13px 15px; background:var(--code-bg);
+  border:1px solid var(--border-2); border-radius:8px; overflow-x:auto;
+}
+.content pre code{background:none; padding:0; font-size:12.5px; line-height:1.6}
+
+/* 表格 */
+.table-wrap{overflow-x:auto; margin:12px 0; -webkit-overflow-scrolling:touch}
+.content table{border-collapse:collapse; width:100%; font-size:13.5px; min-width:320px}
+.content th,.content td{
+  border:1px solid var(--border); padding:7px 10px; text-align:left; vertical-align:top;
+}
+.content th{background:var(--surface-2); font-weight:620; color:var(--text); white-space:nowrap}
+.content td{color:var(--text-2)}
+.content tbody tr:nth-child(even){background:var(--surface-2)}
+
+/* 归档列表 */
+.list{display:flex; flex-direction:column; gap:8px; margin-top:14px}
+.item{
+  display:flex; align-items:center; gap:12px; padding:11px 14px;
+  background:var(--surface); border:1px solid var(--border);
+  border-radius:var(--radius); box-shadow:var(--shadow);
+}
+.item:hover{border-color:var(--accent); text-decoration:none}
+.item .d{
+  flex:none; font-variant-numeric:tabular-nums; font-size:12.5px; color:var(--muted);
+  padding:3px 8px; background:var(--surface-2); border-radius:6px; border:1px solid var(--border-2);
+}
+.item .t{flex:1; min-width:0; font-size:14px; color:var(--text); overflow:hidden; text-overflow:ellipsis; white-space:nowrap}
+.item .n{flex:none; font-size:12px; color:var(--muted)}
+
+.nav{display:flex; gap:8px; margin-top:16px; flex-wrap:wrap}
+.nav .btn{flex:1; min-width:120px; justify-content:center; min-height:36px}
+
+.foot{margin-top:26px; padding-top:14px; border-top:1px solid var(--border); color:var(--muted); font-size:12px; line-height:1.9}
+.foot code{background:var(--code-bg); padding:1px 5px; border-radius:4px; font-size:11.5px}
+.empty{padding:40px 20px; text-align:center; color:var(--muted); font-size:13.5px}
+
+@media (max-width:560px){
+  .wrap{padding:0 13px 44px}
+  .topbar-in{padding:9px 13px}
+  .card{padding:15px 15px; border-radius:9px}
+  .hero h1{font-size:20px}
+  .content h1{font-size:19px}
+  .content h2{font-size:15.5px}
+  .item{padding:10px 12px; gap:9px}
+  .item .t{font-size:13.5px}
+}
+</style>
+</head>
+<body>
+<header class="topbar"><div class="topbar-in">
+  <div class="brand"><b>收藏情报日报</b><span>抖音 / B 站 每日收藏归纳</span></div>
+  <div class="tb-right">
+    <a class="btn" href="archive.html">归档</a>
+    <button class="btn icon" id="themeBtn" type="button" title="切换主题" aria-label="切换主题">◑</button>
+  </div>
+</div></header>
+<main class="wrap">
+<section class="hero"><h1>2026-10-14 收藏情报日报</h1><div class="meta"><span>2026 年 10 月 14 日</span></div><div class="chips"><span class="chip">13 条视频</span><span class="chip grey">状态：部分成功</span><span class="chip grey">内容创作</span><span class="chip grey">效率工具</span><span class="chip grey">AI-Agent</span><span class="chip grey">AI编程</span></div></section><article class="card content"><h1>2026-10-14 收藏情报日报</h1>
+<blockquote><p>采集日期：<strong>2026-10-14</strong> ｜ 生成时间：2026-10-14 21:37:45<br>数据来源：本人账号的收藏夹（B 站 + 抖音），由真实浏览器会话读取</p></blockquote>
+<hr>
+<h2>一、今日概览</h2>
+<div class="table-wrap"><table><thead><tr><th>指标</th><th>数值</th></tr></thead><tbody><tr><td>本次新增视频</td><td><strong>13</strong> 条</td></tr><tr><td>平台分布</td><td>抖音 13 条</td></tr><tr><td>拿到字幕</td><td>0 / 13 条</td></tr><tr><td>归纳来源</td><td>Agent 归纳 13 条 ｜ 规则兜底 0 条</td></tr><tr><td>已进知识库</td><td>0 条</td></tr><tr><td>平均精华度</td><td>34.8</td></tr><tr><td>失败</td><td>1 项</td></tr><tr><td>降级（缺字幕）</td><td>4 条</td></tr></tbody></table></div>
+<p><strong>一句话结论</strong>：新增 13 条收藏，主题集中在「效率工具」；最值得看的是《AI剪视频还能随时反悔？这款开源工具让 该开源工具将对话式智能体与专业多轨时间线结合，支持对视频进行词级转写、删除口误停顿、联动字幕、设置转场及背景音乐等操作，所有操作内容均可在时间线上编辑，每一步支持预览、撤销及手动编辑，可对接相关代码工具完成接力处理，适配macOS、Windows、Linux系统，优先本地运行保障相关信息安全。#视频剪辑 #效率工具 #开源 #AI剪辑 #内容创作》（精华度 68）。</p>
+<hr>
+<h2>二、主题分布</h2>
+<div class="table-wrap"><table><thead><tr><th>主题</th><th>条数</th><th>平均精华度</th></tr></thead><tbody><tr><td>内容创作</td><td>12</td><td>32.6</td></tr><tr><td>AI-Agent</td><td>2</td><td>65.0</td></tr><tr><td>AI编程</td><td>2</td><td>57.0</td></tr><tr><td>效率工具</td><td>2</td><td>46.5</td></tr></tbody></table></div>
+<hr>
+<h2>三、精华推荐（精华度 Top 12）</h2>
+<h3>1. AI剪视频还能随时反悔？这款开源工具让 该开源工具将对话式智能体与专业多轨时间线结合，支持对视频进行词级转写、删除口误停顿、联动字幕、设置转场及背景音乐等操作，所有操作内容均可在时间线上编辑，每一步支持预览、撤销及手动编辑，可对接相关代码工具完成接力处理，适配macOS、Windows、Linux系统，优先本地运行保障相关信息安全。#视频剪辑 #效率工具 #开源 #AI剪辑 #内容创作 ⭐⭐⭐ <code>68</code></h3>
+<ul><li><strong>平台</strong>：抖音 ｜ <strong>作者</strong>：- ｜ <strong>时长</strong>：--:--</li><li><strong>收藏</strong>：抖音收藏 ｜ <strong>字幕</strong>：desc_only（0 字）</li><li><strong>链接</strong>：<a href="https://www.douyin.com/video/7696119673565220147" target="_blank" rel="noopener noreferrer">https://www.douyin.com/video/7696119673565220147</a></li><li><strong>主旨</strong>：开源 AI 剪辑工具：对话式智能体 + 多轨时间线，操作可撤销</li><li><strong>要点</strong>：</li><li class="lvl2">把对话式智能体与专业多轨时间线相结合的视频剪辑工具</li><li class="lvl2">支持词级转写、删除口误停顿、联动字幕、设置转场与背景音乐</li><li class="lvl2">所有操作可在时间线上编辑，每一步支持预览、撤销与手动编辑</li><li class="lvl2">可对接相关代码工具完成接力处理</li><li class="lvl2">适配 macOS／Windows／Linux，优先本地运行以保障信息安全</li><li class="lvl2">带话题标签：视频剪辑、效率工具、开源、AI剪辑、内容创作</li></ul>
+<h3>2. AI辅助动作 用claude opus 5.5来给3d模型绑骨和做动画，比预期好很多。现在ai 3d网站也都有绑骨功能，但在非人形生物方面适配得不好，动作僵硬模板化，且容易出现四肢错乱。claude在绑定前会先调查这个生物的构造和运动资料，因此尾巴的摆动和爬行的节奏才能贴近真实。另外还试了一个远古生物奇虾，身上的每一块甲片都能按运动规律摆动，真的很惊喜，这波是opus赢了#vibe知识大赏 #claude #aigc应用 #3d #游戏 ⭐⭐⭐ <code>62</code></h3>
+<ul><li><strong>平台</strong>：抖音 ｜ <strong>作者</strong>：- ｜ <strong>时长</strong>：--:--</li><li><strong>收藏</strong>：抖音收藏 ｜ <strong>字幕</strong>：desc_only（0 字）</li><li><strong>链接</strong>：<a href="https://www.douyin.com/video/7695340585167520229" target="_blank" rel="noopener noreferrer">https://www.douyin.com/video/7695340585167520229</a></li><li><strong>主旨</strong>：用 Claude Opus 5.5 给 3D 模型绑骨与做动画的实测体验</li><li><strong>要点</strong>：</li><li class="lvl2">用 claude opus 5.5 给 3D 模型绑骨和做动画，效果比预期好很多</li><li class="lvl2">现有 AI 3D 网站在非人形生物上适配差：动作僵硬模板化、四肢易错乱</li><li class="lvl2">claude 在绑定前会先调查生物的构造与运动资料，尾巴摆动与爬行节奏更贴近真实</li><li class="lvl2">另测试远古生物奇虾，身上每块甲片都能按运动规律摆动</li><li class="lvl2">带话题标签：vibe知识大赏、claude、aigc应用、3d、游戏</li><li><strong>可执行</strong>：</li><li class="lvl2">[ ] 给非人形生物绑骨时，先让模型调研该生物构造与运动资料再出骨骼与动画</li></ul>
+<h3>3. 第1集 | 同一段打怪，一招一招加上“汁水” 先全关：逻辑全对，但像在对账。再一招一招打开：闪白、击退、挤压拉伸、伤害飘字、粒子、顿帧、震屏、冲击波、拖尾火光、发光、音效、连击分数。你觉得哪一招最关键？#AI #人工智能 #游戏开发 #游戏设计 #独立游戏 ⭐⭐⭐ <code>52</code></h3>
+<ul><li><strong>平台</strong>：抖音 ｜ <strong>作者</strong>：- ｜ <strong>时长</strong>：--:--</li><li><strong>收藏</strong>：抖音收藏 ｜ <strong>字幕</strong>：desc_only（0 字）</li><li><strong>链接</strong>：<a href="https://www.douyin.com/video/7691624633133137728" target="_blank" rel="noopener noreferrer">https://www.douyin.com/video/7691624633133137728</a></li><li><strong>主旨</strong>：AI 游戏开发：逐项叠加打击感「汁水」效果的对比演示</li><li><strong>要点</strong>：</li><li class="lvl2">同一段打怪动画，对比「全关」与逐项打开打击感效果的差异</li><li class="lvl2">全关状态下「逻辑全对，但像在对账」，缺少反馈感</li><li class="lvl2">叠加项包括：闪白、击退、挤压拉伸、伤害飘字、粒子、顿帧、震屏、冲击波、拖尾火光、发光、音效、连击分数</li><li class="lvl2">带话题标签：AI、人工智能、游戏开发、游戏设计、独立游戏</li><li class="lvl2">结尾向观众提问「你觉得哪一招最关键」，引导互动</li><li><strong>可执行</strong>：</li><li class="lvl2">[ ] 做战斗手感时按「闪白／击退／飘字／粒子／顿帧／震屏」清单逐项开关对比</li></ul>
+<h3>4. 第103集 | 《马斯克原理》01：他什么都没准备好，却成了地球首富 #马斯克 #马斯克原理 #燃起来了大国重器 #真财实学计划 #小A读书圈 ⭐⭐ <code>45</code></h3>
+<ul><li><strong>平台</strong>：抖音 ｜ <strong>作者</strong>：- ｜ <strong>时长</strong>：--:--</li><li><strong>收藏</strong>：抖音收藏 ｜ <strong>字幕</strong>：desc_only（0 字）</li><li><strong>链接</strong>：<a href="https://www.douyin.com/video/7694963112532888868" target="_blank" rel="noopener noreferrer">https://www.douyin.com/video/7694963112532888868</a></li><li><strong>主旨</strong>：读书解读《马斯克原理》第1集：他如何成为地球首富</li><li><strong>要点</strong>：</li><li class="lvl2">为读书圈系列第 103 集，解读《马斯克原理》第 01 篇</li><li class="lvl2">主题句为「他什么都没准备好，却成了地球首富」</li><li class="lvl2">带话题标签：马斯克、马斯克原理、燃起来了大国重器、真财实学计划、小A读书圈</li><li class="lvl2">无字幕，具体论据与案例未披露</li></ul>
+<h3>5. 事业编面试很简单，就是让考官感觉倍儿爽！ #公务员面试 #上岸 #干货分享 #热门 #知识分享 ⭐⭐ <code>42</code></h3>
+<ul><li><strong>平台</strong>：抖音 ｜ <strong>作者</strong>：- ｜ <strong>时长</strong>：--:--</li><li><strong>收藏</strong>：抖音收藏 ｜ <strong>字幕</strong>：desc_only（0 字）</li><li><strong>链接</strong>：<a href="https://www.douyin.com/video/7361687659602889993" target="_blank" rel="noopener noreferrer">https://www.douyin.com/video/7361687659602889993</a></li><li><strong>主旨</strong>：事业编面试技巧分享：让考官感觉舒服是关键</li><li><strong>要点</strong>：</li><li class="lvl2">主题为公务员／事业编面试经验分享</li><li class="lvl2">核心观点：面试很简单，关键在让考官感觉「倍儿爽」</li><li class="lvl2">带话题标签：公务员面试、上岸、干货分享、热门、知识分享</li><li class="lvl2">无字幕与正文，仅标题级信息，未给出具体答题框架</li></ul>
+<h3>6. 在Sam Kolder的镜头下感受到了南非极致的自由与野性#用电影镜头打开非洲最南端 #夏日海边出游电影感大片就这么拍 #vivoX300Ultra专业V单 ⭐⭐ <code>38</code></h3>
+<ul><li><strong>平台</strong>：抖音 ｜ <strong>作者</strong>：- ｜ <strong>时长</strong>：--:--</li><li><strong>收藏</strong>：抖音收藏 ｜ <strong>字幕</strong>：desc_only（0 字）</li><li><strong>链接</strong>：<a href="https://www.douyin.com/video/7639607207457809829" target="_blank" rel="noopener noreferrer">https://www.douyin.com/video/7639607207457809829</a></li><li><strong>主旨</strong>：电影感南非旅行短片，用 vivo X300 Ultra 拍摄</li><li><strong>要点</strong>：</li><li class="lvl2">内容为南非旅行短片，主打「极致自由与野性」的电影感镜头</li><li class="lvl2">镜头风格参照创作者 Sam Kolder</li><li class="lvl2">拍摄设备为 vivo X300 Ultra（专业 V 单）</li><li class="lvl2">带话题：用电影镜头打开非洲最南端、夏日海边出游电影感大片</li></ul>
+<h3>7. 第22集 | 22 叙利亚 中世纪的士兵是如何拉屎的？今天必须亲自体验下！#叙利亚 #穿越中东 #十字军东征 #交换世界计划 ⭐⭐ <code>35</code></h3>
+<ul><li><strong>平台</strong>：抖音 ｜ <strong>作者</strong>：- ｜ <strong>时长</strong>：--:--</li><li><strong>收藏</strong>：抖音收藏 ｜ <strong>字幕</strong>：desc_only（0 字）</li><li><strong>链接</strong>：<a href="https://www.douyin.com/video/7550762365114830095" target="_blank" rel="noopener noreferrer">https://www.douyin.com/video/7550762365114830095</a></li><li><strong>主旨</strong>：中东旅行纪录片第22集：体验中世纪士兵如厕方式</li><li><strong>要点</strong>：</li><li class="lvl2">旅行纪录片系列第 22 集，拍摄地点为叙利亚</li><li class="lvl2">选题为「中世纪的士兵是如何拉屎的」，以亲自体验方式呈现</li><li class="lvl2">带话题标签：叙利亚、穿越中东、十字军东征、交换世界计划</li><li class="lvl2">无字幕与正文，具体历史考据未披露</li></ul>
+<h3>8. 第8集 | @大双和二双（直播号） @大双 二双 （生活号） #直播录屏分享 #致所有当过兵的战友 #八一建军 #致努力奋斗的人 《少年壮志不言愁》听了让人热血沸腾的歌曲，小小的身体里有大大的能量，字字铿锵，句句有力，奋斗吧，骚年们 ⭐ <code>28</code></h3>
+<ul><li><strong>平台</strong>：抖音 ｜ <strong>作者</strong>：- ｜ <strong>时长</strong>：--:--</li><li><strong>收藏</strong>：抖音收藏 ｜ <strong>字幕</strong>：desc_only（0 字）</li><li><strong>链接</strong>：<a href="https://www.douyin.com/video/7390425320362446092" target="_blank" rel="noopener noreferrer">https://www.douyin.com/video/7390425320362446092</a></li><li><strong>主旨</strong>：直播录屏演唱《少年壮志不言愁》励志片段（第8集）</li><li><strong>要点</strong>：</li><li class="lvl2">为直播录屏系列第 8 集，内容为演唱《少年壮志不言愁》</li><li class="lvl2">账号为 @大双和二双（直播号）／@大双 二双（生活号）</li><li class="lvl2">带话题标签：致所有当过兵的战友、八一建军、致努力奋斗的人</li><li class="lvl2">简介强调「小小的身体里有大大的能量，字字铿锵，句句有力」</li></ul>
+<h3>9. 视频抽帧工具 #视频抽帧 #帧动画 #帧动画制作 ⭐ <code>25</code></h3>
+<ul><li><strong>平台</strong>：抖音 ｜ <strong>作者</strong>：- ｜ <strong>时长</strong>：--:--</li><li><strong>收藏</strong>：抖音收藏 ｜ <strong>字幕</strong>：desc_only（0 字）</li><li><strong>链接</strong>：<a href="https://www.douyin.com/video/7671788929330253090" target="_blank" rel="noopener noreferrer">https://www.douyin.com/video/7671788929330253090</a></li><li><strong>主旨</strong>：视频抽帧工具的功能展示（信息有限）</li><li><strong>要点</strong>：</li><li class="lvl2">标题为「视频抽帧工具」，主题为视频抽帧／帧动画制作</li><li class="lvl2">带话题标签：视频抽帧、帧动画、帧动画制作</li><li class="lvl2">未给出工具名称、运行平台与具体操作步骤</li></ul>
+<h3>10. 仕图笔试11.7超火爆开课！联系老王报名 仕图临沂总校11.7日超级火爆开课！包揽护理、临床、康复、药学、中医、检验等众多岗位赶紧快速联系仕图老王报名！15853982322#护理事业编公告 #医疗招聘考试 #医疗招聘考试 #医学类院校 #仕图医考 ⭐ <code>20</code></h3>
+<ul><li><strong>平台</strong>：抖音 ｜ <strong>作者</strong>：- ｜ <strong>时长</strong>：--:--</li><li><strong>收藏</strong>：抖音收藏 ｜ <strong>字幕</strong>：desc_only（0 字）</li><li><strong>链接</strong>：<a href="https://www.douyin.com/video/7696331058271038322" target="_blank" rel="noopener noreferrer">https://www.douyin.com/video/7696331058271038322</a></li><li><strong>主旨</strong>：仕图医考事业编笔试 11.7 开课招生广告（临沂总校）</li><li><strong>要点</strong>：</li><li class="lvl2">仕图临沂总校 11.7 日开课，岗位方向含护理、临床、康复、药学、中医、检验等</li><li class="lvl2">要求联系「仕图老王」报名，简介中给出联系电话</li><li class="lvl2">带话题标签：护理事业编公告、医疗招聘考试、医学类院校、仕图医考</li><li class="lvl2">属培训机构招生广告，无方法论或可复用内容</li></ul>
+<h3>11. 湖北神农架林区实验初级中学龙之翼行进管乐团 ⭐ <code>15</code></h3>
+<ul><li><strong>平台</strong>：抖音 ｜ <strong>作者</strong>：- ｜ <strong>时长</strong>：--:--</li><li><strong>收藏</strong>：抖音收藏 ｜ <strong>字幕</strong>：desc_only（0 字）</li><li><strong>链接</strong>：<a href="https://www.douyin.com/video/7257921793321733428" target="_blank" rel="noopener noreferrer">https://www.douyin.com/video/7257921793321733428</a></li><li><strong>主旨</strong>：湖北神农架中学龙之翼行进管乐团演出记录（信息有限）</li><li><strong>要点</strong>：</li><li class="lvl2">标题与简介均为「湖北神农架林区实验初级中学龙之翼行进管乐团」，无补充描述</li><li class="lvl2">作者、时长、发布时间、标签与互动数据均缺失</li><li class="lvl2">无字幕，演出曲目、场合与人员构成未披露</li></ul>
+<h3>12. 《骆队打脸》#骆闻舟 #费渡 #舟渡 #默读 #ooc致歉 ⭐ <code>15</code></h3>
+<ul><li><strong>平台</strong>：抖音 ｜ <strong>作者</strong>：- ｜ <strong>时长</strong>：--:--</li><li><strong>收藏</strong>：抖音收藏 ｜ <strong>字幕</strong>：desc_only（0 字）</li><li><strong>链接</strong>：<a href="https://www.douyin.com/video/7590622612716333669" target="_blank" rel="noopener noreferrer">https://www.douyin.com/video/7590622612716333669</a></li><li><strong>主旨</strong>：小说《默读》同人二创《骆队打脸》短视频（信息有限）</li><li><strong>要点</strong>：</li><li class="lvl2">标题为《骆队打脸》，属小说《默读》的同人二创内容</li><li class="lvl2">带角色标签：骆闻舟、费渡、舟渡，并标注「ooc 致歉」</li><li class="lvl2">无字幕、无作者与时长，具体情节与形式不可考</li></ul>
+<hr>
+<h2>四、全部条目摘要</h2>
+<h3>🎵 抖音（13 条）</h3>
+<ul><li><strong>AI剪视频还能随时反悔？这款开源工具让 该开源工具将对话式智能体与专业多轨时间线结合，支持对视频进行词级转写、删除口误停顿、联动字幕、设置转场及背景音乐等操作，所有操作内容均可在时间线上编辑，每一步支持预览、撤销及手动编辑，可对接相关代码工具完成接力处理，适配macOS、Windows、Linux系统，优先本地运行保障相关信息安全。#视频剪辑 #效率工具 #开源 #AI剪辑 #内容创作</strong> ｜ <code>68</code> ｜ --:-- ｜ 字幕质量:中</li><li class="lvl2">开源 AI 剪辑工具：对话式智能体 + 多轨时间线，操作可撤销</li><li class="lvl2">把对话式智能体与专业多轨时间线相结合的视频剪辑工具</li><li class="lvl2">支持词级转写、删除口误停顿、联动字幕、设置转场与背景音乐</li><li class="lvl2">所有操作可在时间线上编辑，每一步支持预览、撤销与手动编辑</li><li class="lvl2">可对接相关代码工具完成接力处理</li><li class="lvl2">适配 macOS／Windows／Linux，优先本地运行以保障信息安全</li><li><strong>AI辅助动作 用claude opus 5.5来给3d模型绑骨和做动画，比预期好很多。现在ai 3d网站也都有绑骨功能，但在非人形生物方面适配得不好，动作僵硬模板化，且容易出现四肢错乱。claude在绑定前会先调查这个生物的构造和运动资料，因此尾巴的摆动和爬行的节奏才能贴近真实。另外还试了一个远古生物奇虾，身上的每一块甲片都能按运动规律摆动，真的很惊喜，这波是opus赢了#vibe知识大赏 #claude #aigc应用 #3d #游戏</strong> ｜ <code>62</code> ｜ --:-- ｜ 字幕质量:中</li><li class="lvl2">用 Claude Opus 5.5 给 3D 模型绑骨与做动画的实测体验</li><li class="lvl2">用 claude opus 5.5 给 3D 模型绑骨和做动画，效果比预期好很多</li><li class="lvl2">现有 AI 3D 网站在非人形生物上适配差：动作僵硬模板化、四肢易错乱</li><li class="lvl2">claude 在绑定前会先调查生物的构造与运动资料，尾巴摆动与爬行节奏更贴近真实</li><li class="lvl2">另测试远古生物奇虾，身上每块甲片都能按运动规律摆动</li><li class="lvl2">带话题标签：vibe知识大赏、claude、aigc应用、3d、游戏</li><li><strong>第1集 | 同一段打怪，一招一招加上“汁水” 先全关：逻辑全对，但像在对账。再一招一招打开：闪白、击退、挤压拉伸、伤害飘字、粒子、顿帧、震屏、冲击波、拖尾火光、发光、音效、连击分数。你觉得哪一招最关键？#AI #人工智能 #游戏开发 #游戏设计 #独立游戏</strong> ｜ <code>52</code> ｜ --:-- ｜ 字幕质量:中</li><li class="lvl2">AI 游戏开发：逐项叠加打击感「汁水」效果的对比演示</li><li class="lvl2">同一段打怪动画，对比「全关」与逐项打开打击感效果的差异</li><li class="lvl2">全关状态下「逻辑全对，但像在对账」，缺少反馈感</li><li class="lvl2">叠加项包括：闪白、击退、挤压拉伸、伤害飘字、粒子、顿帧、震屏、冲击波、拖尾火光、发光、音效、连击分数</li><li class="lvl2">带话题标签：AI、人工智能、游戏开发、游戏设计、独立游戏</li><li class="lvl2">结尾向观众提问「你觉得哪一招最关键」，引导互动</li><li><strong>第103集 | 《马斯克原理》01：他什么都没准备好，却成了地球首富 #马斯克 #马斯克原理 #燃起来了大国重器 #真财实学计划 #小A读书圈</strong> ｜ <code>45</code> ｜ --:-- ｜ 字幕质量:中</li><li class="lvl2">读书解读《马斯克原理》第1集：他如何成为地球首富</li><li class="lvl2">为读书圈系列第 103 集，解读《马斯克原理》第 01 篇</li><li class="lvl2">主题句为「他什么都没准备好，却成了地球首富」</li><li class="lvl2">带话题标签：马斯克、马斯克原理、燃起来了大国重器、真财实学计划、小A读书圈</li><li class="lvl2">无字幕，具体论据与案例未披露</li><li><strong>事业编面试很简单，就是让考官感觉倍儿爽！ #公务员面试 #上岸 #干货分享 #热门 #知识分享</strong> ｜ <code>42</code> ｜ --:-- ｜ 字幕质量:中</li><li class="lvl2">事业编面试技巧分享：让考官感觉舒服是关键</li><li class="lvl2">主题为公务员／事业编面试经验分享</li><li class="lvl2">核心观点：面试很简单，关键在让考官感觉「倍儿爽」</li><li class="lvl2">带话题标签：公务员面试、上岸、干货分享、热门、知识分享</li><li class="lvl2">无字幕与正文，仅标题级信息，未给出具体答题框架</li><li><strong>在Sam Kolder的镜头下感受到了南非极致的自由与野性#用电影镜头打开非洲最南端 #夏日海边出游电影感大片就这么拍 #vivoX300Ultra专业V单</strong> ｜ <code>38</code> ｜ --:-- ｜ 字幕质量:中</li><li class="lvl2">电影感南非旅行短片，用 vivo X300 Ultra 拍摄</li><li class="lvl2">内容为南非旅行短片，主打「极致自由与野性」的电影感镜头</li><li class="lvl2">镜头风格参照创作者 Sam Kolder</li><li class="lvl2">拍摄设备为 vivo X300 Ultra（专业 V 单）</li><li class="lvl2">带话题：用电影镜头打开非洲最南端、夏日海边出游电影感大片</li><li><strong>第22集 | 22 叙利亚 中世纪的士兵是如何拉屎的？今天必须亲自体验下！#叙利亚 #穿越中东 #十字军东征 #交换世界计划</strong> ｜ <code>35</code> ｜ --:-- ｜ 字幕质量:中</li><li class="lvl2">中东旅行纪录片第22集：体验中世纪士兵如厕方式</li><li class="lvl2">旅行纪录片系列第 22 集，拍摄地点为叙利亚</li><li class="lvl2">选题为「中世纪的士兵是如何拉屎的」，以亲自体验方式呈现</li><li class="lvl2">带话题标签：叙利亚、穿越中东、十字军东征、交换世界计划</li><li class="lvl2">无字幕与正文，具体历史考据未披露</li><li><strong>第8集 | @大双和二双（直播号） @大双 二双 （生活号） #直播录屏分享 #致所有当过兵的战友 #八一建军 #致努力奋斗的人 《少年壮志不言愁》听了让人热血沸腾的歌曲，小小的身体里有大大的能量，字字铿锵，句句有力，奋斗吧，骚年们</strong> ｜ <code>28</code> ｜ --:-- ｜ 字幕质量:中</li><li class="lvl2">直播录屏演唱《少年壮志不言愁》励志片段（第8集）</li><li class="lvl2">为直播录屏系列第 8 集，内容为演唱《少年壮志不言愁》</li><li class="lvl2">账号为 @大双和二双（直播号）／@大双 二双（生活号）</li><li class="lvl2">带话题标签：致所有当过兵的战友、八一建军、致努力奋斗的人</li><li class="lvl2">简介强调「小小的身体里有大大的能量，字字铿锵，句句有力」</li><li><strong>视频抽帧工具 #视频抽帧 #帧动画 #帧动画制作</strong> ｜ <code>25</code> ｜ --:-- ｜ 字幕质量:低</li><li class="lvl2">视频抽帧工具的功能展示（信息有限）</li><li class="lvl2">标题为「视频抽帧工具」，主题为视频抽帧／帧动画制作</li><li class="lvl2">带话题标签：视频抽帧、帧动画、帧动画制作</li><li class="lvl2">未给出工具名称、运行平台与具体操作步骤</li><li><strong>仕图笔试11.7超火爆开课！联系老王报名 仕图临沂总校11.7日超级火爆开课！包揽护理、临床、康复、药学、中医、检验等众多岗位赶紧快速联系仕图老王报名！15853982322#护理事业编公告 #医疗招聘考试 #医疗招聘考试 #医学类院校 #仕图医考</strong> ｜ <code>20</code> ｜ --:-- ｜ 字幕质量:中</li><li class="lvl2">仕图医考事业编笔试 11.7 开课招生广告（临沂总校）</li><li class="lvl2">仕图临沂总校 11.7 日开课，岗位方向含护理、临床、康复、药学、中医、检验等</li><li class="lvl2">要求联系「仕图老王」报名，简介中给出联系电话</li><li class="lvl2">带话题标签：护理事业编公告、医疗招聘考试、医学类院校、仕图医考</li><li class="lvl2">属培训机构招生广告，无方法论或可复用内容</li><li><strong>湖北神农架林区实验初级中学龙之翼行进管乐团</strong> ｜ <code>15</code> ｜ --:-- ｜ 字幕质量:低</li><li class="lvl2">湖北神农架中学龙之翼行进管乐团演出记录（信息有限）</li><li class="lvl2">标题与简介均为「湖北神农架林区实验初级中学龙之翼行进管乐团」，无补充描述</li><li class="lvl2">作者、时长、发布时间、标签与互动数据均缺失</li><li class="lvl2">无字幕，演出曲目、场合与人员构成未披露</li><li><strong>《骆队打脸》#骆闻舟 #费渡 #舟渡 #默读 #ooc致歉</strong> ｜ <code>15</code> ｜ --:-- ｜ 字幕质量:低</li><li class="lvl2">小说《默读》同人二创《骆队打脸》短视频（信息有限）</li><li class="lvl2">标题为《骆队打脸》，属小说《默读》的同人二创内容</li><li class="lvl2">带角色标签：骆闻舟、费渡、舟渡，并标注「ooc 致歉」</li><li class="lvl2">无字幕、无作者与时长，具体情节与形式不可考</li><li><strong>7239875982813891898</strong> ｜ <code>8</code> ｜ --:-- ｜ 字幕质量:低</li><li class="lvl2">简介为热门榜聚合污染文本，无法判定真实主题（信息有限）</li><li class="lvl2">标题缺失，仅以视频 ID 7239875982813891898 占位</li><li class="lvl2">简介以「热门：」开头，串联抖音热门歌曲、医疗招聘、高考志愿等多条无关内容</li><li class="lvl2">文本中夹带仕图医考/护理事业编培训招生话术与联系电话，与单条视频无对应关系</li><li class="lvl2">无字幕、无作者、无时长，无法判定本条视频实际主题</li></ul>
+<hr>
+<h2>五、失败与降级记录</h2>
+<div class="table-wrap"><table><thead><tr><th>平台</th><th>条目</th><th>阶段</th><th>错误</th><th>时间</th></tr></thead><tbody><tr><td>bilibili</td><td>-</td><td>login</td><td>未登录（code=-101）</td><td>2026-10-14 21:34:55</td></tr></tbody></table></div>
+<blockquote><p>⚠️ <strong>本次运行为「部分成功」</strong>：存在采集或处理失败项，报告已按可用数据生成。</p></blockquote>
+<hr>
+<h2>附：运行信息</h2>
+<ul><li>报告日期：2026-10-14</li><li>本次条目数：13</li><li>知识库收录：0 篇</li><li>状态：partial</li><li>数据源文件：<code>data/raw/*-2026-10-14.json</code></li><li>流程：采集 → 字幕 → 摘要包 → 归纳 → 报告 → 知识库</li></ul>
+<hr>
+<p>_本报告由「抖音/B站 收藏情报系统」自动生成，规则与约定见 <code>情报系统/AGENT.md</code>。_</p></article>
+<div class="nav"><a class="btn" href="2026-10-13.html">下一期 2026-10-13 →</a><a class="btn" href="archive.html">全部归档</a></div>
+<div class="foot">由「收藏情报系统」自动生成 ｜ 内容来自本人在 B 站与抖音的收藏，原视频版权归原作者所有</div>
+</main>
+<script>
+(function(){
+  var KEY='intel-theme', root=document.documentElement;
+  function sys(){try{return window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}catch(e){return 'light';}}
+  function cur(){return root.getAttribute('data-theme')||sys();}
+  function paint(){var b=document.getElementById('themeBtn'); if(b){b.textContent=cur()==='dark'?'\u25D0':'\u25D1'; b.title=cur()==='dark'?'切换到浅色':'切换到深色';}}
+  try{var s=localStorage.getItem(KEY); if(s){root.setAttribute('data-theme',s);}}catch(e){}
+  window.__toggleTheme=function(){
+    var next=cur()==='dark'?'light':'dark';
+    root.setAttribute('data-theme',next);
+    try{localStorage.setItem(KEY,next);}catch(e){}
+    paint();
+  };
+  if(document.readyState!=='loading'){paint();}else{document.addEventListener('DOMContentLoaded',paint);}
+})();
+</script>
+</body>
+</html>
