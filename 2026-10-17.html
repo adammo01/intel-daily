@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="referrer" content="no-referrer">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<title>2026-10-17 收藏情报日报</title>
+<style>
+:root{
+  --bg:#f6f7f9; --surface:#ffffff; --surface-2:#fafbfc;
+  --text:#1a1d21; --text-2:#4b5563; --muted:#8b939e;
+  --border:#e5e7eb; --border-2:#eef0f3;
+  --accent:#2563eb; --accent-soft:#eff4ff;
+  --code-bg:#f3f4f6; --quote-bg:#f8fafc;
+  --shadow:0 1px 2px rgba(16,24,40,.04), 0 1px 3px rgba(16,24,40,.06);
+  --radius:10px;
+}
+[data-theme="dark"]{
+  --bg:#0e1013; --surface:#16181d; --surface-2:#1b1e24;
+  --text:#e6e8eb; --text-2:#b6bcc5; --muted:#7d848e;
+  --border:#272b32; --border-2:#21242a;
+  --accent:#6ea8fe; --accent-soft:#1a2433;
+  --code-bg:#1e2128; --quote-bg:#191c22;
+  --shadow:0 1px 2px rgba(0,0,0,.3);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0e1013; --surface:#16181d; --surface-2:#1b1e24;
+    --text:#e6e8eb; --text-2:#b6bcc5; --muted:#7d848e;
+    --border:#272b32; --border-2:#21242a;
+    --accent:#6ea8fe; --accent-soft:#1a2433;
+    --code-bg:#1e2128; --quote-bg:#191c22;
+    --shadow:0 1px 2px rgba(0,0,0,.3);
+  }
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--bg); color:var(--text);
+  font:15px/1.72 -apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB",
+       "Microsoft YaHei","Source Han Sans SC","Noto Sans CJK SC",sans-serif;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:var(--accent); text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:860px; margin:0 auto; padding:0 18px 56px}
+
+/* 顶栏 */
+.topbar{
+  position:sticky; top:0; z-index:20;
+  background:var(--surface);
+  background:color-mix(in srgb, var(--surface) 88%, transparent);
+  backdrop-filter:saturate(180%) blur(12px);
+  -webkit-backdrop-filter:saturate(180%) blur(12px);
+  border-bottom:1px solid var(--border);
+}
+.topbar-in{max-width:860px; margin:0 auto; padding:10px 18px; display:flex; align-items:center; gap:12px}
+.brand{display:flex; flex-direction:column; gap:1px; min-width:0; flex:1}
+.brand b{font-size:15px; font-weight:650; letter-spacing:.2px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+.brand span{font-size:11.5px; color:var(--muted); white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+.tb-right{display:flex; align-items:center; gap:6px; flex:none}
+.btn{
+  display:inline-flex; align-items:center; justify-content:center;
+  min-height:30px; padding:4px 10px; font-size:12.5px; line-height:1;
+  color:var(--text-2); background:var(--surface-2);
+  border:1px solid var(--border); border-radius:8px;
+  cursor:pointer; font-family:inherit; white-space:nowrap;
+}
+.btn:hover{color:var(--text); border-color:var(--muted)}
+.btn.icon{width:30px; padding:0; font-size:14px}
+
+/* 页面头 */
+.hero{padding:22px 0 12px}
+.hero h1{margin:0 0 6px; font-size:23px; line-height:1.35; letter-spacing:-.2px}
+.hero .meta{color:var(--muted); font-size:12.5px; display:flex; flex-wrap:wrap; gap:6px 14px}
+.chips{display:flex; flex-wrap:wrap; gap:6px; margin-top:10px}
+.chip{
+  font-size:11.5px; padding:2.5px 8px; border-radius:999px;
+  background:var(--accent-soft); color:var(--accent); border:1px solid transparent;
+}
+.chip.grey{background:var(--surface-2); color:var(--text-2); border-color:var(--border)}
+
+/* 正文卡片 */
+.card{
+  background:var(--surface); border:1px solid var(--border);
+  border-radius:var(--radius); box-shadow:var(--shadow);
+  padding:20px 22px; margin-top:14px;
+}
+.content>*:first-child{margin-top:0}
+.content>*:last-child{margin-bottom:0}
+.content h1{font-size:21px; margin:22px 0 10px; letter-spacing:-.2px}
+.content h2{
+  font-size:16.5px; margin:24px 0 10px; padding-bottom:7px;
+  border-bottom:1px solid var(--border-2); letter-spacing:-.1px;
+}
+.content h3{font-size:15px; margin:18px 0 7px; color:var(--text); font-weight:650}
+.content h4,.content h5,.content h6{font-size:14px; margin:14px 0 6px; color:var(--text-2)}
+.content p{margin:9px 0; color:var(--text-2)}
+.content strong{color:var(--text); font-weight:650}
+.content ul,.content ol{margin:8px 0; padding-left:20px}
+.content li{margin:4px 0; color:var(--text-2)}
+.content li.lvl2{list-style-type:circle; margin-left:8px}
+.content hr{border:0; border-top:1px solid var(--border); margin:20px 0}
+.content blockquote{
+  margin:12px 0; padding:10px 14px; background:var(--quote-bg);
+  border-left:3px solid var(--accent); border-radius:0 8px 8px 0; color:var(--text-2);
+}
+.content blockquote p{margin:4px 0}
+.content code{
+  font-family:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,monospace;
+  font-size:12.5px; background:var(--code-bg); padding:1.5px 5px; border-radius:5px;
+  color:var(--text); word-break:break-word;
+}
+.content pre{
+  margin:12px 0; padding:13px 15px; background:var(--code-bg);
+  border:1px solid var(--border-2); border-radius:8px; overflow-x:auto;
+}
+.content pre code{background:none; padding:0; font-size:12.5px; line-height:1.6}
+
+/* 表格 */
+.table-wrap{overflow-x:auto; margin:12px 0; -webkit-overflow-scrolling:touch}
+.content table{border-collapse:collapse; width:100%; font-size:13.5px; min-width:320px}
+.content th,.content td{
+  border:1px solid var(--border); padding:7px 10px; text-align:left; vertical-align:top;
+}
+.content th{background:var(--surface-2); font-weight:620; color:var(--text); white-space:nowrap}
+.content td{color:var(--text-2)}
+.content tbody tr:nth-child(even){background:var(--surface-2)}
+
+/* 归档列表 */
+.list{display:flex; flex-direction:column; gap:8px; margin-top:14px}
+.item{
+  display:flex; align-items:center; gap:12px; padding:11px 14px;
+  background:var(--surface); border:1px solid var(--border);
+  border-radius:var(--radius); box-shadow:var(--shadow);
+}
+.item:hover{border-color:var(--accent); text-decoration:none}
+.item .d{
+  flex:none; font-variant-numeric:tabular-nums; font-size:12.5px; color:var(--muted);
+  padding:3px 8px; background:var(--surface-2); border-radius:6px; border:1px solid var(--border-2);
+}
+.item .t{flex:1; min-width:0; font-size:14px; color:var(--text); overflow:hidden; text-overflow:ellipsis; white-space:nowrap}
+.item .n{flex:none; font-size:12px; color:var(--muted)}
+
+.nav{display:flex; gap:8px; margin-top:16px; flex-wrap:wrap}
+.nav .btn{flex:1; min-width:120px; justify-content:center; min-height:36px}
+
+.foot{margin-top:26px; padding-top:14px; border-top:1px solid var(--border); color:var(--muted); font-size:12px; line-height:1.9}
+.foot code{background:var(--code-bg); padding:1px 5px; border-radius:4px; font-size:11.5px}
+.empty{padding:40px 20px; text-align:center; color:var(--muted); font-size:13.5px}
+
+@media (max-width:560px){
+  .wrap{padding:0 13px 44px}
+  .topbar-in{padding:9px 13px}
+  .card{padding:15px 15px; border-radius:9px}
+  .hero h1{font-size:20px}
+  .content h1{font-size:19px}
+  .content h2{font-size:15.5px}
+  .item{padding:10px 12px; gap:9px}
+  .item .t{font-size:13.5px}
+}
+</style>
+</head>
+<body>
+<header class="topbar"><div class="topbar-in">
+  <div class="brand"><b>收藏情报日报</b><span>抖音 / B 站 每日收藏归纳</span></div>
+  <div class="tb-right">
+    <a class="btn" href="archive.html">归档</a>
+    <button class="btn icon" id="themeBtn" type="button" title="切换主题" aria-label="切换主题">◑</button>
+  </div>
+</div></header>
+<main class="wrap">
+<section class="hero"><h1>2026-10-17 收藏情报日报</h1><div class="meta"><span>2026 年 10 月 17 日</span></div><div class="chips"><span class="chip">11 条视频</span><span class="chip">知识库 1 篇</span><span class="chip grey">状态：部分成功</span><span class="chip grey">内容创作</span><span class="chip grey">视频生成AI</span><span class="chip grey">商业化变现</span><span class="chip grey">AI编程</span><span class="chip grey">AI-Agent</span><span class="chip grey">技术基建</span></div></section><article class="card content"><h1>2026-10-17 收藏情报日报</h1>
+<blockquote><p>采集日期：<strong>2026-10-17</strong> ｜ 生成时间：2026-10-17 21:40:29<br>数据来源：本人账号的收藏夹（B 站 + 抖音），由真实浏览器会话读取</p></blockquote>
+<hr>
+<h2>一、今日概览</h2>
+<div class="table-wrap"><table><thead><tr><th>指标</th><th>数值</th></tr></thead><tbody><tr><td>本次新增视频</td><td><strong>11</strong> 条</td></tr><tr><td>平台分布</td><td>抖音 11 条</td></tr><tr><td>拿到字幕</td><td>0 / 11 条</td></tr><tr><td>归纳来源</td><td>Agent 归纳 11 条 ｜ 规则兜底 0 条</td></tr><tr><td>已进知识库</td><td>1 条</td></tr><tr><td>平均精华度</td><td>32.5</td></tr><tr><td>失败</td><td>1 项</td></tr><tr><td>降级（缺字幕）</td><td>3 条</td></tr></tbody></table></div>
+<p><strong>一句话结论</strong>：新增 11 条收藏，主题集中在「效率工具」；最值得看的是《《小王子》3D 游戏作者公开了制作流程 场景：image2.5生图，然后让ai找出需要单独搓的资产，tripo生成资产，然后拿着场景图让opus5.5组装资产（分配子agent做对抗审查）； 人物：image2.5生图，tripo做人物模型，Auto-Rig pro插件绑骨骼和蒙皮，人物动作来自mixamo（没有合适的动作就找近似，然后让 Claude调整）》（精华度 76）。</p>
+<hr>
+<h2>二、主题分布</h2>
+<div class="table-wrap"><table><thead><tr><th>主题</th><th>条数</th><th>平均精华度</th></tr></thead><tbody><tr><td>内容创作</td><td>8</td><td>24.1</td></tr><tr><td>商业化变现</td><td>2</td><td>26.0</td></tr><tr><td>视频生成AI</td><td>2</td><td>72.0</td></tr><tr><td>AI-Agent</td><td>1</td><td>76.0</td></tr><tr><td>AI编程</td><td>1</td><td>76.0</td></tr><tr><td>产品与增长</td><td>1</td><td>30.0</td></tr><tr><td>技术基建</td><td>1</td><td>58.0</td></tr><tr><td>效率工具</td><td>1</td><td>58.0</td></tr></tbody></table></div>
+<hr>
+<h2>三、精华推荐（精华度 Top 11）</h2>
+<h3>1. 《小王子》3D 游戏作者公开了制作流程 场景：image2.5生图，然后让ai找出需要单独搓的资产，tripo生成资产，然后拿着场景图让opus5.5组装资产（分配子agent做对抗审查）； 人物：image2.5生图，tripo做人物模型，Auto-Rig pro插件绑骨骼和蒙皮，人物动作来自mixamo（没有合适的动作就找近似，然后让 Claude调整） ⭐⭐⭐⭐ <code>76</code></h3>
+<ul><li><strong>平台</strong>：抖音 ｜ <strong>作者</strong>：- ｜ <strong>时长</strong>：--:--</li><li><strong>收藏</strong>：抖音收藏 ｜ <strong>字幕</strong>：desc_only（0 字）</li><li><strong>链接</strong>：<a href="https://www.douyin.com/video/7696910394345917747" target="_blank" rel="noopener noreferrer">https://www.douyin.com/video/7696910394345917747</a></li><li><strong>主旨</strong>：《小王子》3D 游戏作者公开 AI 全流程：生图→建模→组装→绑骨</li><li><strong>要点</strong>：</li><li class="lvl2">场景流程：image2.5 生图 → 让 AI 找出需单独搓的资产 → tripo 生成 → opus5.5 组装</li><li class="lvl2">组装环节给 opus5.5 分配子 agent 做对抗审查，用交叉校验替代人工逐件核对</li><li class="lvl2">人物流程：image2.5 生图 → tripo 做人物模型 → Auto-Rig pro 插件绑骨骼与蒙皮</li><li class="lvl2">动作素材取自 mixamo，无合适动作时找近似动作再让 Claude 调整</li><li class="lvl2">整条链路把「资产发现」显式化为独立步骤，避免一次性生成导致漏件</li><li><strong>可执行</strong>：</li><li class="lvl2">[ ] 先用 image2.5 出场景原图，再让多模态模型列出必须单独建模的资产清单</li><li class="lvl2">[ ] 资产与人物统一走 tripo 生成，人物用 Auto-Rig pro 绑骨、mixamo 取动作后由 Claude 微调</li><li class="lvl2">[ ] 组装阶段让 opus5.5 派生子 agent 互审装配结果，替代人工逐项核对</li></ul>
+<h3>2. 你给照片画一条线？AI实现精准控制镜头运动 本来只是想让照片动一下，结果镜头还能绕到人物正面，再一路飞出去。这次试了三个场景：女子聚会、灯塔，还有把自己放进小船，贴着水面穿出海蚀洞。操作其实不复杂：准备图片 → 画路线和箭头 → 原图、标注图一起配上提示词生成。记住一句：线条管方向，提示词管细节。也不是每次都能一次成功，路线越复杂，越需要调整。视频里的三个案例可以跟着练。我还准备了几张没用过的图，想看看同一张照片，你们会画出什么镜头。挑一张画好路线，发出来给我看看，也写一句你想让镜头怎么走。 #AI运镜 #AI视频 #AI动画 #AI工具 #镜头表现力 ⭐⭐⭐ <code>68</code></h3>
+<ul><li><strong>平台</strong>：抖音 ｜ <strong>作者</strong>：- ｜ <strong>时长</strong>：--:--</li><li><strong>收藏</strong>：抖音收藏 ｜ <strong>字幕</strong>：desc_only（0 字）</li><li><strong>链接</strong>：<a href="https://www.douyin.com/video/7694984368682454308" target="_blank" rel="noopener noreferrer">https://www.douyin.com/video/7694984368682454308</a></li><li><strong>主旨</strong>：在照片上画路线箭头，用 AI 精准控制镜头运动方向</li><li><strong>要点</strong>：</li><li class="lvl2">核心方法：在原图上画路线与箭头，再把原图、标注图一起配提示词生成</li><li class="lvl2">分工原则是「线条管方向，提示词管细节」，两者各管一层</li><li class="lvl2">演示三个场景：女子聚会、灯塔、小船贴水面穿出海蚀洞</li><li class="lvl2">镜头可绕到人物正面再一路飞出去，超出单纯让照片「动一下」的预期</li><li class="lvl2">路线越复杂越难一次成功，需要多轮调整；作者邀观众交作业互评</li><li><strong>可执行</strong>：</li><li class="lvl2">[ ] 准备一张静态图，用标注工具画出镜头路线与箭头方向</li><li class="lvl2">[ ] 把原图与标注图一并作为参考图提交，提示词只描述画面细节不描述运动</li><li class="lvl2">[ ] 从单段直线运镜起步，成功后逐步增加转弯与穿出镜头</li></ul>
+<h3>3. 上网隐私务必重视，你的画像早被串成一条 该开源工具可查询对应手机号关联的注册平台、所属运营商、大致所在城市等相关信息，能帮助用户排查个人隐私泄露风险，提醒用户重视网络隐私安全，可指引用户检查自身相关信息留存情况以规避隐私隐患。#AI #开源 #信息安全 #隐私保护 #手机号 ⭐⭐⭐ <code>58</code></h3>
+<ul><li><strong>平台</strong>：抖音 ｜ <strong>作者</strong>：- ｜ <strong>时长</strong>：--:--</li><li><strong>收藏</strong>：抖音收藏 ｜ <strong>字幕</strong>：desc_only（0 字）</li><li><strong>链接</strong>：<a href="https://www.douyin.com/video/7695763435249798438" target="_blank" rel="noopener noreferrer">https://www.douyin.com/video/7695763435249798438</a></li><li><strong>主旨</strong>：开源工具可查手机号关联的注册平台与归属地，做隐私自查</li><li><strong>要点</strong>：</li><li class="lvl2">工具能力：输入手机号可查其关联的注册平台、所属运营商、大致所在城市</li><li class="lvl2">用途定位是排查个人隐私泄露风险，而非攻击他人</li><li class="lvl2">作者强调「画像被串成一条」，说明单点信息聚合后风险放大</li><li class="lvl2">给出的动作是检查自身信息留存情况以规避隐患</li><li class="lvl2">简介未点名具体仓库或工具名，需自行检索</li><li><strong>可执行</strong>：</li><li class="lvl2">[ ] 用该工具自查本人手机号在哪些平台留有注册记录，逐条评估是否必要</li><li class="lvl2">[ ] 对不再使用但保留账号的平台执行注销或解绑手机号</li></ul>
+<h3>4. 智能黑科技家电，想要哪个跟我说！ #石头科技发布会 #石头A30国民机皇 #石头洗地机 ⭐⭐ <code>30</code></h3>
+<ul><li><strong>平台</strong>：抖音 ｜ <strong>作者</strong>：- ｜ <strong>时长</strong>：--:--</li><li><strong>收藏</strong>：抖音收藏 ｜ <strong>字幕</strong>：desc_only（0 字）</li><li><strong>链接</strong>：<a href="https://www.douyin.com/video/7419208967185796392" target="_blank" rel="noopener noreferrer">https://www.douyin.com/video/7419208967185796392</a></li><li><strong>主旨</strong>：石头科技发布会新品预热：A30 洗地机等智能家电</li><li><strong>要点</strong>：</li><li class="lvl2">内容为石头科技发布会的新品展示与互动征集</li><li class="lvl2">明确点名的产品线为石头 A30 洗地机，被称「国民机皇」</li><li class="lvl2">简介以「想要哪个跟我说」引导观众留言互动，属发布前种草</li><li class="lvl2">带 #石头科技发布会 #石头A30国民机皇 #石头洗地机 三个品牌标签</li><li class="lvl2">无价格、参数、上市时间等可核验信息</li></ul>
+<h3>5. 刘备号称大汉魅魔！为何襄樊之战后，他的小舅子糜芳却背叛了他？ #刘备 #糜竺 #糜芳 #蜀汉 #三国 ⭐ <code>28</code></h3>
+<ul><li><strong>平台</strong>：抖音 ｜ <strong>作者</strong>：- ｜ <strong>时长</strong>：--:--</li><li><strong>收藏</strong>：抖音收藏 ｜ <strong>字幕</strong>：desc_only（0 字）</li><li><strong>链接</strong>：<a href="https://www.douyin.com/video/7428594846631251226" target="_blank" rel="noopener noreferrer">https://www.douyin.com/video/7428594846631251226</a></li><li><strong>主旨</strong>：三国史话题：糜芳为何在襄樊之战后背叛刘备（信息有限）</li><li><strong>要点</strong>：</li><li class="lvl2">选题围绕蜀汉人物糜芳在襄樊之战后背叛刘备的原因</li><li class="lvl2">同时关联糜竺，暗示从兄弟二人不同结局切入分析</li><li class="lvl2">标题用「刘备号称大汉魅魔」的网感表述吸引点击</li><li class="lvl2">带 #刘备 #糜竺 #糜芳 #蜀汉 #三国 五个话题标签，属历史解说类</li><li class="lvl2">无字幕，具体论据与史料引用不可知</li></ul>
+<h3>6. 马上就要过年了，我猜你一定也需要一套这样的内衣裤套装，它摸起来软乎乎的，穿上后就像被云朵包裹住一样舒服，而且还是大红色的，穿上红红火火，寓意着新的一年会很好。#内衣套装 #贴身衣物 #新年礼物 #女生必备 #必备好物 ⭐ <code>22</code></h3>
+<ul><li><strong>平台</strong>：抖音 ｜ <strong>作者</strong>：- ｜ <strong>时长</strong>：--:--</li><li><strong>收藏</strong>：抖音收藏 ｜ <strong>字幕</strong>：desc_only（0 字）</li><li><strong>链接</strong>：<a href="https://www.douyin.com/video/7575455014345471737" target="_blank" rel="noopener noreferrer">https://www.douyin.com/video/7575455014345471737</a></li><li><strong>主旨</strong>：年货带货：红色内衣裤套装的新年场景营销（信息有限）</li><li><strong>要点</strong>：</li><li class="lvl2">带货对象为红色内衣裤套装，主打过年场景与「红红火火」寓意</li><li class="lvl2">卖点描述集中在触感：「软乎乎」「像被云朵包裹住一样舒服」</li><li class="lvl2">以「我猜你一定也需要」的预判式话术降低观众抗拒</li><li class="lvl2">带 #内衣套装 #贴身衣物 #新年礼物 #女生必备 等五个标签</li><li class="lvl2">无价格、材质成分、尺码等成交决策信息</li></ul>
+<h3>7. 今天来道新菜，鲍鱼烧鸭，色香味俱全，你们一定试试啊，非常好吃 #家常菜 #妈呀太香了 #烧鸭 ⭐ <code>20</code></h3>
+<ul><li><strong>平台</strong>：抖音 ｜ <strong>作者</strong>：- ｜ <strong>时长</strong>：--:--</li><li><strong>收藏</strong>：抖音收藏 ｜ <strong>字幕</strong>：desc_only（0 字）</li><li><strong>链接</strong>：<a href="https://www.douyin.com/video/7415918733958368522" target="_blank" rel="noopener noreferrer">https://www.douyin.com/video/7415918733958368522</a></li><li><strong>主旨</strong>：家常菜教程：鲍鱼烧鸭的做法分享（信息有限）</li><li><strong>要点</strong>：</li><li class="lvl2">标题与简介均为「鲍鱼烧鸭」这道新菜的推荐语，主打色香味俱全</li><li class="lvl2">发布者建议观众亲自尝试，强调「非常好吃」</li><li class="lvl2">带 #家常菜 #妈呀太香了 #烧鸭 三个话题标签，属美食教程类内容</li><li class="lvl2">无字幕、无时长、无作者信息，无法获知具体配料与火候步骤</li></ul>
+<h3>8. 湖南常德一国企董事长 被曝在办公室收礼金 官方通报：已免职，继续调查 ⭐ <code>20</code></h3>
+<ul><li><strong>平台</strong>：抖音 ｜ <strong>作者</strong>：- ｜ <strong>时长</strong>：--:--</li><li><strong>收藏</strong>：抖音收藏 ｜ <strong>字幕</strong>：desc_only（0 字）</li><li><strong>链接</strong>：<a href="https://www.douyin.com/video/7661544518289755427" target="_blank" rel="noopener noreferrer">https://www.douyin.com/video/7661544518289755427</a></li><li><strong>主旨</strong>：湖南常德国企董事长办公室收礼金被免职的官方通报（信息有限）</li><li><strong>要点</strong>：</li><li class="lvl2">事件为湖南常德某国企董事长被曝在办公室收礼金</li><li class="lvl2">官方通报结论为已免职，并继续调查</li><li class="lvl2">内容属时政社会新闻转述，无更多细节与信源标注</li><li class="lvl2">无字幕、无发布时间，无法核实通报原文</li></ul>
+<h3>9. 听过的 最少都快25了#英文歌 #欧美音乐 #音乐分享 #popdanthology2012#歌单种草计划 ⭐ <code>15</code></h3>
+<ul><li><strong>平台</strong>：抖音 ｜ <strong>作者</strong>：- ｜ <strong>时长</strong>：--:--</li><li><strong>收藏</strong>：抖音收藏 ｜ <strong>字幕</strong>：desc_only（0 字）</li><li><strong>链接</strong>：<a href="https://www.douyin.com/video/7575627834669919450" target="_blank" rel="noopener noreferrer">https://www.douyin.com/video/7575627834669919450</a></li><li><strong>主旨</strong>：欧美英文歌单分享，主打怀旧情绪（信息有限）</li><li><strong>要点</strong>：</li><li class="lvl2">内容为英文歌 / 欧美音乐歌单推荐，带 popdanthology2012 标签</li><li class="lvl2">标题以「听过的 最少都快25了」制造年龄共鸣与怀旧感</li><li class="lvl2">属歌单种草类内容，附带 #歌单种草计划 话题</li><li class="lvl2">无字幕、无曲目列表，无法获知具体歌曲名</li></ul>
+<h3>10. 致敬耕耘者，聚力向未来 —— 阿城区胜利小学校教学工作表彰大会圆满举行 ⭐ <code>12</code></h3>
+<ul><li><strong>平台</strong>：抖音 ｜ <strong>作者</strong>：- ｜ <strong>时长</strong>：--:--</li><li><strong>收藏</strong>：抖音收藏 ｜ <strong>字幕</strong>：desc_only（0 字）</li><li><strong>链接</strong>：<a href="https://www.douyin.com/video/7697082656882702419" target="_blank" rel="noopener noreferrer">https://www.douyin.com/video/7697082656882702419</a></li><li><strong>主旨</strong>：阿城区胜利小学校教学工作表彰大会的会议报道（信息有限）</li><li><strong>要点</strong>：</li><li class="lvl2">事件为阿城区胜利小学校举行的教学工作表彰大会</li><li class="lvl2">主题口号是「致敬耕耘者，聚力向未来」</li><li class="lvl2">属地方校园活动通稿，无教学数据或方法细节</li><li class="lvl2">无字幕、无作者与发布时间，信息量仅为标题本身</li></ul>
+<h3>11. 7419747309044485434 ⭐ <code>8</code></h3>
+<ul><li><strong>平台</strong>：抖音 ｜ <strong>作者</strong>：- ｜ <strong>时长</strong>：--:--</li><li><strong>收藏</strong>：抖音收藏 ｜ <strong>字幕</strong>：desc_only（0 字）</li><li><strong>链接</strong>：<a href="https://www.douyin.com/video/7419747309044485434" target="_blank" rel="noopener noreferrer">https://www.douyin.com/video/7419747309044485434</a></li><li><strong>主旨</strong>：标题缺失且简介为热门榜聚合文本，无法判定主题（信息有限）</li><li><strong>要点</strong>：</li><li class="lvl2">标题字段缺失，仅以 item_id 占位，无真实标题</li><li class="lvl2">简介以「热门：」开头，串联抖音热门歌曲、高考志愿、国企通报、家电、年货内衣、英文歌、打金手镯等无关内容</li><li class="lvl2">文本系多条视频简介的拼接，并非本条视频自身描述</li><li class="lvl2">无字幕、无作者、无时长，无法判定真实主题与信息价值</li></ul>
+<hr>
+<h2>四、全部条目摘要</h2>
+<h3>🎵 抖音（11 条）</h3>
+<ul><li>📚 <strong>《小王子》3D 游戏作者公开了制作流程 场景：image2.5生图，然后让ai找出需要单独搓的资产，tripo生成资产，然后拿着场景图让opus5.5组装资产（分配子agent做对抗审查）； 人物：image2.5生图，tripo做人物模型，Auto-Rig pro插件绑骨骼和蒙皮，人物动作来自mixamo（没有合适的动作就找近似，然后让 Claude调整）</strong> ｜ <code>76</code> ｜ --:-- ｜ 字幕质量:中</li><li class="lvl2">《小王子》3D 游戏作者公开 AI 全流程：生图→建模→组装→绑骨</li><li class="lvl2">场景流程：image2.5 生图 → 让 AI 找出需单独搓的资产 → tripo 生成 → opus5.5 组装</li><li class="lvl2">组装环节给 opus5.5 分配子 agent 做对抗审查，用交叉校验替代人工逐件核对</li><li class="lvl2">人物流程：image2.5 生图 → tripo 做人物模型 → Auto-Rig pro 插件绑骨骼与蒙皮</li><li class="lvl2">动作素材取自 mixamo，无合适动作时找近似动作再让 Claude 调整</li><li class="lvl2">整条链路把「资产发现」显式化为独立步骤，避免一次性生成导致漏件</li><li><strong>你给照片画一条线？AI实现精准控制镜头运动 本来只是想让照片动一下，结果镜头还能绕到人物正面，再一路飞出去。这次试了三个场景：女子聚会、灯塔，还有把自己放进小船，贴着水面穿出海蚀洞。操作其实不复杂：准备图片 → 画路线和箭头 → 原图、标注图一起配上提示词生成。记住一句：线条管方向，提示词管细节。也不是每次都能一次成功，路线越复杂，越需要调整。视频里的三个案例可以跟着练。我还准备了几张没用过的图，想看看同一张照片，你们会画出什么镜头。挑一张画好路线，发出来给我看看，也写一句你想让镜头怎么走。 #AI运镜 #AI视频 #AI动画 #AI工具 #镜头表现力</strong> ｜ <code>68</code> ｜ --:-- ｜ 字幕质量:中</li><li class="lvl2">在照片上画路线箭头，用 AI 精准控制镜头运动方向</li><li class="lvl2">核心方法：在原图上画路线与箭头，再把原图、标注图一起配提示词生成</li><li class="lvl2">分工原则是「线条管方向，提示词管细节」，两者各管一层</li><li class="lvl2">演示三个场景：女子聚会、灯塔、小船贴水面穿出海蚀洞</li><li class="lvl2">镜头可绕到人物正面再一路飞出去，超出单纯让照片「动一下」的预期</li><li class="lvl2">路线越复杂越难一次成功，需要多轮调整；作者邀观众交作业互评</li><li><strong>上网隐私务必重视，你的画像早被串成一条 该开源工具可查询对应手机号关联的注册平台、所属运营商、大致所在城市等相关信息，能帮助用户排查个人隐私泄露风险，提醒用户重视网络隐私安全，可指引用户检查自身相关信息留存情况以规避隐私隐患。#AI #开源 #信息安全 #隐私保护 #手机号</strong> ｜ <code>58</code> ｜ --:-- ｜ 字幕质量:中</li><li class="lvl2">开源工具可查手机号关联的注册平台与归属地，做隐私自查</li><li class="lvl2">工具能力：输入手机号可查其关联的注册平台、所属运营商、大致所在城市</li><li class="lvl2">用途定位是排查个人隐私泄露风险，而非攻击他人</li><li class="lvl2">作者强调「画像被串成一条」，说明单点信息聚合后风险放大</li><li class="lvl2">给出的动作是检查自身信息留存情况以规避隐患</li><li class="lvl2">简介未点名具体仓库或工具名，需自行检索</li><li><strong>智能黑科技家电，想要哪个跟我说！ #石头科技发布会 #石头A30国民机皇 #石头洗地机</strong> ｜ <code>30</code> ｜ --:-- ｜ 字幕质量:中</li><li class="lvl2">石头科技发布会新品预热：A30 洗地机等智能家电</li><li class="lvl2">内容为石头科技发布会的新品展示与互动征集</li><li class="lvl2">明确点名的产品线为石头 A30 洗地机，被称「国民机皇」</li><li class="lvl2">简介以「想要哪个跟我说」引导观众留言互动，属发布前种草</li><li class="lvl2">带 #石头科技发布会 #石头A30国民机皇 #石头洗地机 三个品牌标签</li><li class="lvl2">无价格、参数、上市时间等可核验信息</li><li><strong>刘备号称大汉魅魔！为何襄樊之战后，他的小舅子糜芳却背叛了他？ #刘备 #糜竺 #糜芳 #蜀汉 #三国</strong> ｜ <code>28</code> ｜ --:-- ｜ 字幕质量:中</li><li class="lvl2">三国史话题：糜芳为何在襄樊之战后背叛刘备（信息有限）</li><li class="lvl2">选题围绕蜀汉人物糜芳在襄樊之战后背叛刘备的原因</li><li class="lvl2">同时关联糜竺，暗示从兄弟二人不同结局切入分析</li><li class="lvl2">标题用「刘备号称大汉魅魔」的网感表述吸引点击</li><li class="lvl2">带 #刘备 #糜竺 #糜芳 #蜀汉 #三国 五个话题标签，属历史解说类</li><li class="lvl2">无字幕，具体论据与史料引用不可知</li><li><strong>马上就要过年了，我猜你一定也需要一套这样的内衣裤套装，它摸起来软乎乎的，穿上后就像被云朵包裹住一样舒服，而且还是大红色的，穿上红红火火，寓意着新的一年会很好。#内衣套装 #贴身衣物 #新年礼物 #女生必备 #必备好物</strong> ｜ <code>22</code> ｜ --:-- ｜ 字幕质量:中</li><li class="lvl2">年货带货：红色内衣裤套装的新年场景营销（信息有限）</li><li class="lvl2">带货对象为红色内衣裤套装，主打过年场景与「红红火火」寓意</li><li class="lvl2">卖点描述集中在触感：「软乎乎」「像被云朵包裹住一样舒服」</li><li class="lvl2">以「我猜你一定也需要」的预判式话术降低观众抗拒</li><li class="lvl2">带 #内衣套装 #贴身衣物 #新年礼物 #女生必备 等五个标签</li><li class="lvl2">无价格、材质成分、尺码等成交决策信息</li><li><strong>今天来道新菜，鲍鱼烧鸭，色香味俱全，你们一定试试啊，非常好吃 #家常菜 #妈呀太香了 #烧鸭</strong> ｜ <code>20</code> ｜ --:-- ｜ 字幕质量:中</li><li class="lvl2">家常菜教程：鲍鱼烧鸭的做法分享（信息有限）</li><li class="lvl2">标题与简介均为「鲍鱼烧鸭」这道新菜的推荐语，主打色香味俱全</li><li class="lvl2">发布者建议观众亲自尝试，强调「非常好吃」</li><li class="lvl2">带 #家常菜 #妈呀太香了 #烧鸭 三个话题标签，属美食教程类内容</li><li class="lvl2">无字幕、无时长、无作者信息，无法获知具体配料与火候步骤</li><li><strong>湖南常德一国企董事长 被曝在办公室收礼金 官方通报：已免职，继续调查</strong> ｜ <code>20</code> ｜ --:-- ｜ 字幕质量:低</li><li class="lvl2">湖南常德国企董事长办公室收礼金被免职的官方通报（信息有限）</li><li class="lvl2">事件为湖南常德某国企董事长被曝在办公室收礼金</li><li class="lvl2">官方通报结论为已免职，并继续调查</li><li class="lvl2">内容属时政社会新闻转述，无更多细节与信源标注</li><li class="lvl2">无字幕、无发布时间，无法核实通报原文</li><li><strong>听过的 最少都快25了#英文歌 #欧美音乐 #音乐分享 #popdanthology2012#歌单种草计划</strong> ｜ <code>15</code> ｜ --:-- ｜ 字幕质量:中</li><li class="lvl2">欧美英文歌单分享，主打怀旧情绪（信息有限）</li><li class="lvl2">内容为英文歌 / 欧美音乐歌单推荐，带 popdanthology2012 标签</li><li class="lvl2">标题以「听过的 最少都快25了」制造年龄共鸣与怀旧感</li><li class="lvl2">属歌单种草类内容，附带 #歌单种草计划 话题</li><li class="lvl2">无字幕、无曲目列表，无法获知具体歌曲名</li><li><strong>致敬耕耘者，聚力向未来 —— 阿城区胜利小学校教学工作表彰大会圆满举行</strong> ｜ <code>12</code> ｜ --:-- ｜ 字幕质量:低</li><li class="lvl2">阿城区胜利小学校教学工作表彰大会的会议报道（信息有限）</li><li class="lvl2">事件为阿城区胜利小学校举行的教学工作表彰大会</li><li class="lvl2">主题口号是「致敬耕耘者，聚力向未来」</li><li class="lvl2">属地方校园活动通稿，无教学数据或方法细节</li><li class="lvl2">无字幕、无作者与发布时间，信息量仅为标题本身</li><li><strong>7419747309044485434</strong> ｜ <code>8</code> ｜ --:-- ｜ 字幕质量:低</li><li class="lvl2">标题缺失且简介为热门榜聚合文本，无法判定主题（信息有限）</li><li class="lvl2">标题字段缺失，仅以 item_id 占位，无真实标题</li><li class="lvl2">简介以「热门：」开头，串联抖音热门歌曲、高考志愿、国企通报、家电、年货内衣、英文歌、打金手镯等无关内容</li><li class="lvl2">文本系多条视频简介的拼接，并非本条视频自身描述</li><li class="lvl2">无字幕、无作者、无时长，无法判定真实主题与信息价值</li></ul>
+<hr>
+<h2>五、失败与降级记录</h2>
+<div class="table-wrap"><table><thead><tr><th>平台</th><th>条目</th><th>阶段</th><th>错误</th><th>时间</th></tr></thead><tbody><tr><td>bilibili</td><td>-</td><td>login</td><td>未登录（code=-101）</td><td>2026-10-17 21:37:48</td></tr></tbody></table></div>
+<blockquote><p>⚠️ <strong>本次运行为「部分成功」</strong>：存在采集或处理失败项，报告已按可用数据生成。</p></blockquote>
+<hr>
+<h2>附：运行信息</h2>
+<ul><li>报告日期：2026-10-17</li><li>本次条目数：11</li><li>知识库收录：1 篇</li><li>状态：partial</li><li>数据源文件：<code>data/raw/*-2026-10-17.json</code></li><li>流程：采集 → 字幕 → 摘要包 → 归纳 → 报告 → 知识库</li></ul>
+<hr>
+<p>_本报告由「抖音/B站 收藏情报系统」自动生成，规则与约定见 <code>情报系统/AGENT.md</code>。_</p></article>
+<div class="nav"><a class="btn" href="2026-10-16.html">下一期 2026-10-16 →</a><a class="btn" href="archive.html">全部归档</a></div>
+<div class="foot">由「收藏情报系统」自动生成 ｜ 内容来自本人在 B 站与抖音的收藏，原视频版权归原作者所有</div>
+</main>
+<script>
+(function(){
+  var KEY='intel-theme', root=document.documentElement;
+  function sys(){try{return window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}catch(e){return 'light';}}
+  function cur(){return root.getAttribute('data-theme')||sys();}
+  function paint(){var b=document.getElementById('themeBtn'); if(b){b.textContent=cur()==='dark'?'\u25D0':'\u25D1'; b.title=cur()==='dark'?'切换到浅色':'切换到深色';}}
+  try{var s=localStorage.getItem(KEY); if(s){root.setAttribute('data-theme',s);}}catch(e){}
+  window.__toggleTheme=function(){
+    var next=cur()==='dark'?'light':'dark';
+    root.setAttribute('data-theme',next);
+    try{localStorage.setItem(KEY,next);}catch(e){}
+    paint();
+  };
+  if(document.readyState!=='loading'){paint();}else{document.addEventListener('DOMContentLoaded',paint);}
+})();
+</script>
+</body>
+</html>
