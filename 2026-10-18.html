@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="referrer" content="no-referrer">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<title>2026-10-18 收藏情报日报</title>
+<style>
+:root{
+  --bg:#f6f7f9; --surface:#ffffff; --surface-2:#fafbfc;
+  --text:#1a1d21; --text-2:#4b5563; --muted:#8b939e;
+  --border:#e5e7eb; --border-2:#eef0f3;
+  --accent:#2563eb; --accent-soft:#eff4ff;
+  --code-bg:#f3f4f6; --quote-bg:#f8fafc;
+  --shadow:0 1px 2px rgba(16,24,40,.04), 0 1px 3px rgba(16,24,40,.06);
+  --radius:10px;
+}
+[data-theme="dark"]{
+  --bg:#0e1013; --surface:#16181d; --surface-2:#1b1e24;
+  --text:#e6e8eb; --text-2:#b6bcc5; --muted:#7d848e;
+  --border:#272b32; --border-2:#21242a;
+  --accent:#6ea8fe; --accent-soft:#1a2433;
+  --code-bg:#1e2128; --quote-bg:#191c22;
+  --shadow:0 1px 2px rgba(0,0,0,.3);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0e1013; --surface:#16181d; --surface-2:#1b1e24;
+    --text:#e6e8eb; --text-2:#b6bcc5; --muted:#7d848e;
+    --border:#272b32; --border-2:#21242a;
+    --accent:#6ea8fe; --accent-soft:#1a2433;
+    --code-bg:#1e2128; --quote-bg:#191c22;
+    --shadow:0 1px 2px rgba(0,0,0,.3);
+  }
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--bg); color:var(--text);
+  font:15px/1.72 -apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB",
+       "Microsoft YaHei","Source Han Sans SC","Noto Sans CJK SC",sans-serif;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:var(--accent); text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:860px; margin:0 auto; padding:0 18px 56px}
+
+/* 顶栏 */
+.topbar{
+  position:sticky; top:0; z-index:20;
+  background:var(--surface);
+  background:color-mix(in srgb, var(--surface) 88%, transparent);
+  backdrop-filter:saturate(180%) blur(12px);
+  -webkit-backdrop-filter:saturate(180%) blur(12px);
+  border-bottom:1px solid var(--border);
+}
+.topbar-in{max-width:860px; margin:0 auto; padding:10px 18px; display:flex; align-items:center; gap:12px}
+.brand{display:flex; flex-direction:column; gap:1px; min-width:0; flex:1}
+.brand b{font-size:15px; font-weight:650; letter-spacing:.2px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+.brand span{font-size:11.5px; color:var(--muted); white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+.tb-right{display:flex; align-items:center; gap:6px; flex:none}
+.btn{
+  display:inline-flex; align-items:center; justify-content:center;
+  min-height:30px; padding:4px 10px; font-size:12.5px; line-height:1;
+  color:var(--text-2); background:var(--surface-2);
+  border:1px solid var(--border); border-radius:8px;
+  cursor:pointer; font-family:inherit; white-space:nowrap;
+}
+.btn:hover{color:var(--text); border-color:var(--muted)}
+.btn.icon{width:30px; padding:0; font-size:14px}
+
+/* 页面头 */
+.hero{padding:22px 0 12px}
+.hero h1{margin:0 0 6px; font-size:23px; line-height:1.35; letter-spacing:-.2px}
+.hero .meta{color:var(--muted); font-size:12.5px; display:flex; flex-wrap:wrap; gap:6px 14px}
+.chips{display:flex; flex-wrap:wrap; gap:6px; margin-top:10px}
+.chip{
+  font-size:11.5px; padding:2.5px 8px; border-radius:999px;
+  background:var(--accent-soft); color:var(--accent); border:1px solid transparent;
+}
+.chip.grey{background:var(--surface-2); color:var(--text-2); border-color:var(--border)}
+
+/* 正文卡片 */
+.card{
+  background:var(--surface); border:1px solid var(--border);
+  border-radius:var(--radius); box-shadow:var(--shadow);
+  padding:20px 22px; margin-top:14px;
+}
+.content>*:first-child{margin-top:0}
+.content>*:last-child{margin-bottom:0}
+.content h1{font-size:21px; margin:22px 0 10px; letter-spacing:-.2px}
+.content h2{
+  font-size:16.5px; margin:24px 0 10px; padding-bottom:7px;
+  border-bottom:1px solid var(--border-2); letter-spacing:-.1px;
+}
+.content h3{font-size:15px; margin:18px 0 7px; color:var(--text); font-weight:650}
+.content h4,.content h5,.content h6{font-size:14px; margin:14px 0 6px; color:var(--text-2)}
+.content p{margin:9px 0; color:var(--text-2)}
+.content strong{color:var(--text); font-weight:650}
+.content ul,.content ol{margin:8px 0; padding-left:20px}
+.content li{margin:4px 0; color:var(--text-2)}
+.content li.lvl2{list-style-type:circle; margin-left:8px}
+.content hr{border:0; border-top:1px solid var(--border); margin:20px 0}
+.content blockquote{
+  margin:12px 0; padding:10px 14px; background:var(--quote-bg);
+  border-left:3px solid var(--accent); border-radius:0 8px 8px 0; color:var(--text-2);
+}
+.content blockquote p{margin:4px 0}
+.content code{
+  font-family:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,monospace;
+  font-size:12.5px; background:var(--code-bg); padding:1.5px 5px; border-radius:5px;
+  color:var(--text); word-break:break-word;
+}
+.content pre{
+  margin:12px 0; padding:13px 15px; background:var(--code-bg);
+  border:1px solid var(--border-2); border-radius:8px; overflow-x:auto;
+}
+.content pre code{background:none; padding:0; font-size:12.5px; line-height:1.6}
+
+/* 表格 */
+.table-wrap{overflow-x:auto; margin:12px 0; -webkit-overflow-scrolling:touch}
+.content table{border-collapse:collapse; width:100%; font-size:13.5px; min-width:320px}
+.content th,.content td{
+  border:1px solid var(--border); padding:7px 10px; text-align:left; vertical-align:top;
+}
+.content th{background:var(--surface-2); font-weight:620; color:var(--text); white-space:nowrap}
+.content td{color:var(--text-2)}
+.content tbody tr:nth-child(even){background:var(--surface-2)}
+
+/* 归档列表 */
+.list{display:flex; flex-direction:column; gap:8px; margin-top:14px}
+.item{
+  display:flex; align-items:center; gap:12px; padding:11px 14px;
+  background:var(--surface); border:1px solid var(--border);
+  border-radius:var(--radius); box-shadow:var(--shadow);
+}
+.item:hover{border-color:var(--accent); text-decoration:none}
+.item .d{
+  flex:none; font-variant-numeric:tabular-nums; font-size:12.5px; color:var(--muted);
+  padding:3px 8px; background:var(--surface-2); border-radius:6px; border:1px solid var(--border-2);
+}
+.item .t{flex:1; min-width:0; font-size:14px; color:var(--text); overflow:hidden; text-overflow:ellipsis; white-space:nowrap}
+.item .n{flex:none; font-size:12px; color:var(--muted)}
+
+.nav{display:flex; gap:8px; margin-top:16px; flex-wrap:wrap}
+.nav .btn{flex:1; min-width:120px; justify-content:center; min-height:36px}
+
+.foot{margin-top:26px; padding-top:14px; border-top:1px solid var(--border); color:var(--muted); font-size:12px; line-height:1.9}
+.foot code{background:var(--code-bg); padding:1px 5px; border-radius:4px; font-size:11.5px}
+.empty{padding:40px 20px; text-align:center; color:var(--muted); font-size:13.5px}
+
+@media (max-width:560px){
+  .wrap{padding:0 13px 44px}
+  .topbar-in{padding:9px 13px}
+  .card{padding:15px 15px; border-radius:9px}
+  .hero h1{font-size:20px}
+  .content h1{font-size:19px}
+  .content h2{font-size:15.5px}
+  .item{padding:10px 12px; gap:9px}
+  .item .t{font-size:13.5px}
+}
+</style>
+</head>
+<body>
+<header class="topbar"><div class="topbar-in">
+  <div class="brand"><b>收藏情报日报</b><span>抖音 / B 站 每日收藏归纳</span></div>
+  <div class="tb-right">
+    <a class="btn" href="archive.html">归档</a>
+    <button class="btn icon" id="themeBtn" type="button" title="切换主题" aria-label="切换主题">◑</button>
+  </div>
+</div></header>
+<main class="wrap">
+<section class="hero"><h1>2026-10-18 收藏情报日报</h1><div class="meta"><span>2026 年 10 月 18 日</span></div><div class="chips"><span class="chip">11 条视频</span><span class="chip grey">状态：部分成功</span><span class="chip grey">内容创作</span><span class="chip grey">AI编程</span><span class="chip grey">技术基建</span><span class="chip grey">效率工具</span><span class="chip grey">视频生成AI</span></div></section><article class="card content"><h1>2026-10-18 收藏情报日报</h1>
+<blockquote><p>采集日期：<strong>2026-10-18</strong> ｜ 生成时间：2026-10-18 21:33:27<br>数据来源：本人账号的收藏夹（B 站 + 抖音），由真实浏览器会话读取</p></blockquote>
+<hr>
+<h2>一、今日概览</h2>
+<div class="table-wrap"><table><thead><tr><th>指标</th><th>数值</th></tr></thead><tbody><tr><td>本次新增视频</td><td><strong>11</strong> 条</td></tr><tr><td>平台分布</td><td>抖音 11 条</td></tr><tr><td>拿到字幕</td><td>0 / 11 条</td></tr><tr><td>归纳来源</td><td>Agent 归纳 11 条 ｜ 规则兜底 0 条</td></tr><tr><td>已进知识库</td><td>0 条</td></tr><tr><td>平均精华度</td><td>27.6</td></tr><tr><td>失败</td><td>1 项</td></tr><tr><td>降级（缺字幕）</td><td>4 条</td></tr></tbody></table></div>
+<p><strong>一句话结论</strong>：新增 11 条收藏，主题集中在「AI编程」；最值得看的是《Vibe知识大赏丨我用AI手搓的《凡人修仙传》游戏！ #凡人修仙传 #TripoAI #3D建模#游戏开发 #Vibe知识大赏》（精华度 58）。</p>
+<hr>
+<h2>二、主题分布</h2>
+<div class="table-wrap"><table><thead><tr><th>主题</th><th>条数</th><th>平均精华度</th></tr></thead><tbody><tr><td>内容创作</td><td>8</td><td>19.0</td></tr><tr><td>AI编程</td><td>2</td><td>55.0</td></tr><tr><td>技术基建</td><td>2</td><td>47.0</td></tr><tr><td>效率工具</td><td>2</td><td>37.0</td></tr><tr><td>视频生成AI</td><td>1</td><td>58.0</td></tr></tbody></table></div>
+<hr>
+<h2>三、精华推荐（精华度 Top 11）</h2>
+<h3>1. Vibe知识大赏丨我用AI手搓的《凡人修仙传》游戏！ #凡人修仙传 #TripoAI #3D建模#游戏开发 #Vibe知识大赏 ⭐⭐⭐ <code>58</code></h3>
+<ul><li><strong>平台</strong>：抖音 ｜ <strong>作者</strong>：- ｜ <strong>时长</strong>：--:--</li><li><strong>收藏</strong>：抖音收藏 ｜ <strong>字幕</strong>：desc_only（0 字）</li><li><strong>链接</strong>：<a href="https://www.douyin.com/video/7695009318600461619" target="_blank" rel="noopener noreferrer">https://www.douyin.com/video/7695009318600461619</a></li><li><strong>主旨</strong>：用 AI 与 TripoAI 手搓《凡人修仙传》3D 游戏</li><li><strong>要点</strong>：</li><li class="lvl2">作者以 AI 工具独立完成一款《凡人修仙传》题材游戏。</li><li class="lvl2">明确使用的工具为 TripoAI，用于 3D 建模环节。</li><li class="lvl2">内容归入「Vibe知识大赏」活动，属 AI 编程/游戏开发方向。</li><li class="lvl2">标题强调「手搓」，指向个人低成本完成全流程。</li><li class="lvl2">仅有标题与标签，无字幕，具体工作流与资产管线未披露。</li><li><strong>可执行</strong>：</li><li class="lvl2">[ ] 先看视频确认 TripoAI 在资产生成到引擎导入之间的具体环节。</li></ul>
+<h3>2. 第60集 | 一个手机号能翻出个啥啥啥？#ai #开源 #编程 #vibecoding #代码 ⭐⭐⭐ <code>52</code></h3>
+<ul><li><strong>平台</strong>：抖音 ｜ <strong>作者</strong>：- ｜ <strong>时长</strong>：--:--</li><li><strong>收藏</strong>：抖音收藏 ｜ <strong>字幕</strong>：desc_only（0 字）</li><li><strong>链接</strong>：<a href="https://www.douyin.com/video/7697661302445366449" target="_blank" rel="noopener noreferrer">https://www.douyin.com/video/7697661302445366449</a></li><li><strong>主旨</strong>：第60集：演示用一个手机号能翻出哪些信息</li><li><strong>要点</strong>：</li><li class="lvl2">属系列第 60 集，主题是用手机号做信息关联查询。</li><li class="lvl2">标签覆盖 AI、开源、编程、vibecoding、代码，指向开源工具实操。</li><li class="lvl2">内容形态为「用代码/工具演示能查到什么」，非纯科普。</li><li class="lvl2">涉及个人隐私边界，查询他人信息须有合法授权。</li><li class="lvl2">无字幕，具体工具名与查询接口未在简介披露。</li><li><strong>可执行</strong>：</li><li class="lvl2">[ ] 先用该工具自查本人手机号的暴露面，再决定是否做隐私收敛。</li></ul>
+<h3>3. 网盘界最严厉的父亲来了 #网盘 #下载 #开源项目 #热点 #干货分享 ⭐⭐ <code>42</code></h3>
+<ul><li><strong>平台</strong>：抖音 ｜ <strong>作者</strong>：- ｜ <strong>时长</strong>：--:--</li><li><strong>收藏</strong>：抖音收藏 ｜ <strong>字幕</strong>：desc_only（0 字）</li><li><strong>链接</strong>：<a href="https://www.douyin.com/video/7697958146651802880" target="_blank" rel="noopener noreferrer">https://www.douyin.com/video/7697958146651802880</a></li><li><strong>主旨</strong>：推荐网盘下载类开源项目，方案未在简介说明（信息有限）</li><li><strong>要点</strong>：</li><li class="lvl2">主题为网盘与下载方向，标题称「网盘界最严厉的父亲」。</li><li class="lvl2">带开源项目标签，推测为一款开源网盘/下载工具。</li><li class="lvl2">挂「热点」「干货分享」标签，属工具推荐类短视频。</li><li class="lvl2">仅有标题，无字幕，未披露项目名、仓库地址与功能细节。</li><li><strong>可执行</strong>：</li><li class="lvl2">[ ] 从评论区或作者主页取项目名后，再到 GitHub 核对 license 与维护活跃度。</li></ul>
+<h3>4. PS渐变工具PS学习第184课PS入门基础教学PS初学者教程PS实操案例 #ps基础 #ps初学者教程 #PS入门 #PS小白 ⭐⭐ <code>32</code></h3>
+<ul><li><strong>平台</strong>：抖音 ｜ <strong>作者</strong>：- ｜ <strong>时长</strong>：--:--</li><li><strong>收藏</strong>：抖音收藏 ｜ <strong>字幕</strong>：desc_only（0 字）</li><li><strong>链接</strong>：<a href="https://www.douyin.com/video/7281619945778056484" target="_blank" rel="noopener noreferrer">https://www.douyin.com/video/7281619945778056484</a></li><li><strong>主旨</strong>：PS 第184课：渐变工具的基础操作与实操案例</li><li><strong>要点</strong>：</li><li class="lvl2">课程编号为 PS 学习第 184 课，属长系列系统课中的一节。</li><li class="lvl2">本课主题是 Photoshop 的渐变工具。</li><li class="lvl2">定位为入门基础教学，面向零基础学习者。</li><li class="lvl2">含实操案例，但简介未列出具体案例内容。</li><li class="lvl2">无字幕，工具参数与操作步骤无法从文本还原。</li><li><strong>可执行</strong>：</li><li class="lvl2">[ ] 在 PS 中打开渐变工具（快捷键 G），对照视频练习线性与径向两种模式。</li></ul>
+<h3>5. 2026年中考历史和道法是开卷考试，考试资料也可以带进考场，但是一定要提前熟悉，到时才能快速找到#中考 #开卷考试 ⭐ <code>28</code></h3>
+<ul><li><strong>平台</strong>：抖音 ｜ <strong>作者</strong>：- ｜ <strong>时长</strong>：--:--</li><li><strong>收藏</strong>：抖音收藏 ｜ <strong>字幕</strong>：desc_only（0 字）</li><li><strong>链接</strong>：<a href="https://www.douyin.com/video/7697339999187963187" target="_blank" rel="noopener noreferrer">https://www.douyin.com/video/7697339999187963187</a></li><li><strong>主旨</strong>：2026 中考历史道法开卷，提醒提前熟悉资料</li><li><strong>要点</strong>：</li><li class="lvl2">2026 年中考历史与道德法治两科为开卷考试。</li><li class="lvl2">允许把考试资料带进考场。</li><li class="lvl2">关键提醒是必须提前熟悉资料，考场上才能快速定位。</li><li class="lvl2">面向中考生及家长，属应试策略类提示。</li><li class="lvl2">无字幕，未给出资料整理方法。</li><li><strong>可执行</strong>：</li><li class="lvl2">[ ] 考前把资料按考点做目录与标签，并做限时翻书检索练习。</li></ul>
+<h3>6. 快过年了，教你在家炸油糕，个个脆皮空心不开裂，新手一次成功#炸油糕 #抖音美食 ⭐ <code>22</code></h3>
+<ul><li><strong>平台</strong>：抖音 ｜ <strong>作者</strong>：- ｜ <strong>时长</strong>：--:--</li><li><strong>收藏</strong>：抖音收藏 ｜ <strong>字幕</strong>：desc_only（0 字）</li><li><strong>链接</strong>：<a href="https://www.douyin.com/video/7188143068397243685" target="_blank" rel="noopener noreferrer">https://www.douyin.com/video/7188143068397243685</a></li><li><strong>主旨</strong>：过年在家炸油糕的教程，主打脆皮空心不开裂（信息有限）</li><li><strong>要点</strong>：</li><li class="lvl2">主题为家庭自制炸油糕，定位过年应景食品。</li><li class="lvl2">标题承诺的效果是「个个脆皮空心不开裂」。</li><li class="lvl2">面向新手，称「新手一次成功」。</li><li class="lvl2">仅有标题，无字幕，未披露配比、油温等关键参数。</li><li><strong>可执行</strong>：</li><li class="lvl2">[ ] 实际操作前先看完视频确认面团配比与油温区间。</li></ul>
+<h3>7. 暗访神秘名店，斥巨资把智商税带回家（三） #广州车展 ⭐ <code>20</code></h3>
+<ul><li><strong>平台</strong>：抖音 ｜ <strong>作者</strong>：- ｜ <strong>时长</strong>：--:--</li><li><strong>收藏</strong>：抖音收藏 ｜ <strong>字幕</strong>：desc_only（0 字）</li><li><strong>链接</strong>：<a href="https://www.douyin.com/video/7035115356024802592" target="_blank" rel="noopener noreferrer">https://www.douyin.com/video/7035115356024802592</a></li><li><strong>主旨</strong>：暗访广州车展神秘名店，以现场体验为主（信息有限）</li><li><strong>要点</strong>：</li><li class="lvl2">属「暗访神秘名店」系列第三集，本集关联广州车展场景。</li><li class="lvl2">标题称「斥巨资把智商税带回家」，指向高价商品的消费体验。</li><li class="lvl2">仅有标题与简介，无字幕，未披露具体店铺名称与商品品类。</li><li class="lvl2">「智商税」为作者主观评价，非可验证结论。</li><li><strong>可执行</strong>：</li><li class="lvl2">[ ] 观看时留意作者给出的价格与实测对比，勿直接采信单方评价。</li></ul>
+<h3>8. 第23集 | 济阳老城探访之旅（中），老东门 老城街。感谢@飞 提供记忆素材#济阳 #济阳老事 #济阳区 ⭐ <code>18</code></h3>
+<ul><li><strong>平台</strong>：抖音 ｜ <strong>作者</strong>：- ｜ <strong>时长</strong>：--:--</li><li><strong>收藏</strong>：抖音收藏 ｜ <strong>字幕</strong>：desc_only（0 字）</li><li><strong>链接</strong>：<a href="https://www.douyin.com/video/6944288320872615204" target="_blank" rel="noopener noreferrer">https://www.douyin.com/video/6944288320872615204</a></li><li><strong>主旨</strong>：济阳老城人文记录第23集，走访老东门与老城街旧貌</li><li><strong>要点</strong>：</li><li class="lvl2">属「济阳老城探访之旅」系列第23集，本集为中篇。</li><li class="lvl2">本集走访地点为老东门与老城街两处。</li><li class="lvl2">素材由他人提供，简介中致谢提供记忆素材的用户。</li><li class="lvl2">带济阳、济阳老事、济阳区三个地域标签，属地方记忆类内容。</li><li class="lvl2">仅有简介可用，无字幕，具体讲述内容无法还原。</li><li><strong>可执行</strong>：</li><li class="lvl2">[ ] 如需了解济阳地方史，可按系列编号回看前后集补齐上下文。</li></ul>
+<h3>9. 人生路上，遇见善良，学会付出；遇见微笑，学会分享；遇见坎坷，学会勇敢。人生路艰难，但是如果你有笑对人生的能力，你就有享受人生的能力。心是苦的，人生便如苦海无边；心是甜的，人生处处都是曼妙风景。#关爱老人传递正能量 ⭐ <code>12</code></h3>
+<ul><li><strong>平台</strong>：抖音 ｜ <strong>作者</strong>：- ｜ <strong>时长</strong>：--:--</li><li><strong>收藏</strong>：抖音收藏 ｜ <strong>字幕</strong>：desc_only（0 字）</li><li><strong>链接</strong>：<a href="https://www.douyin.com/video/7447130282710371619" target="_blank" rel="noopener noreferrer">https://www.douyin.com/video/7447130282710371619</a></li><li><strong>主旨</strong>：人生感悟短文，讲善良、分享与勇敢面对坎坷</li><li><strong>要点</strong>：</li><li class="lvl2">内容为情绪励志类短句，非知识或方法论。</li><li class="lvl2">核心主张：遇见善良学付出、遇见微笑学分享、遇见坎坷学勇敢。</li><li class="lvl2">用「心苦则人生如苦海，心甜则处处是风景」作比喻收尾。</li><li class="lvl2">带「关爱老人传递正能量」标签，属正能量题材。</li><li class="lvl2">无可执行信息，无字幕。</li></ul>
+<h3>10. 画面超燃！ 米卢与和田队球员齐声呐喊助威！（拍摄：迪力穆拉提 李凌燕 编辑：阿孜古丽）#2026“同心杯”新疆足球超级联赛#疆超联赛#世界玉都·中国和田#这里是和田 ⭐ <code>12</code></h3>
+<ul><li><strong>平台</strong>：抖音 ｜ <strong>作者</strong>：- ｜ <strong>时长</strong>：--:--</li><li><strong>收藏</strong>：抖音收藏 ｜ <strong>字幕</strong>：desc_only（0 字）</li><li><strong>链接</strong>：<a href="https://www.douyin.com/video/7643663098167037225" target="_blank" rel="noopener noreferrer">https://www.douyin.com/video/7643663098167037225</a></li><li><strong>主旨</strong>：米卢现身新疆足球超级联赛，为和田队呐喊助威</li><li><strong>要点</strong>：</li><li class="lvl2">事件为 2026「同心杯」新疆足球超级联赛（疆超联赛）。</li><li class="lvl2">前国足主帅米卢与和田队球员一同呐喊助威。</li><li class="lvl2">地点关联和田，带「世界玉都·中国和田」标签。</li><li class="lvl2">属赛事现场短视频，含拍摄与编辑署名。</li><li class="lvl2">无字幕，无战术或赛事数据分析。</li></ul>
+<h3>11. 7591031889171844402 ⭐ <code>8</code></h3>
+<ul><li><strong>平台</strong>：抖音 ｜ <strong>作者</strong>：- ｜ <strong>时长</strong>：--:--</li><li><strong>收藏</strong>：抖音收藏 ｜ <strong>字幕</strong>：desc_only（0 字）</li><li><strong>链接</strong>：<a href="https://www.douyin.com/video/7591031889171844402" target="_blank" rel="noopener noreferrer">https://www.douyin.com/video/7591031889171844402</a></li><li><strong>主旨</strong>：简介为热门榜单聚合文本，无法判定真实主题（信息有限）</li><li><strong>要点</strong>：</li><li class="lvl2">标题字段缺失，仅剩 item_id 占位，无有效标题信息。</li><li class="lvl2">简介以「热门：」开头，后接多条互不相关的视频标题。</li><li class="lvl2">拼接内容涉及中考开卷、体育院校招生、疆超联赛、济阳老城、车展、PS 教程等。</li><li class="lvl2">其中多条与今日其它收藏重复，说明是页面卡片文本串行错位。</li><li class="lvl2">无法从该文本判定本条视频自身的主题，不做推测。</li><li><strong>可执行</strong>：</li><li class="lvl2">[ ] 在抖音客户端打开该条视频确认真实内容，或直接从收藏夹移除该无效记录。</li></ul>
+<hr>
+<h2>四、全部条目摘要</h2>
+<h3>🎵 抖音（11 条）</h3>
+<ul><li><strong>Vibe知识大赏丨我用AI手搓的《凡人修仙传》游戏！ #凡人修仙传 #TripoAI #3D建模#游戏开发 #Vibe知识大赏</strong> ｜ <code>58</code> ｜ --:-- ｜ 字幕质量:中</li><li class="lvl2">用 AI 与 TripoAI 手搓《凡人修仙传》3D 游戏</li><li class="lvl2">作者以 AI 工具独立完成一款《凡人修仙传》题材游戏。</li><li class="lvl2">明确使用的工具为 TripoAI，用于 3D 建模环节。</li><li class="lvl2">内容归入「Vibe知识大赏」活动，属 AI 编程/游戏开发方向。</li><li class="lvl2">标题强调「手搓」，指向个人低成本完成全流程。</li><li class="lvl2">仅有标题与标签，无字幕，具体工作流与资产管线未披露。</li><li><strong>第60集 | 一个手机号能翻出个啥啥啥？#ai #开源 #编程 #vibecoding #代码</strong> ｜ <code>52</code> ｜ --:-- ｜ 字幕质量:中</li><li class="lvl2">第60集：演示用一个手机号能翻出哪些信息</li><li class="lvl2">属系列第 60 集，主题是用手机号做信息关联查询。</li><li class="lvl2">标签覆盖 AI、开源、编程、vibecoding、代码，指向开源工具实操。</li><li class="lvl2">内容形态为「用代码/工具演示能查到什么」，非纯科普。</li><li class="lvl2">涉及个人隐私边界，查询他人信息须有合法授权。</li><li class="lvl2">无字幕，具体工具名与查询接口未在简介披露。</li><li><strong>网盘界最严厉的父亲来了 #网盘 #下载 #开源项目 #热点 #干货分享</strong> ｜ <code>42</code> ｜ --:-- ｜ 字幕质量:低</li><li class="lvl2">推荐网盘下载类开源项目，方案未在简介说明（信息有限）</li><li class="lvl2">主题为网盘与下载方向，标题称「网盘界最严厉的父亲」。</li><li class="lvl2">带开源项目标签，推测为一款开源网盘/下载工具。</li><li class="lvl2">挂「热点」「干货分享」标签，属工具推荐类短视频。</li><li class="lvl2">仅有标题，无字幕，未披露项目名、仓库地址与功能细节。</li><li><strong>PS渐变工具PS学习第184课PS入门基础教学PS初学者教程PS实操案例 #ps基础 #ps初学者教程 #PS入门 #PS小白</strong> ｜ <code>32</code> ｜ --:-- ｜ 字幕质量:中</li><li class="lvl2">PS 第184课：渐变工具的基础操作与实操案例</li><li class="lvl2">课程编号为 PS 学习第 184 课，属长系列系统课中的一节。</li><li class="lvl2">本课主题是 Photoshop 的渐变工具。</li><li class="lvl2">定位为入门基础教学，面向零基础学习者。</li><li class="lvl2">含实操案例，但简介未列出具体案例内容。</li><li class="lvl2">无字幕，工具参数与操作步骤无法从文本还原。</li><li><strong>2026年中考历史和道法是开卷考试，考试资料也可以带进考场，但是一定要提前熟悉，到时才能快速找到#中考 #开卷考试</strong> ｜ <code>28</code> ｜ --:-- ｜ 字幕质量:中</li><li class="lvl2">2026 中考历史道法开卷，提醒提前熟悉资料</li><li class="lvl2">2026 年中考历史与道德法治两科为开卷考试。</li><li class="lvl2">允许把考试资料带进考场。</li><li class="lvl2">关键提醒是必须提前熟悉资料，考场上才能快速定位。</li><li class="lvl2">面向中考生及家长，属应试策略类提示。</li><li class="lvl2">无字幕，未给出资料整理方法。</li><li><strong>快过年了，教你在家炸油糕，个个脆皮空心不开裂，新手一次成功#炸油糕 #抖音美食</strong> ｜ <code>22</code> ｜ --:-- ｜ 字幕质量:低</li><li class="lvl2">过年在家炸油糕的教程，主打脆皮空心不开裂（信息有限）</li><li class="lvl2">主题为家庭自制炸油糕，定位过年应景食品。</li><li class="lvl2">标题承诺的效果是「个个脆皮空心不开裂」。</li><li class="lvl2">面向新手，称「新手一次成功」。</li><li class="lvl2">仅有标题，无字幕，未披露配比、油温等关键参数。</li><li><strong>暗访神秘名店，斥巨资把智商税带回家（三） #广州车展</strong> ｜ <code>20</code> ｜ --:-- ｜ 字幕质量:低</li><li class="lvl2">暗访广州车展神秘名店，以现场体验为主（信息有限）</li><li class="lvl2">属「暗访神秘名店」系列第三集，本集关联广州车展场景。</li><li class="lvl2">标题称「斥巨资把智商税带回家」，指向高价商品的消费体验。</li><li class="lvl2">仅有标题与简介，无字幕，未披露具体店铺名称与商品品类。</li><li class="lvl2">「智商税」为作者主观评价，非可验证结论。</li><li><strong>第23集 | 济阳老城探访之旅（中），老东门 老城街。感谢@飞 提供记忆素材#济阳 #济阳老事 #济阳区</strong> ｜ <code>18</code> ｜ --:-- ｜ 字幕质量:中</li><li class="lvl2">济阳老城人文记录第23集，走访老东门与老城街旧貌</li><li class="lvl2">属「济阳老城探访之旅」系列第23集，本集为中篇。</li><li class="lvl2">本集走访地点为老东门与老城街两处。</li><li class="lvl2">素材由他人提供，简介中致谢提供记忆素材的用户。</li><li class="lvl2">带济阳、济阳老事、济阳区三个地域标签，属地方记忆类内容。</li><li class="lvl2">仅有简介可用，无字幕，具体讲述内容无法还原。</li><li><strong>人生路上，遇见善良，学会付出；遇见微笑，学会分享；遇见坎坷，学会勇敢。人生路艰难，但是如果你有笑对人生的能力，你就有享受人生的能力。心是苦的，人生便如苦海无边；心是甜的，人生处处都是曼妙风景。#关爱老人传递正能量</strong> ｜ <code>12</code> ｜ --:-- ｜ 字幕质量:中</li><li class="lvl2">人生感悟短文，讲善良、分享与勇敢面对坎坷</li><li class="lvl2">内容为情绪励志类短句，非知识或方法论。</li><li class="lvl2">核心主张：遇见善良学付出、遇见微笑学分享、遇见坎坷学勇敢。</li><li class="lvl2">用「心苦则人生如苦海，心甜则处处是风景」作比喻收尾。</li><li class="lvl2">带「关爱老人传递正能量」标签，属正能量题材。</li><li class="lvl2">无可执行信息，无字幕。</li><li><strong>画面超燃！ 米卢与和田队球员齐声呐喊助威！（拍摄：迪力穆拉提 李凌燕 编辑：阿孜古丽）#2026“同心杯”新疆足球超级联赛#疆超联赛#世界玉都·中国和田#这里是和田</strong> ｜ <code>12</code> ｜ --:-- ｜ 字幕质量:中</li><li class="lvl2">米卢现身新疆足球超级联赛，为和田队呐喊助威</li><li class="lvl2">事件为 2026「同心杯」新疆足球超级联赛（疆超联赛）。</li><li class="lvl2">前国足主帅米卢与和田队球员一同呐喊助威。</li><li class="lvl2">地点关联和田，带「世界玉都·中国和田」标签。</li><li class="lvl2">属赛事现场短视频，含拍摄与编辑署名。</li><li class="lvl2">无字幕，无战术或赛事数据分析。</li><li><strong>7591031889171844402</strong> ｜ <code>8</code> ｜ --:-- ｜ 字幕质量:低</li><li class="lvl2">简介为热门榜单聚合文本，无法判定真实主题（信息有限）</li><li class="lvl2">标题字段缺失，仅剩 item_id 占位，无有效标题信息。</li><li class="lvl2">简介以「热门：」开头，后接多条互不相关的视频标题。</li><li class="lvl2">拼接内容涉及中考开卷、体育院校招生、疆超联赛、济阳老城、车展、PS 教程等。</li><li class="lvl2">其中多条与今日其它收藏重复，说明是页面卡片文本串行错位。</li><li class="lvl2">无法从该文本判定本条视频自身的主题，不做推测。</li></ul>
+<hr>
+<h2>五、失败与降级记录</h2>
+<div class="table-wrap"><table><thead><tr><th>平台</th><th>条目</th><th>阶段</th><th>错误</th><th>时间</th></tr></thead><tbody><tr><td>bilibili</td><td>-</td><td>login</td><td>未登录（code=-101）</td><td>2026-10-18 21:31:17</td></tr></tbody></table></div>
+<blockquote><p>⚠️ <strong>本次运行为「部分成功」</strong>：存在采集或处理失败项，报告已按可用数据生成。</p></blockquote>
+<hr>
+<h2>附：运行信息</h2>
+<ul><li>报告日期：2026-10-18</li><li>本次条目数：11</li><li>知识库收录：0 篇</li><li>状态：partial</li><li>数据源文件：<code>data/raw/*-2026-10-18.json</code></li><li>流程：采集 → 字幕 → 摘要包 → 归纳 → 报告 → 知识库</li></ul>
+<hr>
+<p>_本报告由「抖音/B站 收藏情报系统」自动生成，规则与约定见 <code>情报系统/AGENT.md</code>。_</p></article>
+<div class="nav"><a class="btn" href="2026-10-17.html">下一期 2026-10-17 →</a><a class="btn" href="archive.html">全部归档</a></div>
+<div class="foot">由「收藏情报系统」自动生成 ｜ 内容来自本人在 B 站与抖音的收藏，原视频版权归原作者所有</div>
+</main>
+<script>
+(function(){
+  var KEY='intel-theme', root=document.documentElement;
+  function sys(){try{return window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}catch(e){return 'light';}}
+  function cur(){return root.getAttribute('data-theme')||sys();}
+  function paint(){var b=document.getElementById('themeBtn'); if(b){b.textContent=cur()==='dark'?'\u25D0':'\u25D1'; b.title=cur()==='dark'?'切换到浅色':'切换到深色';}}
+  try{var s=localStorage.getItem(KEY); if(s){root.setAttribute('data-theme',s);}}catch(e){}
+  window.__toggleTheme=function(){
+    var next=cur()==='dark'?'light':'dark';
+    root.setAttribute('data-theme',next);
+    try{localStorage.setItem(KEY,next);}catch(e){}
+    paint();
+  };
+  if(document.readyState!=='loading'){paint();}else{document.addEventListener('DOMContentLoaded',paint);}
+})();
+</script>
+</body>
+</html>
