@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="referrer" content="no-referrer">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<title>2026-10-29 收藏情报日报</title>
+<style>
+:root{
+  --bg:#f6f7f9; --surface:#ffffff; --surface-2:#fafbfc;
+  --text:#1a1d21; --text-2:#4b5563; --muted:#8b939e;
+  --border:#e5e7eb; --border-2:#eef0f3;
+  --accent:#2563eb; --accent-soft:#eff4ff;
+  --code-bg:#f3f4f6; --quote-bg:#f8fafc;
+  --shadow:0 1px 2px rgba(16,24,40,.04), 0 1px 3px rgba(16,24,40,.06);
+  --radius:10px;
+}
+[data-theme="dark"]{
+  --bg:#0e1013; --surface:#16181d; --surface-2:#1b1e24;
+  --text:#e6e8eb; --text-2:#b6bcc5; --muted:#7d848e;
+  --border:#272b32; --border-2:#21242a;
+  --accent:#6ea8fe; --accent-soft:#1a2433;
+  --code-bg:#1e2128; --quote-bg:#191c22;
+  --shadow:0 1px 2px rgba(0,0,0,.3);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0e1013; --surface:#16181d; --surface-2:#1b1e24;
+    --text:#e6e8eb; --text-2:#b6bcc5; --muted:#7d848e;
+    --border:#272b32; --border-2:#21242a;
+    --accent:#6ea8fe; --accent-soft:#1a2433;
+    --code-bg:#1e2128; --quote-bg:#191c22;
+    --shadow:0 1px 2px rgba(0,0,0,.3);
+  }
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--bg); color:var(--text);
+  font:15px/1.72 -apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB",
+       "Microsoft YaHei","Source Han Sans SC","Noto Sans CJK SC",sans-serif;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:var(--accent); text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:860px; margin:0 auto; padding:0 18px 56px}
+
+/* 顶栏 */
+.topbar{
+  position:sticky; top:0; z-index:20;
+  background:var(--surface);
+  background:color-mix(in srgb, var(--surface) 88%, transparent);
+  backdrop-filter:saturate(180%) blur(12px);
+  -webkit-backdrop-filter:saturate(180%) blur(12px);
+  border-bottom:1px solid var(--border);
+}
+.topbar-in{max-width:860px; margin:0 auto; padding:10px 18px; display:flex; align-items:center; gap:12px}
+.brand{display:flex; flex-direction:column; gap:1px; min-width:0; flex:1}
+.brand b{font-size:15px; font-weight:650; letter-spacing:.2px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+.brand span{font-size:11.5px; color:var(--muted); white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+.tb-right{display:flex; align-items:center; gap:6px; flex:none}
+.btn{
+  display:inline-flex; align-items:center; justify-content:center;
+  min-height:30px; padding:4px 10px; font-size:12.5px; line-height:1;
+  color:var(--text-2); background:var(--surface-2);
+  border:1px solid var(--border); border-radius:8px;
+  cursor:pointer; font-family:inherit; white-space:nowrap;
+}
+.btn:hover{color:var(--text); border-color:var(--muted)}
+.btn.icon{width:30px; padding:0; font-size:14px}
+
+/* 页面头 */
+.hero{padding:22px 0 12px}
+.hero h1{margin:0 0 6px; font-size:23px; line-height:1.35; letter-spacing:-.2px}
+.hero .meta{color:var(--muted); font-size:12.5px; display:flex; flex-wrap:wrap; gap:6px 14px}
+.chips{display:flex; flex-wrap:wrap; gap:6px; margin-top:10px}
+.chip{
+  font-size:11.5px; padding:2.5px 8px; border-radius:999px;
+  background:var(--accent-soft); color:var(--accent); border:1px solid transparent;
+}
+.chip.grey{background:var(--surface-2); color:var(--text-2); border-color:var(--border)}
+
+/* 正文卡片 */
+.card{
+  background:var(--surface); border:1px solid var(--border);
+  border-radius:var(--radius); box-shadow:var(--shadow);
+  padding:20px 22px; margin-top:14px;
+}
+.content>*:first-child{margin-top:0}
+.content>*:last-child{margin-bottom:0}
+.content h1{font-size:21px; margin:22px 0 10px; letter-spacing:-.2px}
+.content h2{
+  font-size:16.5px; margin:24px 0 10px; padding-bottom:7px;
+  border-bottom:1px solid var(--border-2); letter-spacing:-.1px;
+}
+.content h3{font-size:15px; margin:18px 0 7px; color:var(--text); font-weight:650}
+.content h4,.content h5,.content h6{font-size:14px; margin:14px 0 6px; color:var(--text-2)}
+.content p{margin:9px 0; color:var(--text-2)}
+.content strong{color:var(--text); font-weight:650}
+.content ul,.content ol{margin:8px 0; padding-left:20px}
+.content li{margin:4px 0; color:var(--text-2)}
+.content li.lvl2{list-style-type:circle; margin-left:8px}
+.content hr{border:0; border-top:1px solid var(--border); margin:20px 0}
+.content blockquote{
+  margin:12px 0; padding:10px 14px; background:var(--quote-bg);
+  border-left:3px solid var(--accent); border-radius:0 8px 8px 0; color:var(--text-2);
+}
+.content blockquote p{margin:4px 0}
+.content code{
+  font-family:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,monospace;
+  font-size:12.5px; background:var(--code-bg); padding:1.5px 5px; border-radius:5px;
+  color:var(--text); word-break:break-word;
+}
+.content pre{
+  margin:12px 0; padding:13px 15px; background:var(--code-bg);
+  border:1px solid var(--border-2); border-radius:8px; overflow-x:auto;
+}
+.content pre code{background:none; padding:0; font-size:12.5px; line-height:1.6}
+
+/* 表格 */
+.table-wrap{overflow-x:auto; margin:12px 0; -webkit-overflow-scrolling:touch}
+.content table{border-collapse:collapse; width:100%; font-size:13.5px; min-width:320px}
+.content th,.content td{
+  border:1px solid var(--border); padding:7px 10px; text-align:left; vertical-align:top;
+}
+.content th{background:var(--surface-2); font-weight:620; color:var(--text); white-space:nowrap}
+.content td{color:var(--text-2)}
+.content tbody tr:nth-child(even){background:var(--surface-2)}
+
+/* 归档列表 */
+.list{display:flex; flex-direction:column; gap:8px; margin-top:14px}
+.item{
+  display:flex; align-items:center; gap:12px; padding:11px 14px;
+  background:var(--surface); border:1px solid var(--border);
+  border-radius:var(--radius); box-shadow:var(--shadow);
+}
+.item:hover{border-color:var(--accent); text-decoration:none}
+.item .d{
+  flex:none; font-variant-numeric:tabular-nums; font-size:12.5px; color:var(--muted);
+  padding:3px 8px; background:var(--surface-2); border-radius:6px; border:1px solid var(--border-2);
+}
+.item .t{flex:1; min-width:0; font-size:14px; color:var(--text); overflow:hidden; text-overflow:ellipsis; white-space:nowrap}
+.item .n{flex:none; font-size:12px; color:var(--muted)}
+
+.nav{display:flex; gap:8px; margin-top:16px; flex-wrap:wrap}
+.nav .btn{flex:1; min-width:120px; justify-content:center; min-height:36px}
+
+.foot{margin-top:26px; padding-top:14px; border-top:1px solid var(--border); color:var(--muted); font-size:12px; line-height:1.9}
+.foot code{background:var(--code-bg); padding:1px 5px; border-radius:4px; font-size:11.5px}
+.empty{padding:40px 20px; text-align:center; color:var(--muted); font-size:13.5px}
+
+@media (max-width:560px){
+  .wrap{padding:0 13px 44px}
+  .topbar-in{padding:9px 13px}
+  .card{padding:15px 15px; border-radius:9px}
+  .hero h1{font-size:20px}
+  .content h1{font-size:19px}
+  .content h2{font-size:15.5px}
+  .item{padding:10px 12px; gap:9px}
+  .item .t{font-size:13.5px}
+}
+</style>
+</head>
+<body>
+<header class="topbar"><div class="topbar-in">
+  <div class="brand"><b>收藏情报日报</b><span>抖音 / B 站 每日收藏归纳</span></div>
+  <div class="tb-right">
+    <a class="btn" href="archive.html">归档</a>
+    <button class="btn icon" id="themeBtn" type="button" title="切换主题" aria-label="切换主题">◑</button>
+  </div>
+</div></header>
+<main class="wrap">
+<section class="hero"><h1>2026-10-29 收藏情报日报</h1><div class="meta"><span>2026 年 10 月 29 日</span></div><div class="chips"><span class="chip">8 条视频</span><span class="chip grey">状态：部分成功</span><span class="chip grey">内容创作</span></div></section><article class="card content"><h1>2026-10-29 收藏情报日报</h1>
+<blockquote><p>采集日期：<strong>2026-10-29</strong> ｜ 生成时间：2026-10-29 21:35:16<br>数据来源：本人账号的收藏夹（B 站 + 抖音），由真实浏览器会话读取</p></blockquote>
+<hr>
+<h2>一、今日概览</h2>
+<div class="table-wrap"><table><thead><tr><th>指标</th><th>数值</th></tr></thead><tbody><tr><td>本次新增视频</td><td><strong>8</strong> 条</td></tr><tr><td>平台分布</td><td>抖音 8 条</td></tr><tr><td>拿到字幕</td><td>0 / 8 条</td></tr><tr><td>归纳来源</td><td>Agent 归纳 8 条 ｜ 规则兜底 0 条</td></tr><tr><td>已进知识库</td><td>0 条</td></tr><tr><td>平均精华度</td><td>21.0</td></tr><tr><td>失败</td><td>1 项</td></tr><tr><td>降级（缺字幕）</td><td>5 条</td></tr></tbody></table></div>
+<p><strong>一句话结论</strong>：新增 8 条收藏，主题集中在「内容创作」；最值得看的是《香港联想上市，柳教父倪光南为他翻脸，谁帮他成功逆袭，0-35亿？ #联想 #柳家 #涨知识 #知识分享 #互联网 #思维》（精华度 38）。</p>
+<hr>
+<h2>二、主题分布</h2>
+<div class="table-wrap"><table><thead><tr><th>主题</th><th>条数</th><th>平均精华度</th></tr></thead><tbody><tr><td>内容创作</td><td>8</td><td>21.0</td></tr></tbody></table></div>
+<hr>
+<h2>三、精华推荐（精华度 Top 8）</h2>
+<h3>1. 香港联想上市，柳教父倪光南为他翻脸，谁帮他成功逆袭，0-35亿？ #联想 #柳家 #涨知识 #知识分享 #互联网 #思维 ⭐⭐ <code>38</code></h3>
+<ul><li><strong>平台</strong>：抖音 ｜ <strong>作者</strong>：- ｜ <strong>时长</strong>：--:--</li><li><strong>收藏</strong>：抖音收藏 ｜ <strong>字幕</strong>：desc_only（0 字）</li><li><strong>链接</strong>：<a href="https://www.douyin.com/video/7049110360397253899" target="_blank" rel="noopener noreferrer">https://www.douyin.com/video/7049110360397253899</a></li><li><strong>主旨</strong>：香港联想上市背后柳传志与倪光南决裂、主角0到35亿逆袭史（信息有限）</li><li><strong>要点</strong>：</li><li class="lvl2">视频以香港联想上市为引，讲述企业资本运作与上市进程</li><li class="lvl2">柳传志（柳教父）与倪光南曾因发展路线分歧公开决裂</li><li class="lvl2">主角从0起步逆袭，最终做到约35亿元规模（信息有限，无细节）</li></ul>
+<h3>2. “我想砍自己脸，为啥恁相信小孩！”15岁女孩被电诈14万！妈妈崩溃讲述：一晚上把家底都抄空了#电信诈骗 #都市接到办 ⭐⭐ <code>30</code></h3>
+<ul><li><strong>平台</strong>：抖音 ｜ <strong>作者</strong>：- ｜ <strong>时长</strong>：--:--</li><li><strong>收藏</strong>：抖音收藏 ｜ <strong>字幕</strong>：desc_only（0 字）</li><li><strong>链接</strong>：<a href="https://www.douyin.com/video/7657780620977884468" target="_blank" rel="noopener noreferrer">https://www.douyin.com/video/7657780620977884468</a></li><li><strong>主旨</strong>：15岁女孩被电诈14万，母亲讲述家庭一夜被掏空（信息有限）</li><li><strong>要点</strong>：</li><li class="lvl2">视频讲述一名15岁女孩遭遇电信诈骗，损失14万元</li><li class="lvl2">据母亲讲述，一夜间家庭积蓄被全部转走</li><li class="lvl2">属反电信诈骗警示类内容（据标签推断，无字幕仅标题）</li></ul>
+<h3>3. 第1集 | 河南大学生乡村医生招录185人！有编制#河南医学生就业 #河南大学生乡村医生 #卫生院 #新乡 #河南医学生考编 ⭐ <code>28</code></h3>
+<ul><li><strong>平台</strong>：抖音 ｜ <strong>作者</strong>：- ｜ <strong>时长</strong>：--:--</li><li><strong>收藏</strong>：抖音收藏 ｜ <strong>字幕</strong>：desc_only（0 字）</li><li><strong>链接</strong>：<a href="https://www.douyin.com/video/7701920416365339302" target="_blank" rel="noopener noreferrer">https://www.douyin.com/video/7701920416365339302</a></li><li><strong>主旨</strong>：河南大学生乡村医生专项招录185人，带编制（信息有限）</li><li><strong>要点</strong>：</li><li class="lvl2">河南面向大学生开展乡村医生专项招录，计划185人</li><li class="lvl2">岗位带编制，涉及卫生院等基层医疗机构</li><li class="lvl2">属就业与考编类资讯（据标签推断，无字幕仅标题）</li></ul>
+<h3>4. 增强照片光影氛围新思路，绝对有用 #抖音摄影美学大赏 #ps教程 #蓝调 ⭐ <code>22</code></h3>
+<ul><li><strong>平台</strong>：抖音 ｜ <strong>作者</strong>：- ｜ <strong>时长</strong>：--:--</li><li><strong>收藏</strong>：抖音收藏 ｜ <strong>字幕</strong>：desc_only（0 字）</li><li><strong>链接</strong>：<a href="https://www.douyin.com/video/7535812055716482340" target="_blank" rel="noopener noreferrer">https://www.douyin.com/video/7535812055716482340</a></li><li><strong>主旨</strong>：分享增强照片光影氛围的PS摄影后期新思路（信息有限）</li><li><strong>要点</strong>：</li><li class="lvl2">视频介绍增强照片光影氛围的摄影后期新思路</li><li class="lvl2">属于 PS 教程、蓝调风格与摄影美学范畴（据标签推断）</li><li class="lvl2">仅标题可见，无字幕与正文，无法获知具体操作步骤</li></ul>
+<h3>5. 爱因斯坦棺材板压不住了，中子星合并粒子速度，达到了7倍光速？ #探索宇宙 #天文 ⭐ <code>18</code></h3>
+<ul><li><strong>平台</strong>：抖音 ｜ <strong>作者</strong>：- ｜ <strong>时长</strong>：--:--</li><li><strong>收藏</strong>：抖音收藏 ｜ <strong>字幕</strong>：desc_only（0 字）</li><li><strong>链接</strong>：<a href="https://www.douyin.com/video/7161642057872788769" target="_blank" rel="noopener noreferrer">https://www.douyin.com/video/7161642057872788769</a></li><li><strong>主旨</strong>：科普中子星合并粒子速度达7倍光速的天文奇观（信息有限）</li><li><strong>要点</strong>：</li><li class="lvl2">视频探讨中子星合并事件中粒子速度可能达到7倍光速的设想</li><li class="lvl2">属于探索宇宙、天文科普类内容（据标签推断，信息有限）</li><li class="lvl2">仅标题可见，无字幕与正文，无法核实具体物理依据</li></ul>
+<h3>6. 第4集 | 二郎神：屠龙英雄传 #山海经 #西游记 #神话 ⭐ <code>12</code></h3>
+<ul><li><strong>平台</strong>：抖音 ｜ <strong>作者</strong>：- ｜ <strong>时长</strong>：--:--</li><li><strong>收藏</strong>：抖音收藏 ｜ <strong>字幕</strong>：desc_only（0 字）</li><li><strong>链接</strong>：<a href="https://www.douyin.com/video/7054137574213864743" target="_blank" rel="noopener noreferrer">https://www.douyin.com/video/7054137574213864743</a></li><li><strong>主旨</strong>：二郎神屠龙英雄传系列第4集，神话改编动画（信息有限）</li><li><strong>要点</strong>：</li><li class="lvl2">该视频为《二郎神：屠龙英雄传》系列动画的第4集</li><li class="lvl2">内容取材自山海经、西游记等神话体系（据标签推断，信息有限）</li><li class="lvl2">仅标题与标签可见，无字幕与简介正文，无法判定具体剧情</li></ul>
+<h3>7. 轮机长评估考试是怎么样的 #海员 #海员生活 #船员 #轮机长 #轮机员 ⭐ <code>12</code></h3>
+<ul><li><strong>平台</strong>：抖音 ｜ <strong>作者</strong>：- ｜ <strong>时长</strong>：--:--</li><li><strong>收藏</strong>：抖音收藏 ｜ <strong>字幕</strong>：desc_only（0 字）</li><li><strong>链接</strong>：<a href="https://www.douyin.com/video/7338211250981113097" target="_blank" rel="noopener noreferrer">https://www.douyin.com/video/7338211250981113097</a></li><li><strong>主旨</strong>：科普轮机长评估考试的流程与海员职业内容（信息有限）</li><li><strong>要点</strong>：</li><li class="lvl2">视频讲解轮机长评估考试的具体内容与形式</li><li class="lvl2">涉及海员、船员、轮机员等航海职业群体（据标签推断）</li><li class="lvl2">仅标题可见，无字幕与正文，无法获知考试细节</li></ul>
+<h3>8. 7177640567336209702 ⭐ <code>8</code></h3>
+<ul><li><strong>平台</strong>：抖音 ｜ <strong>作者</strong>：- ｜ <strong>时长</strong>：--:--</li><li><strong>收藏</strong>：抖音收藏 ｜ <strong>字幕</strong>：desc_only（0 字）</li><li><strong>链接</strong>：<a href="https://www.douyin.com/video/7177640567336209702" target="_blank" rel="noopener noreferrer">https://www.douyin.com/video/7177640567336209702</a></li><li><strong>主旨</strong>：简介为聚合污染文本，无法判定真实主题（信息有限）</li><li><strong>要点</strong>：</li><li class="lvl2">本条视频标题缺失（仅显示 item_id 占位符）</li><li class="lvl2">简介以「热门：」开头，串接了同页其它收藏的标题与标签</li><li class="lvl2">属采集侧 DOM 错位导致的聚合污染文本，无法归纳真实内容</li></ul>
+<hr>
+<h2>四、全部条目摘要</h2>
+<h3>🎵 抖音（8 条）</h3>
+<ul><li><strong>香港联想上市，柳教父倪光南为他翻脸，谁帮他成功逆袭，0-35亿？ #联想 #柳家 #涨知识 #知识分享 #互联网 #思维</strong> ｜ <code>38</code> ｜ --:-- ｜ 字幕质量:中</li><li class="lvl2">香港联想上市背后柳传志与倪光南决裂、主角0到35亿逆袭史（信息有限）</li><li class="lvl2">视频以香港联想上市为引，讲述企业资本运作与上市进程</li><li class="lvl2">柳传志（柳教父）与倪光南曾因发展路线分歧公开决裂</li><li class="lvl2">主角从0起步逆袭，最终做到约35亿元规模（信息有限，无细节）</li><li><strong>“我想砍自己脸，为啥恁相信小孩！”15岁女孩被电诈14万！妈妈崩溃讲述：一晚上把家底都抄空了#电信诈骗 #都市接到办</strong> ｜ <code>30</code> ｜ --:-- ｜ 字幕质量:中</li><li class="lvl2">15岁女孩被电诈14万，母亲讲述家庭一夜被掏空（信息有限）</li><li class="lvl2">视频讲述一名15岁女孩遭遇电信诈骗，损失14万元</li><li class="lvl2">据母亲讲述，一夜间家庭积蓄被全部转走</li><li class="lvl2">属反电信诈骗警示类内容（据标签推断，无字幕仅标题）</li><li><strong>第1集 | 河南大学生乡村医生招录185人！有编制#河南医学生就业 #河南大学生乡村医生 #卫生院 #新乡 #河南医学生考编</strong> ｜ <code>28</code> ｜ --:-- ｜ 字幕质量:中</li><li class="lvl2">河南大学生乡村医生专项招录185人，带编制（信息有限）</li><li class="lvl2">河南面向大学生开展乡村医生专项招录，计划185人</li><li class="lvl2">岗位带编制，涉及卫生院等基层医疗机构</li><li class="lvl2">属就业与考编类资讯（据标签推断，无字幕仅标题）</li><li><strong>增强照片光影氛围新思路，绝对有用 #抖音摄影美学大赏 #ps教程 #蓝调</strong> ｜ <code>22</code> ｜ --:-- ｜ 字幕质量:低</li><li class="lvl2">分享增强照片光影氛围的PS摄影后期新思路（信息有限）</li><li class="lvl2">视频介绍增强照片光影氛围的摄影后期新思路</li><li class="lvl2">属于 PS 教程、蓝调风格与摄影美学范畴（据标签推断）</li><li class="lvl2">仅标题可见，无字幕与正文，无法获知具体操作步骤</li><li><strong>爱因斯坦棺材板压不住了，中子星合并粒子速度，达到了7倍光速？ #探索宇宙 #天文</strong> ｜ <code>18</code> ｜ --:-- ｜ 字幕质量:低</li><li class="lvl2">科普中子星合并粒子速度达7倍光速的天文奇观（信息有限）</li><li class="lvl2">视频探讨中子星合并事件中粒子速度可能达到7倍光速的设想</li><li class="lvl2">属于探索宇宙、天文科普类内容（据标签推断，信息有限）</li><li class="lvl2">仅标题可见，无字幕与正文，无法核实具体物理依据</li><li><strong>第4集 | 二郎神：屠龙英雄传 #山海经 #西游记 #神话</strong> ｜ <code>12</code> ｜ --:-- ｜ 字幕质量:低</li><li class="lvl2">二郎神屠龙英雄传系列第4集，神话改编动画（信息有限）</li><li class="lvl2">该视频为《二郎神：屠龙英雄传》系列动画的第4集</li><li class="lvl2">内容取材自山海经、西游记等神话体系（据标签推断，信息有限）</li><li class="lvl2">仅标题与标签可见，无字幕与简介正文，无法判定具体剧情</li><li><strong>轮机长评估考试是怎么样的 #海员 #海员生活 #船员 #轮机长 #轮机员</strong> ｜ <code>12</code> ｜ --:-- ｜ 字幕质量:低</li><li class="lvl2">科普轮机长评估考试的流程与海员职业内容（信息有限）</li><li class="lvl2">视频讲解轮机长评估考试的具体内容与形式</li><li class="lvl2">涉及海员、船员、轮机员等航海职业群体（据标签推断）</li><li class="lvl2">仅标题可见，无字幕与正文，无法获知考试细节</li><li><strong>7177640567336209702</strong> ｜ <code>8</code> ｜ --:-- ｜ 字幕质量:低</li><li class="lvl2">简介为聚合污染文本，无法判定真实主题（信息有限）</li><li class="lvl2">本条视频标题缺失（仅显示 item_id 占位符）</li><li class="lvl2">简介以「热门：」开头，串接了同页其它收藏的标题与标签</li><li class="lvl2">属采集侧 DOM 错位导致的聚合污染文本，无法归纳真实内容</li></ul>
+<hr>
+<h2>五、失败与降级记录</h2>
+<div class="table-wrap"><table><thead><tr><th>平台</th><th>条目</th><th>阶段</th><th>错误</th><th>时间</th></tr></thead><tbody><tr><td>bilibili</td><td>-</td><td>login</td><td>未登录（code=-101）</td><td>2026-10-29 21:31:58</td></tr></tbody></table></div>
+<blockquote><p>⚠️ <strong>本次运行为「部分成功」</strong>：存在采集或处理失败项，报告已按可用数据生成。</p></blockquote>
+<hr>
+<h2>附：运行信息</h2>
+<ul><li>报告日期：2026-10-29</li><li>本次条目数：8</li><li>知识库收录：0 篇</li><li>状态：partial</li><li>数据源文件：<code>data/raw/*-2026-10-29.json</code></li><li>流程：采集 → 字幕 → 摘要包 → 归纳 → 报告 → 知识库</li></ul>
+<hr>
+<p>_本报告由「抖音/B站 收藏情报系统」自动生成，规则与约定见 <code>情报系统/AGENT.md</code>。_</p></article>
+<div class="nav"><a class="btn" href="2026-10-28.html">下一期 2026-10-28 →</a><a class="btn" href="archive.html">全部归档</a></div>
+<div class="foot">由「收藏情报系统」自动生成 ｜ 内容来自本人在 B 站与抖音的收藏，原视频版权归原作者所有</div>
+</main>
+<script>
+(function(){
+  var KEY='intel-theme', root=document.documentElement;
+  function sys(){try{return window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}catch(e){return 'light';}}
+  function cur(){return root.getAttribute('data-theme')||sys();}
+  function paint(){var b=document.getElementById('themeBtn'); if(b){b.textContent=cur()==='dark'?'\u25D0':'\u25D1'; b.title=cur()==='dark'?'切换到浅色':'切换到深色';}}
+  try{var s=localStorage.getItem(KEY); if(s){root.setAttribute('data-theme',s);}}catch(e){}
+  window.__toggleTheme=function(){
+    var next=cur()==='dark'?'light':'dark';
+    root.setAttribute('data-theme',next);
+    try{localStorage.setItem(KEY,next);}catch(e){}
+    paint();
+  };
+  if(document.readyState!=='loading'){paint();}else{document.addEventListener('DOMContentLoaded',paint);}
+})();
+</script>
+</body>
+</html>
