@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="referrer" content="no-referrer">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<title>2026-11-02 收藏情报日报</title>
+<style>
+:root{
+  --bg:#f6f7f9; --surface:#ffffff; --surface-2:#fafbfc;
+  --text:#1a1d21; --text-2:#4b5563; --muted:#8b939e;
+  --border:#e5e7eb; --border-2:#eef0f3;
+  --accent:#2563eb; --accent-soft:#eff4ff;
+  --code-bg:#f3f4f6; --quote-bg:#f8fafc;
+  --shadow:0 1px 2px rgba(16,24,40,.04), 0 1px 3px rgba(16,24,40,.06);
+  --radius:10px;
+}
+[data-theme="dark"]{
+  --bg:#0e1013; --surface:#16181d; --surface-2:#1b1e24;
+  --text:#e6e8eb; --text-2:#b6bcc5; --muted:#7d848e;
+  --border:#272b32; --border-2:#21242a;
+  --accent:#6ea8fe; --accent-soft:#1a2433;
+  --code-bg:#1e2128; --quote-bg:#191c22;
+  --shadow:0 1px 2px rgba(0,0,0,.3);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0e1013; --surface:#16181d; --surface-2:#1b1e24;
+    --text:#e6e8eb; --text-2:#b6bcc5; --muted:#7d848e;
+    --border:#272b32; --border-2:#21242a;
+    --accent:#6ea8fe; --accent-soft:#1a2433;
+    --code-bg:#1e2128; --quote-bg:#191c22;
+    --shadow:0 1px 2px rgba(0,0,0,.3);
+  }
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--bg); color:var(--text);
+  font:15px/1.72 -apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB",
+       "Microsoft YaHei","Source Han Sans SC","Noto Sans CJK SC",sans-serif;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:var(--accent); text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:860px; margin:0 auto; padding:0 18px 56px}
+
+/* 顶栏 */
+.topbar{
+  position:sticky; top:0; z-index:20;
+  background:var(--surface);
+  background:color-mix(in srgb, var(--surface) 88%, transparent);
+  backdrop-filter:saturate(180%) blur(12px);
+  -webkit-backdrop-filter:saturate(180%) blur(12px);
+  border-bottom:1px solid var(--border);
+}
+.topbar-in{max-width:860px; margin:0 auto; padding:10px 18px; display:flex; align-items:center; gap:12px}
+.brand{display:flex; flex-direction:column; gap:1px; min-width:0; flex:1}
+.brand b{font-size:15px; font-weight:650; letter-spacing:.2px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+.brand span{font-size:11.5px; color:var(--muted); white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+.tb-right{display:flex; align-items:center; gap:6px; flex:none}
+.btn{
+  display:inline-flex; align-items:center; justify-content:center;
+  min-height:30px; padding:4px 10px; font-size:12.5px; line-height:1;
+  color:var(--text-2); background:var(--surface-2);
+  border:1px solid var(--border); border-radius:8px;
+  cursor:pointer; font-family:inherit; white-space:nowrap;
+}
+.btn:hover{color:var(--text); border-color:var(--muted)}
+.btn.icon{width:30px; padding:0; font-size:14px}
+
+/* 页面头 */
+.hero{padding:22px 0 12px}
+.hero h1{margin:0 0 6px; font-size:23px; line-height:1.35; letter-spacing:-.2px}
+.hero .meta{color:var(--muted); font-size:12.5px; display:flex; flex-wrap:wrap; gap:6px 14px}
+.chips{display:flex; flex-wrap:wrap; gap:6px; margin-top:10px}
+.chip{
+  font-size:11.5px; padding:2.5px 8px; border-radius:999px;
+  background:var(--accent-soft); color:var(--accent); border:1px solid transparent;
+}
+.chip.grey{background:var(--surface-2); color:var(--text-2); border-color:var(--border)}
+
+/* 正文卡片 */
+.card{
+  background:var(--surface); border:1px solid var(--border);
+  border-radius:var(--radius); box-shadow:var(--shadow);
+  padding:20px 22px; margin-top:14px;
+}
+.content>*:first-child{margin-top:0}
+.content>*:last-child{margin-bottom:0}
+.content h1{font-size:21px; margin:22px 0 10px; letter-spacing:-.2px}
+.content h2{
+  font-size:16.5px; margin:24px 0 10px; padding-bottom:7px;
+  border-bottom:1px solid var(--border-2); letter-spacing:-.1px;
+}
+.content h3{font-size:15px; margin:18px 0 7px; color:var(--text); font-weight:650}
+.content h4,.content h5,.content h6{font-size:14px; margin:14px 0 6px; color:var(--text-2)}
+.content p{margin:9px 0; color:var(--text-2)}
+.content strong{color:var(--text); font-weight:650}
+.content ul,.content ol{margin:8px 0; padding-left:20px}
+.content li{margin:4px 0; color:var(--text-2)}
+.content li.lvl2{list-style-type:circle; margin-left:8px}
+.content hr{border:0; border-top:1px solid var(--border); margin:20px 0}
+.content blockquote{
+  margin:12px 0; padding:10px 14px; background:var(--quote-bg);
+  border-left:3px solid var(--accent); border-radius:0 8px 8px 0; color:var(--text-2);
+}
+.content blockquote p{margin:4px 0}
+.content code{
+  font-family:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,monospace;
+  font-size:12.5px; background:var(--code-bg); padding:1.5px 5px; border-radius:5px;
+  color:var(--text); word-break:break-word;
+}
+.content pre{
+  margin:12px 0; padding:13px 15px; background:var(--code-bg);
+  border:1px solid var(--border-2); border-radius:8px; overflow-x:auto;
+}
+.content pre code{background:none; padding:0; font-size:12.5px; line-height:1.6}
+
+/* 表格 */
+.table-wrap{overflow-x:auto; margin:12px 0; -webkit-overflow-scrolling:touch}
+.content table{border-collapse:collapse; width:100%; font-size:13.5px; min-width:320px}
+.content th,.content td{
+  border:1px solid var(--border); padding:7px 10px; text-align:left; vertical-align:top;
+}
+.content th{background:var(--surface-2); font-weight:620; color:var(--text); white-space:nowrap}
+.content td{color:var(--text-2)}
+.content tbody tr:nth-child(even){background:var(--surface-2)}
+
+/* 归档列表 */
+.list{display:flex; flex-direction:column; gap:8px; margin-top:14px}
+.item{
+  display:flex; align-items:center; gap:12px; padding:11px 14px;
+  background:var(--surface); border:1px solid var(--border);
+  border-radius:var(--radius); box-shadow:var(--shadow);
+}
+.item:hover{border-color:var(--accent); text-decoration:none}
+.item .d{
+  flex:none; font-variant-numeric:tabular-nums; font-size:12.5px; color:var(--muted);
+  padding:3px 8px; background:var(--surface-2); border-radius:6px; border:1px solid var(--border-2);
+}
+.item .t{flex:1; min-width:0; font-size:14px; color:var(--text); overflow:hidden; text-overflow:ellipsis; white-space:nowrap}
+.item .n{flex:none; font-size:12px; color:var(--muted)}
+
+.nav{display:flex; gap:8px; margin-top:16px; flex-wrap:wrap}
+.nav .btn{flex:1; min-width:120px; justify-content:center; min-height:36px}
+
+.foot{margin-top:26px; padding-top:14px; border-top:1px solid var(--border); color:var(--muted); font-size:12px; line-height:1.9}
+.foot code{background:var(--code-bg); padding:1px 5px; border-radius:4px; font-size:11.5px}
+.empty{padding:40px 20px; text-align:center; color:var(--muted); font-size:13.5px}
+
+@media (max-width:560px){
+  .wrap{padding:0 13px 44px}
+  .topbar-in{padding:9px 13px}
+  .card{padding:15px 15px; border-radius:9px}
+  .hero h1{font-size:20px}
+  .content h1{font-size:19px}
+  .content h2{font-size:15.5px}
+  .item{padding:10px 12px; gap:9px}
+  .item .t{font-size:13.5px}
+}
+</style>
+</head>
+<body>
+<header class="topbar"><div class="topbar-in">
+  <div class="brand"><b>收藏情报日报</b><span>抖音 / B 站 每日收藏归纳</span></div>
+  <div class="tb-right">
+    <a class="btn" href="archive.html">归档</a>
+    <button class="btn icon" id="themeBtn" type="button" title="切换主题" aria-label="切换主题">◑</button>
+  </div>
+</div></header>
+<main class="wrap">
+<section class="hero"><h1>2026-11-02 收藏情报日报</h1><div class="meta"><span>2026 年 11 月 2 日</span></div><div class="chips"><span class="chip">13 条视频</span><span class="chip grey">状态：部分成功</span><span class="chip grey">内容创作</span><span class="chip grey">AI编程</span><span class="chip grey">视频生成AI</span><span class="chip grey">效率工具</span><span class="chip grey">技术基建</span><span class="chip grey">商业化变现</span></div></section><article class="card content"><h1>2026-11-02 收藏情报日报</h1>
+<blockquote><p>采集日期：<strong>2026-11-02</strong> ｜ 生成时间：2026-11-02 21:36:44<br>数据来源：本人账号的收藏夹（B 站 + 抖音），由真实浏览器会话读取</p></blockquote>
+<hr>
+<h2>一、今日概览</h2>
+<div class="table-wrap"><table><thead><tr><th>指标</th><th>数值</th></tr></thead><tbody><tr><td>本次新增视频</td><td><strong>13</strong> 条</td></tr><tr><td>平台分布</td><td>抖音 13 条</td></tr><tr><td>拿到字幕</td><td>0 / 13 条</td></tr><tr><td>归纳来源</td><td>Agent 归纳 13 条 ｜ 规则兜底 0 条</td></tr><tr><td>已进知识库</td><td>0 条</td></tr><tr><td>平均精华度</td><td>39.7</td></tr><tr><td>失败</td><td>1 项</td></tr><tr><td>降级（缺字幕）</td><td>4 条</td></tr></tbody></table></div>
+<p><strong>一句话结论</strong>：新增 13 条收藏，主题集中在「AI-Agent」；最值得看的是《第18集 | 我如何利用AI制作横版动作游戏连招 #vibecoding #AI游戏 #seedance #vibecoding大赏 #影之刃零》（精华度 60）。</p>
+<hr>
+<h2>二、主题分布</h2>
+<div class="table-wrap"><table><thead><tr><th>主题</th><th>条数</th><th>平均精华度</th></tr></thead><tbody><tr><td>内容创作</td><td>9</td><td>31.1</td></tr><tr><td>AI编程</td><td>4</td><td>59.0</td></tr><tr><td>视频生成AI</td><td>2</td><td>59.0</td></tr><tr><td>商业化变现</td><td>1</td><td>50.0</td></tr><tr><td>技术基建</td><td>1</td><td>58.0</td></tr><tr><td>效率工具</td><td>1</td><td>60.0</td></tr></tbody></table></div>
+<hr>
+<h2>三、精华推荐（精华度 Top 12）</h2>
+<h3>1. 第18集 | 我如何利用AI制作横版动作游戏连招 #vibecoding #AI游戏 #seedance #vibecoding大赏 #影之刃零 ⭐⭐⭐ <code>60</code></h3>
+<ul><li><strong>平台</strong>：抖音 ｜ <strong>作者</strong>：- ｜ <strong>时长</strong>：--:--</li><li><strong>收藏</strong>：抖音收藏 ｜ <strong>字幕</strong>：desc_only（0 字）</li><li><strong>链接</strong>：<a href="https://www.douyin.com/video/7685102094000393491" target="_blank" rel="noopener noreferrer">https://www.douyin.com/video/7685102094000393491</a></li><li><strong>主旨</strong>：用AI+seedance制作横版动作游戏连招</li><li><strong>要点</strong>：</li><li class="lvl2">第18集：用 AI 制作横版动作游戏连招</li><li class="lvl2">结合 vibecoding 与 seedance 视频生成</li><li class="lvl2">以《影之刃零》为参考案例</li><li class="lvl2">展示 AI 辅助游戏动作/连招设计流程</li></ul>
+<h3>2. AI开发游戏的10个必装skill AI开发游戏的10个必装Skill。从引擎、关卡到角色，每个是干什么的、用在哪，都讲清楚了。先收藏 01 Game-Studios · 星标 2.7万作用：把编程助手变成完整游戏工作室，策划程序美术一条线用在哪：从立项到出包，整队AI一起干活 02 gamedev-agent-skills · 星标 1751作用：七十四个跨引擎技能，Godot、Unity、虚幻都能管用在哪：还没定引擎时，先装这一包当总入口 03 unreal-skill · 星标 1344作用：直接在编辑器里改关卡、蓝图、材质和特效用在哪：用虚幻做项目，让AI动手改场景 04 unity-skills · 星标 1113作用：新建项目、2D、物理、UI、联机这些活都能接用在哪：用Unity做游戏，从搭工程到调资源 05 scenario-game-assets · 星标 1069作用：按游戏规格出原画、图标和能进引擎的资产用在哪：批量做角色立绘、道具图标、场景概念图 06 novel-to-game · 星标 900作用：把小说拆成可玩的游戏，世界观关卡演出一起铺用在哪：有现成故事要改编成可玩原型 07 GodotPrompter · 星标 853作用：Godot专用，脚本、物理、UI、导出五十多项用在哪：用Godot做小游戏，从搭场景到出包 08 unreal-engine-skills · 星标 401作用：虚幻C++玩法、网络同步、技能系统和渲染用在哪：写虚幻底层玩法、联机和战斗系统时装 09 game-ui-design-workflow · 星标 325作用：游戏界面从原型、风格到切图拆组件一条流程用在哪：要做背包、主界面、血条这些游戏UI 10 blender-skills · 星标 303作用：建模、绑定、贴图，再导出到各引擎用在哪：角色场景道具进引擎之前，先用它过一遍 十个讲完了，挑你用得上的先装。 #Skill #游戏开发 #ai开发 #vibecoding #游戏推荐 ⭐⭐⭐ <code>60</code></h3>
+<ul><li><strong>平台</strong>：抖音 ｜ <strong>作者</strong>：- ｜ <strong>时长</strong>：--:--</li><li><strong>收藏</strong>：抖音收藏 ｜ <strong>字幕</strong>：desc_only（0 字）</li><li><strong>链接</strong>：<a href="https://www.douyin.com/video/7698725503469356890" target="_blank" rel="noopener noreferrer">https://www.douyin.com/video/7698725503469356890</a></li><li><strong>主旨</strong>：AI开发游戏必装的10个Skill清单</li><li><strong>要点</strong>：</li><li class="lvl2">盘点 AI 开发游戏的 10 个必装 Skill</li><li class="lvl2">Game-Studios（2.7万星标）把助手变游戏工作室</li><li class="lvl2">gamedev-agent-skills（74个跨引擎技能）作总入口</li><li class="lvl2">覆盖 Godot/Unity/虚幻/blender 等引擎与资产流程</li><li><strong>可执行</strong>：</li><li class="lvl2">[ ] 按清单优先装 Game-Studios 等 10 个游戏开发 skill</li></ul>
+<h3>3. 这效果直接能商用了吧 视频skill可以丢掉了，全代码生成视频，看完我已经没话说了，太顶了 #代码生成视频 #vibecoding #品宣视频 #opus5.5 #抖音前沿科技首发计划 ⭐⭐⭐ <code>58</code></h3>
+<ul><li><strong>平台</strong>：抖音 ｜ <strong>作者</strong>：- ｜ <strong>时长</strong>：--:--</li><li><strong>收藏</strong>：抖音收藏 ｜ <strong>字幕</strong>：desc_only（0 字）</li><li><strong>链接</strong>：<a href="https://www.douyin.com/video/7695778884416154729" target="_blank" rel="noopener noreferrer">https://www.douyin.com/video/7695778884416154729</a></li><li><strong>主旨</strong>：全代码生成视频，可替代视频skill</li><li><strong>要点</strong>：</li><li class="lvl2">宣称「全代码生成视频」，效果可直接商用</li><li class="lvl2">用 opus5.5 实现，或可替代视频 skill</li><li class="lvl2">属 vibecoding / 品宣视频方向</li><li class="lvl2">抖音前沿科技首发计划内容</li></ul>
+<h3>4. 第76集 | Vibe知识大赏｜别光追大模型，这12个专精小模型也许更有用 #小模型 #ai算力 #ai科普 #科技数码 #本地部署 #vibe知识大赏 ⭐⭐⭐ <code>58</code></h3>
+<ul><li><strong>平台</strong>：抖音 ｜ <strong>作者</strong>：- ｜ <strong>时长</strong>：--:--</li><li><strong>收藏</strong>：抖音收藏 ｜ <strong>字幕</strong>：desc_only（0 字）</li><li><strong>链接</strong>：<a href="https://www.douyin.com/video/7698296085130808612" target="_blank" rel="noopener noreferrer">https://www.douyin.com/video/7698296085130808612</a></li><li><strong>主旨</strong>：盘点12个专精小模型，强调本地部署</li><li><strong>要点</strong>：</li><li class="lvl2">Vibe知识大赏第76集：12 个专精小模型盘点</li><li class="lvl2">主张「别光追大模型，专精小模型更有用」</li><li class="lvl2">涉及 AI 算力、AI 科普与本地部署</li><li class="lvl2">适合本地轻量模型选型参考</li></ul>
+<h3>5. 第32集 | 用AI把商单变成吸引人的故事 今天分享一个压箱底的秘籍如果你也在接商单怎么用AI来改变故事的质感呢？ #Flovaai #Flovaai教程 #Flova15 #ai新星计划 #抖音前沿科技首发计划 ⭐⭐ <code>50</code></h3>
+<ul><li><strong>平台</strong>：抖音 ｜ <strong>作者</strong>：- ｜ <strong>时长</strong>：--:--</li><li><strong>收藏</strong>：抖音收藏 ｜ <strong>字幕</strong>：desc_only（0 字）</li><li><strong>链接</strong>：<a href="https://www.douyin.com/video/7702791472365473087" target="_blank" rel="noopener noreferrer">https://www.douyin.com/video/7702791472365473087</a></li><li><strong>主旨</strong>：用AI(Flovaai)把商单改成吸引人的故事</li><li><strong>要点</strong>：</li><li class="lvl2">第32集：用 AI 把商单改成吸引人的故事</li><li class="lvl2">工具 Flovaai / Flova15，提升商单故事质感</li><li class="lvl2">面向接商单的创作者</li></ul>
+<h3>6. 福州闽剧院/女加冠 扮演者：杨佳敏一招一式、一颦一笑在每个心中都有独特的回忆#论惊艳还得是戏曲装扮 #国粹的视觉震撼 ⭐⭐ <code>42</code></h3>
+<ul><li><strong>平台</strong>：抖音 ｜ <strong>作者</strong>：- ｜ <strong>时长</strong>：--:--</li><li><strong>收藏</strong>：抖音收藏 ｜ <strong>字幕</strong>：desc_only（0 字）</li><li><strong>链接</strong>：<a href="https://www.douyin.com/video/7227478612696386816" target="_blank" rel="noopener noreferrer">https://www.douyin.com/video/7227478612696386816</a></li><li><strong>主旨</strong>：福州闽剧院《女加冠》戏曲表演，视觉震撼</li><li><strong>要点</strong>：</li><li class="lvl2">福州闽剧院《女加冠》，扮演者杨佳敏</li><li class="lvl2">一招一式、一颦一笑展现戏曲功底</li><li class="lvl2">主打国粹视觉震撼与戏曲装扮之美</li></ul>
+<h3>7. 到真“桃花源”了！近200位npc带游客深度体验田园生活，“桃花小仙女”甜度爆表#桃花源#常德桃花源 ⭐⭐ <code>42</code></h3>
+<ul><li><strong>平台</strong>：抖音 ｜ <strong>作者</strong>：- ｜ <strong>时长</strong>：--:--</li><li><strong>收藏</strong>：抖音收藏 ｜ <strong>字幕</strong>：desc_only（0 字）</li><li><strong>链接</strong>：<a href="https://www.douyin.com/video/7622202508048609454" target="_blank" rel="noopener noreferrer">https://www.douyin.com/video/7622202508048609454</a></li><li><strong>主旨</strong>：常德桃花源近200位NPC带游客体验田园生活</li><li><strong>要点</strong>：</li><li class="lvl2">常德桃花源景区，近 200 位 NPC 带游客深度体验</li><li class="lvl2">还原田园生活，主打沉浸式文旅</li><li class="lvl2">「桃花小仙女」角色甜度爆表，适合打卡</li></ul>
+<h3>8. 盈亏问题一直都令孩子和家长都头痛#数学思维 #知识分享 #小学数学 #家长收藏孩子受益 #每天学习一点点 ⭐⭐ <code>40</code></h3>
+<ul><li><strong>平台</strong>：抖音 ｜ <strong>作者</strong>：- ｜ <strong>时长</strong>：--:--</li><li><strong>收藏</strong>：抖音收藏 ｜ <strong>字幕</strong>：desc_only（0 字）</li><li><strong>链接</strong>：<a href="https://www.douyin.com/video/7156438449023700260" target="_blank" rel="noopener noreferrer">https://www.douyin.com/video/7156438449023700260</a></li><li><strong>主旨</strong>：小学数学盈亏问题讲解，面向孩子与家长</li><li><strong>要点</strong>：</li><li class="lvl2">讲解小学数学「盈亏问题」</li><li class="lvl2">面向孩子与家长，属数学思维/知识分享内容</li><li class="lvl2">标签含家长收藏孩子受益、每天学习一点点</li></ul>
+<h3>9. 巧克力试吃！这玩意怎么啥都能包！以后我不买房子了，住巧克力里 #巧克力 #巧兮兮巧克力 #迪拜巧克力 #巧克力豆腐 #零食推荐 ⭐⭐ <code>35</code></h3>
+<ul><li><strong>平台</strong>：抖音 ｜ <strong>作者</strong>：- ｜ <strong>时长</strong>：--:--</li><li><strong>收藏</strong>：抖音收藏 ｜ <strong>字幕</strong>：desc_only（0 字）</li><li><strong>链接</strong>：<a href="https://www.douyin.com/video/7418466282699279626" target="_blank" rel="noopener noreferrer">https://www.douyin.com/video/7418466282699279626</a></li><li><strong>主旨</strong>：巧克力试吃，涵盖多品类零食推荐</li><li><strong>要点</strong>：</li><li class="lvl2">巧克力试吃视频，主打「啥都能包」的趣味</li><li class="lvl2">涵盖迪拜巧克力、巧克力豆腐等多种品类</li><li class="lvl2">属零食推荐/美食类内容</li></ul>
+<h3>10. UG编程12.0教程入门，进入NX12的世界～#ug编程 #cnc编程 ⭐ <code>25</code></h3>
+<ul><li><strong>平台</strong>：抖音 ｜ <strong>作者</strong>：- ｜ <strong>时长</strong>：--:--</li><li><strong>收藏</strong>：抖音收藏 ｜ <strong>字幕</strong>：desc_only（0 字）</li><li><strong>链接</strong>：<a href="https://www.douyin.com/video/6903438388720880899" target="_blank" rel="noopener noreferrer">https://www.douyin.com/video/6903438388720880899</a></li><li><strong>主旨</strong>：UG/NX12 CAD-CAM 编程入门教程（信息有限）</li><li><strong>要点</strong>：</li><li class="lvl2">UG 编程 12.0 教程入门，进入 NX12 软件环境</li><li class="lvl2">面向 CNC 编程初学者</li><li class="lvl2">以 NX12 为主线讲解基础操作</li></ul>
+<h3>11. 第5集 | 有关瓦的aimlab设置教学 ⭐ <code>22</code></h3>
+<ul><li><strong>平台</strong>：抖音 ｜ <strong>作者</strong>：- ｜ <strong>时长</strong>：--:--</li><li><strong>收藏</strong>：抖音收藏 ｜ <strong>字幕</strong>：desc_only（0 字）</li><li><strong>链接</strong>：<a href="https://www.douyin.com/video/7220250114047151418" target="_blank" rel="noopener noreferrer">https://www.douyin.com/video/7220250114047151418</a></li><li><strong>主旨</strong>：第5集 Valorant aimlab 瞄准训练设置教学（信息有限）</li><li><strong>要点</strong>：</li><li class="lvl2">第5集，内容为 aimlab（瞄准训练软件）设置教学</li><li class="lvl2">面向 FPS 玩家提升瞄准能力</li><li class="lvl2">属系列教程中的一集</li></ul>
+<h3>12. #拍摄现场 #街头表演 #才艺表演 ⭐ <code>12</code></h3>
+<ul><li><strong>平台</strong>：抖音 ｜ <strong>作者</strong>：- ｜ <strong>时长</strong>：--:--</li><li><strong>收藏</strong>：抖音收藏 ｜ <strong>字幕</strong>：desc_only（0 字）</li><li><strong>链接</strong>：<a href="https://www.douyin.com/video/7565164641484475663" target="_blank" rel="noopener noreferrer">https://www.douyin.com/video/7565164641484475663</a></li><li><strong>主旨</strong>：街头才艺表演记录（信息有限）</li><li><strong>要点</strong>：</li><li class="lvl2">标签为拍摄现场、街头表演、才艺表演</li><li class="lvl2">无具体剧情或人物信息</li><li class="lvl2">信息有限，仅能从标签判断主题</li></ul>
+<hr>
+<h2>四、全部条目摘要</h2>
+<h3>🎵 抖音（13 条）</h3>
+<ul><li><strong>第18集 | 我如何利用AI制作横版动作游戏连招 #vibecoding #AI游戏 #seedance #vibecoding大赏 #影之刃零</strong> ｜ <code>60</code> ｜ --:-- ｜ 字幕质量:中</li><li class="lvl2">用AI+seedance制作横版动作游戏连招</li><li class="lvl2">第18集：用 AI 制作横版动作游戏连招</li><li class="lvl2">结合 vibecoding 与 seedance 视频生成</li><li class="lvl2">以《影之刃零》为参考案例</li><li class="lvl2">展示 AI 辅助游戏动作/连招设计流程</li><li><strong>AI开发游戏的10个必装skill AI开发游戏的10个必装Skill。从引擎、关卡到角色，每个是干什么的、用在哪，都讲清楚了。先收藏 01 Game-Studios · 星标 2.7万作用：把编程助手变成完整游戏工作室，策划程序美术一条线用在哪：从立项到出包，整队AI一起干活 02 gamedev-agent-skills · 星标 1751作用：七十四个跨引擎技能，Godot、Unity、虚幻都能管用在哪：还没定引擎时，先装这一包当总入口 03 unreal-skill · 星标 1344作用：直接在编辑器里改关卡、蓝图、材质和特效用在哪：用虚幻做项目，让AI动手改场景 04 unity-skills · 星标 1113作用：新建项目、2D、物理、UI、联机这些活都能接用在哪：用Unity做游戏，从搭工程到调资源 05 scenario-game-assets · 星标 1069作用：按游戏规格出原画、图标和能进引擎的资产用在哪：批量做角色立绘、道具图标、场景概念图 06 novel-to-game · 星标 900作用：把小说拆成可玩的游戏，世界观关卡演出一起铺用在哪：有现成故事要改编成可玩原型 07 GodotPrompter · 星标 853作用：Godot专用，脚本、物理、UI、导出五十多项用在哪：用Godot做小游戏，从搭场景到出包 08 unreal-engine-skills · 星标 401作用：虚幻C++玩法、网络同步、技能系统和渲染用在哪：写虚幻底层玩法、联机和战斗系统时装 09 game-ui-design-workflow · 星标 325作用：游戏界面从原型、风格到切图拆组件一条流程用在哪：要做背包、主界面、血条这些游戏UI 10 blender-skills · 星标 303作用：建模、绑定、贴图，再导出到各引擎用在哪：角色场景道具进引擎之前，先用它过一遍 十个讲完了，挑你用得上的先装。 #Skill #游戏开发 #ai开发 #vibecoding #游戏推荐</strong> ｜ <code>60</code> ｜ --:-- ｜ 字幕质量:中</li><li class="lvl2">AI开发游戏必装的10个Skill清单</li><li class="lvl2">盘点 AI 开发游戏的 10 个必装 Skill</li><li class="lvl2">Game-Studios（2.7万星标）把助手变游戏工作室</li><li class="lvl2">gamedev-agent-skills（74个跨引擎技能）作总入口</li><li class="lvl2">覆盖 Godot/Unity/虚幻/blender 等引擎与资产流程</li><li><strong>这效果直接能商用了吧 视频skill可以丢掉了，全代码生成视频，看完我已经没话说了，太顶了 #代码生成视频 #vibecoding #品宣视频 #opus5.5 #抖音前沿科技首发计划</strong> ｜ <code>58</code> ｜ --:-- ｜ 字幕质量:中</li><li class="lvl2">全代码生成视频，可替代视频skill</li><li class="lvl2">宣称「全代码生成视频」，效果可直接商用</li><li class="lvl2">用 opus5.5 实现，或可替代视频 skill</li><li class="lvl2">属 vibecoding / 品宣视频方向</li><li class="lvl2">抖音前沿科技首发计划内容</li><li><strong>第76集 | Vibe知识大赏｜别光追大模型，这12个专精小模型也许更有用 #小模型 #ai算力 #ai科普 #科技数码 #本地部署 #vibe知识大赏</strong> ｜ <code>58</code> ｜ --:-- ｜ 字幕质量:中</li><li class="lvl2">盘点12个专精小模型，强调本地部署</li><li class="lvl2">Vibe知识大赏第76集：12 个专精小模型盘点</li><li class="lvl2">主张「别光追大模型，专精小模型更有用」</li><li class="lvl2">涉及 AI 算力、AI 科普与本地部署</li><li class="lvl2">适合本地轻量模型选型参考</li><li><strong>第32集 | 用AI把商单变成吸引人的故事 今天分享一个压箱底的秘籍如果你也在接商单怎么用AI来改变故事的质感呢？ #Flovaai #Flovaai教程 #Flova15 #ai新星计划 #抖音前沿科技首发计划</strong> ｜ <code>50</code> ｜ --:-- ｜ 字幕质量:中</li><li class="lvl2">用AI(Flovaai)把商单改成吸引人的故事</li><li class="lvl2">第32集：用 AI 把商单改成吸引人的故事</li><li class="lvl2">工具 Flovaai / Flova15，提升商单故事质感</li><li class="lvl2">面向接商单的创作者</li><li><strong>福州闽剧院/女加冠 扮演者：杨佳敏一招一式、一颦一笑在每个心中都有独特的回忆#论惊艳还得是戏曲装扮 #国粹的视觉震撼</strong> ｜ <code>42</code> ｜ --:-- ｜ 字幕质量:中</li><li class="lvl2">福州闽剧院《女加冠》戏曲表演，视觉震撼</li><li class="lvl2">福州闽剧院《女加冠》，扮演者杨佳敏</li><li class="lvl2">一招一式、一颦一笑展现戏曲功底</li><li class="lvl2">主打国粹视觉震撼与戏曲装扮之美</li><li><strong>到真“桃花源”了！近200位npc带游客深度体验田园生活，“桃花小仙女”甜度爆表#桃花源#常德桃花源</strong> ｜ <code>42</code> ｜ --:-- ｜ 字幕质量:中</li><li class="lvl2">常德桃花源近200位NPC带游客体验田园生活</li><li class="lvl2">常德桃花源景区，近 200 位 NPC 带游客深度体验</li><li class="lvl2">还原田园生活，主打沉浸式文旅</li><li class="lvl2">「桃花小仙女」角色甜度爆表，适合打卡</li><li><strong>盈亏问题一直都令孩子和家长都头痛#数学思维 #知识分享 #小学数学 #家长收藏孩子受益 #每天学习一点点</strong> ｜ <code>40</code> ｜ --:-- ｜ 字幕质量:中</li><li class="lvl2">小学数学盈亏问题讲解，面向孩子与家长</li><li class="lvl2">讲解小学数学「盈亏问题」</li><li class="lvl2">面向孩子与家长，属数学思维/知识分享内容</li><li class="lvl2">标签含家长收藏孩子受益、每天学习一点点</li><li><strong>巧克力试吃！这玩意怎么啥都能包！以后我不买房子了，住巧克力里 #巧克力 #巧兮兮巧克力 #迪拜巧克力 #巧克力豆腐 #零食推荐</strong> ｜ <code>35</code> ｜ --:-- ｜ 字幕质量:中</li><li class="lvl2">巧克力试吃，涵盖多品类零食推荐</li><li class="lvl2">巧克力试吃视频，主打「啥都能包」的趣味</li><li class="lvl2">涵盖迪拜巧克力、巧克力豆腐等多种品类</li><li class="lvl2">属零食推荐/美食类内容</li><li><strong>UG编程12.0教程入门，进入NX12的世界～#ug编程 #cnc编程</strong> ｜ <code>25</code> ｜ --:-- ｜ 字幕质量:低</li><li class="lvl2">UG/NX12 CAD-CAM 编程入门教程（信息有限）</li><li class="lvl2">UG 编程 12.0 教程入门，进入 NX12 软件环境</li><li class="lvl2">面向 CNC 编程初学者</li><li class="lvl2">以 NX12 为主线讲解基础操作</li><li><strong>第5集 | 有关瓦的aimlab设置教学</strong> ｜ <code>22</code> ｜ --:-- ｜ 字幕质量:低</li><li class="lvl2">第5集 Valorant aimlab 瞄准训练设置教学（信息有限）</li><li class="lvl2">第5集，内容为 aimlab（瞄准训练软件）设置教学</li><li class="lvl2">面向 FPS 玩家提升瞄准能力</li><li class="lvl2">属系列教程中的一集</li><li><strong>#拍摄现场 #街头表演 #才艺表演</strong> ｜ <code>12</code> ｜ --:-- ｜ 字幕质量:低</li><li class="lvl2">街头才艺表演记录（信息有限）</li><li class="lvl2">标签为拍摄现场、街头表演、才艺表演</li><li class="lvl2">无具体剧情或人物信息</li><li class="lvl2">信息有限，仅能从标签判断主题</li><li><strong>第50集 | 日语N3词汇每日一练day50</strong> ｜ <code>12</code> ｜ --:-- ｜ 字幕质量:低</li><li class="lvl2">日语N3词汇每日一练day50打卡（信息有限）</li><li class="lvl2">日语 N3 词汇每日一练第 50 天</li><li class="lvl2">属语言学习打卡内容</li><li class="lvl2">信息有限，仅有标题</li></ul>
+<hr>
+<h2>五、失败与降级记录</h2>
+<div class="table-wrap"><table><thead><tr><th>平台</th><th>条目</th><th>阶段</th><th>错误</th><th>时间</th></tr></thead><tbody><tr><td>bilibili</td><td>-</td><td>login</td><td>未登录（code=-101）</td><td>2026-11-02 21:31:53</td></tr></tbody></table></div>
+<blockquote><p>⚠️ <strong>本次运行为「部分成功」</strong>：存在采集或处理失败项，报告已按可用数据生成。</p></blockquote>
+<hr>
+<h2>附：运行信息</h2>
+<ul><li>报告日期：2026-11-02</li><li>本次条目数：13</li><li>知识库收录：0 篇</li><li>状态：partial</li><li>数据源文件：<code>data/raw/*-2026-11-02.json</code></li><li>流程：采集 → 字幕 → 摘要包 → 归纳 → 报告 → 知识库</li></ul>
+<hr>
+<p>_本报告由「抖音/B站 收藏情报系统」自动生成，规则与约定见 <code>情报系统/AGENT.md</code>。_</p></article>
+<div class="nav"><a class="btn" href="2026-11-01.html">下一期 2026-11-01 →</a><a class="btn" href="archive.html">全部归档</a></div>
+<div class="foot">由「收藏情报系统」自动生成 ｜ 内容来自本人在 B 站与抖音的收藏，原视频版权归原作者所有</div>
+</main>
+<script>
+(function(){
+  var KEY='intel-theme', root=document.documentElement;
+  function sys(){try{return window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}catch(e){return 'light';}}
+  function cur(){return root.getAttribute('data-theme')||sys();}
+  function paint(){var b=document.getElementById('themeBtn'); if(b){b.textContent=cur()==='dark'?'\u25D0':'\u25D1'; b.title=cur()==='dark'?'切换到浅色':'切换到深色';}}
+  try{var s=localStorage.getItem(KEY); if(s){root.setAttribute('data-theme',s);}}catch(e){}
+  window.__toggleTheme=function(){
+    var next=cur()==='dark'?'light':'dark';
+    root.setAttribute('data-theme',next);
+    try{localStorage.setItem(KEY,next);}catch(e){}
+    paint();
+  };
+  if(document.readyState!=='loading'){paint();}else{document.addEventListener('DOMContentLoaded',paint);}
+})();
+</script>
+</body>
+</html>
