@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="referrer" content="no-referrer">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<title>2026-11-08 收藏情报日报</title>
+<style>
+:root{
+  --bg:#f6f7f9; --surface:#ffffff; --surface-2:#fafbfc;
+  --text:#1a1d21; --text-2:#4b5563; --muted:#8b939e;
+  --border:#e5e7eb; --border-2:#eef0f3;
+  --accent:#2563eb; --accent-soft:#eff4ff;
+  --code-bg:#f3f4f6; --quote-bg:#f8fafc;
+  --shadow:0 1px 2px rgba(16,24,40,.04), 0 1px 3px rgba(16,24,40,.06);
+  --radius:10px;
+}
+[data-theme="dark"]{
+  --bg:#0e1013; --surface:#16181d; --surface-2:#1b1e24;
+  --text:#e6e8eb; --text-2:#b6bcc5; --muted:#7d848e;
+  --border:#272b32; --border-2:#21242a;
+  --accent:#6ea8fe; --accent-soft:#1a2433;
+  --code-bg:#1e2128; --quote-bg:#191c22;
+  --shadow:0 1px 2px rgba(0,0,0,.3);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0e1013; --surface:#16181d; --surface-2:#1b1e24;
+    --text:#e6e8eb; --text-2:#b6bcc5; --muted:#7d848e;
+    --border:#272b32; --border-2:#21242a;
+    --accent:#6ea8fe; --accent-soft:#1a2433;
+    --code-bg:#1e2128; --quote-bg:#191c22;
+    --shadow:0 1px 2px rgba(0,0,0,.3);
+  }
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--bg); color:var(--text);
+  font:15px/1.72 -apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB",
+       "Microsoft YaHei","Source Han Sans SC","Noto Sans CJK SC",sans-serif;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:var(--accent); text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:860px; margin:0 auto; padding:0 18px 56px}
+
+/* 顶栏 */
+.topbar{
+  position:sticky; top:0; z-index:20;
+  background:var(--surface);
+  background:color-mix(in srgb, var(--surface) 88%, transparent);
+  backdrop-filter:saturate(180%) blur(12px);
+  -webkit-backdrop-filter:saturate(180%) blur(12px);
+  border-bottom:1px solid var(--border);
+}
+.topbar-in{max-width:860px; margin:0 auto; padding:10px 18px; display:flex; align-items:center; gap:12px}
+.brand{display:flex; flex-direction:column; gap:1px; min-width:0; flex:1}
+.brand b{font-size:15px; font-weight:650; letter-spacing:.2px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+.brand span{font-size:11.5px; color:var(--muted); white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+.tb-right{display:flex; align-items:center; gap:6px; flex:none}
+.btn{
+  display:inline-flex; align-items:center; justify-content:center;
+  min-height:30px; padding:4px 10px; font-size:12.5px; line-height:1;
+  color:var(--text-2); background:var(--surface-2);
+  border:1px solid var(--border); border-radius:8px;
+  cursor:pointer; font-family:inherit; white-space:nowrap;
+}
+.btn:hover{color:var(--text); border-color:var(--muted)}
+.btn.icon{width:30px; padding:0; font-size:14px}
+
+/* 页面头 */
+.hero{padding:22px 0 12px}
+.hero h1{margin:0 0 6px; font-size:23px; line-height:1.35; letter-spacing:-.2px}
+.hero .meta{color:var(--muted); font-size:12.5px; display:flex; flex-wrap:wrap; gap:6px 14px}
+.chips{display:flex; flex-wrap:wrap; gap:6px; margin-top:10px}
+.chip{
+  font-size:11.5px; padding:2.5px 8px; border-radius:999px;
+  background:var(--accent-soft); color:var(--accent); border:1px solid transparent;
+}
+.chip.grey{background:var(--surface-2); color:var(--text-2); border-color:var(--border)}
+
+/* 正文卡片 */
+.card{
+  background:var(--surface); border:1px solid var(--border);
+  border-radius:var(--radius); box-shadow:var(--shadow);
+  padding:20px 22px; margin-top:14px;
+}
+.content>*:first-child{margin-top:0}
+.content>*:last-child{margin-bottom:0}
+.content h1{font-size:21px; margin:22px 0 10px; letter-spacing:-.2px}
+.content h2{
+  font-size:16.5px; margin:24px 0 10px; padding-bottom:7px;
+  border-bottom:1px solid var(--border-2); letter-spacing:-.1px;
+}
+.content h3{font-size:15px; margin:18px 0 7px; color:var(--text); font-weight:650}
+.content h4,.content h5,.content h6{font-size:14px; margin:14px 0 6px; color:var(--text-2)}
+.content p{margin:9px 0; color:var(--text-2)}
+.content strong{color:var(--text); font-weight:650}
+.content ul,.content ol{margin:8px 0; padding-left:20px}
+.content li{margin:4px 0; color:var(--text-2)}
+.content li.lvl2{list-style-type:circle; margin-left:8px}
+.content hr{border:0; border-top:1px solid var(--border); margin:20px 0}
+.content blockquote{
+  margin:12px 0; padding:10px 14px; background:var(--quote-bg);
+  border-left:3px solid var(--accent); border-radius:0 8px 8px 0; color:var(--text-2);
+}
+.content blockquote p{margin:4px 0}
+.content code{
+  font-family:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,monospace;
+  font-size:12.5px; background:var(--code-bg); padding:1.5px 5px; border-radius:5px;
+  color:var(--text); word-break:break-word;
+}
+.content pre{
+  margin:12px 0; padding:13px 15px; background:var(--code-bg);
+  border:1px solid var(--border-2); border-radius:8px; overflow-x:auto;
+}
+.content pre code{background:none; padding:0; font-size:12.5px; line-height:1.6}
+
+/* 表格 */
+.table-wrap{overflow-x:auto; margin:12px 0; -webkit-overflow-scrolling:touch}
+.content table{border-collapse:collapse; width:100%; font-size:13.5px; min-width:320px}
+.content th,.content td{
+  border:1px solid var(--border); padding:7px 10px; text-align:left; vertical-align:top;
+}
+.content th{background:var(--surface-2); font-weight:620; color:var(--text); white-space:nowrap}
+.content td{color:var(--text-2)}
+.content tbody tr:nth-child(even){background:var(--surface-2)}
+
+/* 归档列表 */
+.list{display:flex; flex-direction:column; gap:8px; margin-top:14px}
+.item{
+  display:flex; align-items:center; gap:12px; padding:11px 14px;
+  background:var(--surface); border:1px solid var(--border);
+  border-radius:var(--radius); box-shadow:var(--shadow);
+}
+.item:hover{border-color:var(--accent); text-decoration:none}
+.item .d{
+  flex:none; font-variant-numeric:tabular-nums; font-size:12.5px; color:var(--muted);
+  padding:3px 8px; background:var(--surface-2); border-radius:6px; border:1px solid var(--border-2);
+}
+.item .t{flex:1; min-width:0; font-size:14px; color:var(--text); overflow:hidden; text-overflow:ellipsis; white-space:nowrap}
+.item .n{flex:none; font-size:12px; color:var(--muted)}
+
+.nav{display:flex; gap:8px; margin-top:16px; flex-wrap:wrap}
+.nav .btn{flex:1; min-width:120px; justify-content:center; min-height:36px}
+
+.foot{margin-top:26px; padding-top:14px; border-top:1px solid var(--border); color:var(--muted); font-size:12px; line-height:1.9}
+.foot code{background:var(--code-bg); padding:1px 5px; border-radius:4px; font-size:11.5px}
+.empty{padding:40px 20px; text-align:center; color:var(--muted); font-size:13.5px}
+
+@media (max-width:560px){
+  .wrap{padding:0 13px 44px}
+  .topbar-in{padding:9px 13px}
+  .card{padding:15px 15px; border-radius:9px}
+  .hero h1{font-size:20px}
+  .content h1{font-size:19px}
+  .content h2{font-size:15.5px}
+  .item{padding:10px 12px; gap:9px}
+  .item .t{font-size:13.5px}
+}
+</style>
+</head>
+<body>
+<header class="topbar"><div class="topbar-in">
+  <div class="brand"><b>收藏情报日报</b><span>抖音 / B 站 每日收藏归纳</span></div>
+  <div class="tb-right">
+    <a class="btn" href="archive.html">归档</a>
+    <button class="btn icon" id="themeBtn" type="button" title="切换主题" aria-label="切换主题">◑</button>
+  </div>
+</div></header>
+<main class="wrap">
+<section class="hero"><h1>2026-11-08 收藏情报日报</h1><div class="meta"><span>2026 年 11 月 8 日</span></div><div class="chips"><span class="chip">10 条视频</span><span class="chip grey">状态：部分成功</span><span class="chip grey">内容创作</span><span class="chip grey">AI-Agent</span><span class="chip grey">AI编程</span></div></section><article class="card content"><h1>2026-11-08 收藏情报日报</h1>
+<blockquote><p>采集日期：<strong>2026-11-08</strong> ｜ 生成时间：2026-11-08 21:35:34<br>数据来源：本人账号的收藏夹（B 站 + 抖音），由真实浏览器会话读取</p></blockquote>
+<hr>
+<h2>一、今日概览</h2>
+<div class="table-wrap"><table><thead><tr><th>指标</th><th>数值</th></tr></thead><tbody><tr><td>本次新增视频</td><td><strong>10</strong> 条</td></tr><tr><td>平台分布</td><td>抖音 10 条</td></tr><tr><td>拿到字幕</td><td>0 / 10 条</td></tr><tr><td>归纳来源</td><td>Agent 归纳 10 条 ｜ 规则兜底 0 条</td></tr><tr><td>已进知识库</td><td>0 条</td></tr><tr><td>平均精华度</td><td>42.3</td></tr><tr><td>失败</td><td>1 项</td></tr><tr><td>降级（缺字幕）</td><td>1 条</td></tr></tbody></table></div>
+<p><strong>一句话结论</strong>：新增 10 条收藏，主题集中在「AI-Agent」；最值得看的是《第34集 | 锐评！DeepSeek开源的Super Agent还差点意思 上周末DeepSeek开源了Super Agent要解决多任务并发时人的注意力问题 我仔细研究了一周斗胆唱下反调 #抖音精选App知识充电站 #Vibe知识大赏 #DeepSeek #SuperAgent #PersonalAgent》（精华度 55）。</p>
+<hr>
+<h2>二、主题分布</h2>
+<div class="table-wrap"><table><thead><tr><th>主题</th><th>条数</th><th>平均精华度</th></tr></thead><tbody><tr><td>内容创作</td><td>8</td><td>39.8</td></tr><tr><td>AI-Agent</td><td>1</td><td>55.0</td></tr><tr><td>AI编程</td><td>1</td><td>50.0</td></tr></tbody></table></div>
+<hr>
+<h2>三、精华推荐（精华度 Top 10）</h2>
+<h3>1. 第34集 | 锐评！DeepSeek开源的Super Agent还差点意思 上周末DeepSeek开源了Super Agent要解决多任务并发时人的注意力问题 我仔细研究了一周斗胆唱下反调 #抖音精选App知识充电站 #Vibe知识大赏 #DeepSeek #SuperAgent #PersonalAgent ⭐⭐⭐ <code>55</code></h3>
+<ul><li><strong>平台</strong>：抖音 ｜ <strong>作者</strong>：- ｜ <strong>时长</strong>：--:--</li><li><strong>收藏</strong>：抖音收藏 ｜ <strong>字幕</strong>：desc_only（0 字）</li><li><strong>链接</strong>：<a href="https://www.douyin.com/video/7705303985850191131" target="_blank" rel="noopener noreferrer">https://www.douyin.com/video/7705303985850191131</a></li><li><strong>主旨</strong>：锐评 DeepSeek 开源智能体：多任务并发的注意力方案</li><li><strong>要点</strong>：</li><li class="lvl2">DeepSeek 开源 Super Agent，目标解决多任务并发时人的注意力问题</li><li class="lvl2">作者研究一周后提出「还差点意思」的反调观点</li><li class="lvl2">标签含 PersonalAgent，定位个人智能体方向</li><li class="lvl2">属第 34 集系列知识分享（抖音精选/知识充电站）</li></ul>
+<h3>2. 逆向圈又炸了!比REA还离谱的新工具!craft-any-craft- anything，craft-anything下载，craft-anything教程，craft-anything怎么部署，craft-anything GitHub,craft-anything安装方法，craft-anything功能介绍，craft-anything克隆网站，craft-anything复刻软件，craft- anything复刻游戏，craft-anything windows577版，craft-anything mac版，craft-anything常见报错，craft-anything使用注意事项，craft-anything替代工具，AI复刻工具#REA#craftanything #豆包#豆包工作#GitHub ⭐⭐ <code>50</code></h3>
+<ul><li><strong>平台</strong>：抖音 ｜ <strong>作者</strong>：- ｜ <strong>时长</strong>：--:--</li><li><strong>收藏</strong>：抖音收藏 ｜ <strong>字幕</strong>：desc_only（0 字）</li><li><strong>链接</strong>：<a href="https://www.douyin.com/video/7704894577237355365" target="_blank" rel="noopener noreferrer">https://www.douyin.com/video/7704894577237355365</a></li><li><strong>主旨</strong>：逆向圈新工具：号称可 AI 复刻网站、游戏与软件</li><li><strong>要点</strong>：</li><li class="lvl2">逆向圈新工具 craft-anything，宣称比 REA 更强大</li><li class="lvl2">用途覆盖克隆网站、复刻游戏与软件</li><li class="lvl2">提供下载/部署/教程/GitHub 资源，跨 Windows 与 Mac</li><li class="lvl2">标签关联豆包（工作）、GitHub，属 AI 复刻类工具</li><li><strong>可执行</strong>：</li><li class="lvl2">[ ] 在 GitHub 检索 craft-anything 仓库查看部署方法</li></ul>
+<h3>3. 第3集 | 彼方学院MaYa入门学习系列《镂空材质制作》2023.1.13 #3dmax建模 #三维建模 #3d设计 #3d效果图 #设计教程 #三维动画 #建模 #3d建模 #游戏建模 #视觉设计 ⭐⭐ <code>45</code></h3>
+<ul><li><strong>平台</strong>：抖音 ｜ <strong>作者</strong>：- ｜ <strong>时长</strong>：--:--</li><li><strong>收藏</strong>：抖音收藏 ｜ <strong>字幕</strong>：desc_only（0 字）</li><li><strong>链接</strong>：<a href="https://www.douyin.com/video/7187978076918254907" target="_blank" rel="noopener noreferrer">https://www.douyin.com/video/7187978076918254907</a></li><li><strong>主旨</strong>：三维建模镂空材质制作入门教程，面向建模学习者</li><li><strong>要点</strong>：</li><li class="lvl2">系列第 3 集，主题为中文 3D 建模教学《镂空材质制作》</li><li class="lvl2">使用 3DMax / Maya 演示镂空材质（穿孔/透明叠加）制作</li><li class="lvl2">覆盖三维建模、三维动画、游戏建模、视觉设计等方向</li><li class="lvl2">面向 3D 设计入门与自学人群，标签含设计教程</li></ul>
+<h3>4. 第112集 | 三角梅怕晒？促花还要控光？3分钟看完，养护不迷糊、不犯错#养花小知识 #家庭园艺 #三角梅 #当我们与植物相处时#养植物的快乐 ⭐⭐ <code>45</code></h3>
+<ul><li><strong>平台</strong>：抖音 ｜ <strong>作者</strong>：- ｜ <strong>时长</strong>：--:--</li><li><strong>收藏</strong>：抖音收藏 ｜ <strong>字幕</strong>：desc_only（0 字）</li><li><strong>链接</strong>：<a href="https://www.douyin.com/video/7548073979732725055" target="_blank" rel="noopener noreferrer">https://www.douyin.com/video/7548073979732725055</a></li><li><strong>主旨</strong>：三角梅养护科普：光照与促花的常见误区</li><li><strong>要点</strong>：</li><li class="lvl2">第 112 集家庭园艺科普，主角三角梅</li><li class="lvl2">核心问题：三角梅是否怕晒、促花是否需控光</li><li class="lvl2">用 3 分钟讲清养护要点，定位「不迷糊、不犯错」</li><li class="lvl2">标签含养花小知识、家庭园艺、养植物的快乐</li></ul>
+<h3>5. 分数再高也白搭！志愿填报找对方法，每一分都用在刀刃上 #高考出分 #科学填报志愿 #高三家长必看 ⭐⭐ <code>45</code></h3>
+<ul><li><strong>平台</strong>：抖音 ｜ <strong>作者</strong>：- ｜ <strong>时长</strong>：--:--</li><li><strong>收藏</strong>：抖音收藏 ｜ <strong>字幕</strong>：desc_only（0 字）</li><li><strong>链接</strong>：<a href="https://www.douyin.com/video/7705725023524974198" target="_blank" rel="noopener noreferrer">https://www.douyin.com/video/7705725023524974198</a></li><li><strong>主旨</strong>：高考志愿填报科普：方法比分数更重要，用好每一分</li><li><strong>要点</strong>：</li><li class="lvl2">主题为高考出分后的科学志愿填报</li><li class="lvl2">核心主张：分数再高也白搭，找对方法每一分用在刀刃上</li><li class="lvl2">面向高三家长，标签含科学填报志愿、高三家长必看</li></ul>
+<h3>6. 第7集 | 为什么说“弗朗哥难用独裁者简单定义” #历史 #欧洲 #弗朗哥 #西班牙 #李不懂 ⭐⭐ <code>42</code></h3>
+<ul><li><strong>平台</strong>：抖音 ｜ <strong>作者</strong>：- ｜ <strong>时长</strong>：--:--</li><li><strong>收藏</strong>：抖音收藏 ｜ <strong>字幕</strong>：desc_only（0 字）</li><li><strong>链接</strong>：<a href="https://www.douyin.com/video/7540861499338771755" target="_blank" rel="noopener noreferrer">https://www.douyin.com/video/7540861499338771755</a></li><li><strong>主旨</strong>：历史科普：为何弗朗哥难以简单定义为独裁者</li><li><strong>要点</strong>：</li><li class="lvl2">第 7 集历史科普，主题为西班牙弗朗哥</li><li class="lvl2">核心问题：弗朗哥难以用「独裁者」简单定义</li><li class="lvl2">标签含历史、欧洲、西班牙，面向历史爱好者</li></ul>
+<h3>7. 第3集 | 继续山城玩雪之旅！#旅行推荐官 #带你看雪景 #冬天一定要去看雪呀 #登上山顶看美景 #最美的风景在路上 ⭐⭐ <code>38</code></h3>
+<ul><li><strong>平台</strong>：抖音 ｜ <strong>作者</strong>：- ｜ <strong>时长</strong>：--:--</li><li><strong>收藏</strong>：抖音收藏 ｜ <strong>字幕</strong>：desc_only（0 字）</li><li><strong>链接</strong>：<a href="https://www.douyin.com/video/7190380639626005812" target="_blank" rel="noopener noreferrer">https://www.douyin.com/video/7190380639626005812</a></li><li><strong>主旨</strong>：山城冬日赏雪旅行记录，呈现雪景与登顶风光</li><li><strong>要点</strong>：</li><li class="lvl2">第 3 集系列旅行视频，主题为山城玩雪</li><li class="lvl2">内容含看雪景、登山顶看美景、沿途风景</li><li class="lvl2">标签定位为旅行推荐与冬季出行种草</li></ul>
+<h3>8. #黑袍纠察队第五季 阿祖下线！最缺爱的阿祖死在了充满爱的520当天！#祖国人 #安东尼斯塔尔 ⭐⭐ <code>38</code></h3>
+<ul><li><strong>平台</strong>：抖音 ｜ <strong>作者</strong>：- ｜ <strong>时长</strong>：--:--</li><li><strong>收藏</strong>：抖音收藏 ｜ <strong>字幕</strong>：desc_only（0 字）</li><li><strong>链接</strong>：<a href="https://www.douyin.com/video/7641918559215488302" target="_blank" rel="noopener noreferrer">https://www.douyin.com/video/7641918559215488302</a></li><li><strong>主旨</strong>：黑袍纠察队第五季阿祖角色下线剧情解说</li><li><strong>要点</strong>：</li><li class="lvl2">第 5 季剧情解说，主题角色「阿祖」下线</li><li class="lvl2">剧情点：阿祖死于 520 当天，文案称其「最缺爱」</li><li class="lvl2">关联角色祖国人，标签含安东尼斯塔尔（演员）</li></ul>
+<h3>9. 无人机表演完整版！#无人机灯光秀 #点亮城市之光 #人山人海太热闹了 #我的城市 #景点打卡 ⭐⭐ <code>35</code></h3>
+<ul><li><strong>平台</strong>：抖音 ｜ <strong>作者</strong>：- ｜ <strong>时长</strong>：--:--</li><li><strong>收藏</strong>：抖音收藏 ｜ <strong>字幕</strong>：desc_only（0 字）</li><li><strong>链接</strong>：<a href="https://www.douyin.com/video/7360337622280965428" target="_blank" rel="noopener noreferrer">https://www.douyin.com/video/7360337622280965428</a></li><li><strong>主旨</strong>：城市无人机灯光秀表演完整记录，适合打卡观赏</li><li><strong>要点</strong>：</li><li class="lvl2">完整版无人机表演，主题为无人机灯光秀</li><li class="lvl2">场景为城市夜景，主打「点亮城市之光」</li><li class="lvl2">标签含景点打卡、我的城市，偏城市文旅内容</li></ul>
+<h3>10. 高质量短篇小说来袭，看了主角也太上头了吧，尤其是... ⭐⭐ <code>30</code></h3>
+<ul><li><strong>平台</strong>：抖音 ｜ <strong>作者</strong>：- ｜ <strong>时长</strong>：--:--</li><li><strong>收藏</strong>：抖音收藏 ｜ <strong>字幕</strong>：desc_only（0 字）</li><li><strong>链接</strong>：<a href="https://www.douyin.com/video/7556644099445624107" target="_blank" rel="noopener noreferrer">https://www.douyin.com/video/7556644099445624107</a></li><li><strong>主旨</strong>：短篇故事推荐：主角剧情引人上头（信息有限）</li><li><strong>要点</strong>：</li><li class="lvl2">标题称「高质量短篇小说」，主角剧情令人上头</li><li class="lvl2">仅标题可用，无简介、无字幕，内容主题不明</li><li class="lvl2">标题以「尤其是…」收尾，正文未给出，无法判断具体题材</li></ul>
+<hr>
+<h2>四、全部条目摘要</h2>
+<h3>🎵 抖音（10 条）</h3>
+<ul><li><strong>第34集 | 锐评！DeepSeek开源的Super Agent还差点意思 上周末DeepSeek开源了Super Agent要解决多任务并发时人的注意力问题 我仔细研究了一周斗胆唱下反调 #抖音精选App知识充电站 #Vibe知识大赏 #DeepSeek #SuperAgent #PersonalAgent</strong> ｜ <code>55</code> ｜ --:-- ｜ 字幕质量:中</li><li class="lvl2">锐评 DeepSeek 开源智能体：多任务并发的注意力方案</li><li class="lvl2">DeepSeek 开源 Super Agent，目标解决多任务并发时人的注意力问题</li><li class="lvl2">作者研究一周后提出「还差点意思」的反调观点</li><li class="lvl2">标签含 PersonalAgent，定位个人智能体方向</li><li class="lvl2">属第 34 集系列知识分享（抖音精选/知识充电站）</li><li><strong>逆向圈又炸了!比REA还离谱的新工具!craft-any-craft- anything，craft-anything下载，craft-anything教程，craft-anything怎么部署，craft-anything GitHub,craft-anything安装方法，craft-anything功能介绍，craft-anything克隆网站，craft-anything复刻软件，craft- anything复刻游戏，craft-anything windows577版，craft-anything mac版，craft-anything常见报错，craft-anything使用注意事项，craft-anything替代工具，AI复刻工具#REA#craftanything #豆包#豆包工作#GitHub</strong> ｜ <code>50</code> ｜ --:-- ｜ 字幕质量:中</li><li class="lvl2">逆向圈新工具：号称可 AI 复刻网站、游戏与软件</li><li class="lvl2">逆向圈新工具 craft-anything，宣称比 REA 更强大</li><li class="lvl2">用途覆盖克隆网站、复刻游戏与软件</li><li class="lvl2">提供下载/部署/教程/GitHub 资源，跨 Windows 与 Mac</li><li class="lvl2">标签关联豆包（工作）、GitHub，属 AI 复刻类工具</li><li><strong>第3集 | 彼方学院MaYa入门学习系列《镂空材质制作》2023.1.13 #3dmax建模 #三维建模 #3d设计 #3d效果图 #设计教程 #三维动画 #建模 #3d建模 #游戏建模 #视觉设计</strong> ｜ <code>45</code> ｜ --:-- ｜ 字幕质量:中</li><li class="lvl2">三维建模镂空材质制作入门教程，面向建模学习者</li><li class="lvl2">系列第 3 集，主题为中文 3D 建模教学《镂空材质制作》</li><li class="lvl2">使用 3DMax / Maya 演示镂空材质（穿孔/透明叠加）制作</li><li class="lvl2">覆盖三维建模、三维动画、游戏建模、视觉设计等方向</li><li class="lvl2">面向 3D 设计入门与自学人群，标签含设计教程</li><li><strong>第112集 | 三角梅怕晒？促花还要控光？3分钟看完，养护不迷糊、不犯错#养花小知识 #家庭园艺 #三角梅 #当我们与植物相处时#养植物的快乐</strong> ｜ <code>45</code> ｜ --:-- ｜ 字幕质量:中</li><li class="lvl2">三角梅养护科普：光照与促花的常见误区</li><li class="lvl2">第 112 集家庭园艺科普，主角三角梅</li><li class="lvl2">核心问题：三角梅是否怕晒、促花是否需控光</li><li class="lvl2">用 3 分钟讲清养护要点，定位「不迷糊、不犯错」</li><li class="lvl2">标签含养花小知识、家庭园艺、养植物的快乐</li><li><strong>分数再高也白搭！志愿填报找对方法，每一分都用在刀刃上 #高考出分 #科学填报志愿 #高三家长必看</strong> ｜ <code>45</code> ｜ --:-- ｜ 字幕质量:中</li><li class="lvl2">高考志愿填报科普：方法比分数更重要，用好每一分</li><li class="lvl2">主题为高考出分后的科学志愿填报</li><li class="lvl2">核心主张：分数再高也白搭，找对方法每一分用在刀刃上</li><li class="lvl2">面向高三家长，标签含科学填报志愿、高三家长必看</li><li><strong>第7集 | 为什么说“弗朗哥难用独裁者简单定义” #历史 #欧洲 #弗朗哥 #西班牙 #李不懂</strong> ｜ <code>42</code> ｜ --:-- ｜ 字幕质量:中</li><li class="lvl2">历史科普：为何弗朗哥难以简单定义为独裁者</li><li class="lvl2">第 7 集历史科普，主题为西班牙弗朗哥</li><li class="lvl2">核心问题：弗朗哥难以用「独裁者」简单定义</li><li class="lvl2">标签含历史、欧洲、西班牙，面向历史爱好者</li><li><strong>第3集 | 继续山城玩雪之旅！#旅行推荐官 #带你看雪景 #冬天一定要去看雪呀 #登上山顶看美景 #最美的风景在路上</strong> ｜ <code>38</code> ｜ --:-- ｜ 字幕质量:中</li><li class="lvl2">山城冬日赏雪旅行记录，呈现雪景与登顶风光</li><li class="lvl2">第 3 集系列旅行视频，主题为山城玩雪</li><li class="lvl2">内容含看雪景、登山顶看美景、沿途风景</li><li class="lvl2">标签定位为旅行推荐与冬季出行种草</li><li><strong>#黑袍纠察队第五季 阿祖下线！最缺爱的阿祖死在了充满爱的520当天！#祖国人 #安东尼斯塔尔</strong> ｜ <code>38</code> ｜ --:-- ｜ 字幕质量:中</li><li class="lvl2">黑袍纠察队第五季阿祖角色下线剧情解说</li><li class="lvl2">第 5 季剧情解说，主题角色「阿祖」下线</li><li class="lvl2">剧情点：阿祖死于 520 当天，文案称其「最缺爱」</li><li class="lvl2">关联角色祖国人，标签含安东尼斯塔尔（演员）</li><li><strong>无人机表演完整版！#无人机灯光秀 #点亮城市之光 #人山人海太热闹了 #我的城市 #景点打卡</strong> ｜ <code>35</code> ｜ --:-- ｜ 字幕质量:中</li><li class="lvl2">城市无人机灯光秀表演完整记录，适合打卡观赏</li><li class="lvl2">完整版无人机表演，主题为无人机灯光秀</li><li class="lvl2">场景为城市夜景，主打「点亮城市之光」</li><li class="lvl2">标签含景点打卡、我的城市，偏城市文旅内容</li><li><strong>高质量短篇小说来袭，看了主角也太上头了吧，尤其是...</strong> ｜ <code>30</code> ｜ --:-- ｜ 字幕质量:低</li><li class="lvl2">短篇故事推荐：主角剧情引人上头（信息有限）</li><li class="lvl2">标题称「高质量短篇小说」，主角剧情令人上头</li><li class="lvl2">仅标题可用，无简介、无字幕，内容主题不明</li><li class="lvl2">标题以「尤其是…」收尾，正文未给出，无法判断具体题材</li></ul>
+<hr>
+<h2>五、失败与降级记录</h2>
+<div class="table-wrap"><table><thead><tr><th>平台</th><th>条目</th><th>阶段</th><th>错误</th><th>时间</th></tr></thead><tbody><tr><td>bilibili</td><td>-</td><td>login</td><td>未登录（code=-101）</td><td>2026-11-08 21:31:38</td></tr></tbody></table></div>
+<blockquote><p>⚠️ <strong>本次运行为「部分成功」</strong>：存在采集或处理失败项，报告已按可用数据生成。</p></blockquote>
+<hr>
+<h2>附：运行信息</h2>
+<ul><li>报告日期：2026-11-08</li><li>本次条目数：10</li><li>知识库收录：0 篇</li><li>状态：partial</li><li>数据源文件：<code>data/raw/*-2026-11-08.json</code></li><li>流程：采集 → 字幕 → 摘要包 → 归纳 → 报告 → 知识库</li></ul>
+<hr>
+<p>_本报告由「抖音/B站 收藏情报系统」自动生成，规则与约定见 <code>情报系统/AGENT.md</code>。_</p></article>
+<div class="nav"><a class="btn" href="2026-11-07.html">下一期 2026-11-07 →</a><a class="btn" href="archive.html">全部归档</a></div>
+<div class="foot">由「收藏情报系统」自动生成 ｜ 内容来自本人在 B 站与抖音的收藏，原视频版权归原作者所有</div>
+</main>
+<script>
+(function(){
+  var KEY='intel-theme', root=document.documentElement;
+  function sys(){try{return window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}catch(e){return 'light';}}
+  function cur(){return root.getAttribute('data-theme')||sys();}
+  function paint(){var b=document.getElementById('themeBtn'); if(b){b.textContent=cur()==='dark'?'\u25D0':'\u25D1'; b.title=cur()==='dark'?'切换到浅色':'切换到深色';}}
+  try{var s=localStorage.getItem(KEY); if(s){root.setAttribute('data-theme',s);}}catch(e){}
+  window.__toggleTheme=function(){
+    var next=cur()==='dark'?'light':'dark';
+    root.setAttribute('data-theme',next);
+    try{localStorage.setItem(KEY,next);}catch(e){}
+    paint();
+  };
+  if(document.readyState!=='loading'){paint();}else{document.addEventListener('DOMContentLoaded',paint);}
+})();
+</script>
+</body>
+</html>
